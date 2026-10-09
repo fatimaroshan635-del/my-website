@@ -1,0 +1,561 @@
+<!DOCTYPE html><html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="theme-color" content="#075e46">
+<meta name="description" content="Digital Pakistan — a convenient directory for official Pakistani services, government schemes, jobs, education and digital tools.">
+<title>Digital Pakistan | Your Digital Destination</title><style>
+:root {
+    --green: #075e46;
+    --green-light: #0b8060;
+    --gold: #e7bd57;
+    --background: #f4f8f6;
+    --white: #ffffff;
+    --text: #19332b;
+    --muted: #6b7c75;
+    --border: #e2ebe6;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    background: var(--background);
+    color: var(--text);
+    line-height: 1.6;
+}
+
+header {
+    background: var(--green);
+    color: var(--white);
+    padding: 16px;
+}
+
+.topbar {
+    max-width: 1100px;
+    margin: auto;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 12px;
+}
+
+.brand {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.logo {
+    width: 46px;
+    height: 46px;
+    background: white;
+    color: var(--green);
+    border-radius: 12px;
+    display: grid;
+    place-items: center;
+    font-size: 26px;
+    font-weight: bold;
+}
+
+.brand h1 {
+    font-size: 21px;
+    line-height: 1.3;
+}
+
+.brand p {
+    color: #d3e9df;
+    font-size: 12px;
+}
+
+.header-badge {
+    border: 1px solid #ffffff55;
+    border-radius: 20px;
+    padding: 6px 10px;
+    font-size: 11px;
+    white-space: nowrap;
+}
+
+nav {
+    background: #064a38;
+    padding: 10px 14px;
+    overflow-x: auto;
+    white-space: nowrap;
+    text-align: center;
+}
+
+nav a {
+    color: white;
+    text-decoration: none;
+    margin: 0 12px;
+    font-size: 13px;
+    font-weight: bold;
+}
+
+.hero {
+    background: linear-gradient(135deg, #075e46, #0b8060);
+    color: white;
+    padding: 38px 18px 42px;
+    text-align: center;
+}
+
+.hero-inner {
+    max-width: 760px;
+    margin: auto;
+}
+
+.flag {
+    display: inline-block;
+    background: #ffffff18;
+    border: 1px solid #ffffff35;
+    padding: 5px 12px;
+    border-radius: 20px;
+    margin-bottom: 13px;
+    font-size: 12px;
+}
+
+.hero h2 {
+    font-size: clamp(27px, 6vw, 40px);
+    line-height: 1.25;
+    margin-bottom: 12px;
+}
+
+.hero p {
+    font-size: 14px;
+    color: #e0f0e8;
+    margin-bottom: 23px;
+}
+
+.search-box {
+    background: white;
+    display: flex;
+    max-width: 580px;
+    margin: auto;
+    padding: 6px;
+    border-radius: 12px;
+    box-shadow: 0 8px 28px #003a281c;
+}
+
+.search-box input {
+    width: 100%;
+    min-width: 0;
+    border: none;
+    outline: none;
+    padding: 12px;
+    font-size: 14px;
+    color: var(--text);
+    background: transparent;
+}
+
+.search-box button {
+    border: none;
+    border-radius: 8px;
+    padding: 0 19px;
+    background: var(--gold);
+    color: #243c2e;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+main {
+    max-width: 1100px;
+    padding: 26px 15px;
+    margin: auto;
+}
+
+.section-heading {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 16px;
+}
+
+.section-heading h2 {
+    font-size: 21px;
+}
+
+.section-heading p {
+    font-size: 12px;
+    color: var(--muted);
+}
+
+.category-grid {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 12px;
+}
+
+.category-card {
+    background: var(--white);
+    border: 1px solid var(--border);
+    border-radius: 14px;
+    padding: 17px 13px;
+    text-decoration: none;
+    color: var(--text);
+    min-width: 0;
+    transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.category-card:active {
+    transform: scale(0.98);
+}
+
+.category-icon {
+    width: 44px;
+    height: 44px;
+    border-radius: 12px;
+    background: #e9f5ef;
+    display: grid;
+    place-items: center;
+    font-size: 24px;
+    margin-bottom: 11px;
+}
+
+.category-card h3 {
+    font-size: 14px;
+    margin-bottom: 5px;
+    line-height: 1.4;
+}
+
+.category-card p {
+    color: var(--muted);
+    font-size: 11px;
+    line-height: 1.6;
+}
+
+.card-arrow {
+    display: block;
+    text-align: right;
+    color: var(--green-light);
+    font-size: 19px;
+    margin-top: 6px;
+}
+
+.notice {
+    background: white;
+    border: 1px solid var(--border);
+    border-left: 4px solid var(--gold);
+    border-radius: 10px;
+    padding: 15px;
+    margin-top: 25px;
+    font-size: 12px;
+    color: var(--muted);
+}
+
+.notice strong {
+    color: var(--text);
+}
+
+.developer {
+    background: #e8f3ed;
+    border: 1px solid #d7e9df;
+    border-radius: 16px;
+    padding: 24px 18px;
+    margin-top: 25px;
+    text-align: center;
+}
+
+.developer h2 {
+    color: var(--green);
+    font-size: 22px;
+    margin-bottom: 8px;
+}
+
+.developer p {
+    color: #526a60;
+    font-size: 13px;
+    margin-bottom: 16px;
+}
+
+.primary-btn {
+    display: inline-block;
+    background: var(--green);
+    color: white;
+    text-decoration: none;
+    border-radius: 9px;
+    padding: 11px 18px;
+    font-size: 13px;
+    font-weight: bold;
+}
+
+footer {
+    background: #063d2e;
+    color: #e1eee7;
+    text-align: center;
+    padding: 25px 15px 85px;
+    margin-top: 30px;
+    font-size: 12px;
+}
+
+footer p {
+    margin-bottom: 8px;
+}
+
+footer a {
+    color: #f0d486;
+    text-decoration: none;
+    margin: 0 7px;
+}
+
+.bottom-nav {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    display: flex;
+    justify-content: space-around;
+    background: white;
+    border-top: 1px solid var(--border);
+    padding: 9px 4px calc(9px + env(safe-area-inset-bottom));
+    z-index: 10;
+}
+
+.bottom-nav a {
+    flex: 1;
+    text-align: center;
+    text-decoration: none;
+    color: var(--muted);
+    font-size: 10px;
+}
+
+.bottom-nav span {
+    display: block;
+    font-size: 19px;
+    margin-bottom: 2px;
+}
+
+.bottom-nav a.active {
+    color: var(--green);
+    font-weight: bold;
+}
+
+.empty-message {
+    display: none;
+    background: white;
+    padding: 20px;
+    border-radius: 12px;
+    text-align: center;
+    margin-top: 12px;
+    font-size: 13px;
+}
+
+@media (min-width: 650px) {
+    .category-grid {
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+        gap: 16px;
+    }
+
+    .category-card {
+        padding: 22px;
+    }
+
+    .category-card h3 {
+        font-size: 16px;
+    }
+}
+
+@media (min-width: 900px) {
+    .category-grid {
+        grid-template-columns: repeat(4, minmax(0, 1fr));
+    }
+
+    .hero {
+        padding: 55px 20px 60px;
+    }
+}
+</style></head><body><header id="home">
+    <div class="topbar">
+        <div class="brand">
+            <div class="logo">D</div>
+            <div>
+                <h1>Digital Pakistan</h1>
+                <p>Your Digital Destination</p>
+            </div>
+        </div>
+        <span class="header-badge">🇵🇰 Pakistan</span>
+    </div>
+</header><nav>
+    <a href="#home">Home</a>
+    <a href="#categories">Categories</a>
+    <a href="#developer">Developer</a>
+    <a href="#footer">Contact</a>
+</nav><section class="hero">
+    <div class="hero-inner">
+        <span class="flag">🇵🇰 Pakistan's Digital Directory</span>
+        <h2>Har Zaroori Service,<br>Ek Hi Jagah</h2>
+        <p>Official services, government schemes, education and digital tools — find the right place for your work.</p>    <form class="search-box" id="searchForm">
+        <input type="search" id="searchInput" placeholder="Apna kaam search karein..." aria-label="Search categories">
+        <button type="submit">Search</button>
+    </form>
+</div>
+
+</section><main>
+    <section id="categories">
+        <div class="section-heading">
+            <div>
+                <h2>Explore Categories</h2>
+                <p>Choose a service to get started.</p>
+            </div>
+        </div>    <div class="category-grid" id="categoryGrid">
+
+        <a class="category-card" href="#vehicle" data-search="car bike vehicle registration excise number plate verification">
+            <div class="category-icon">🚗</div>
+            <h3>Car & Bike Services</h3>
+            <p>Vehicle verification and provincial transport services.</p>
+            <span class="card-arrow">→</span>
+        </a>
+
+        <a class="category-card" href="#identity" data-search="nadra cnic identity card family registration identity services">
+            <div class="category-icon">🪪</div>
+            <h3>CNIC & Identity</h3>
+            <p>Find official identity services and information.</p>
+            <span class="card-arrow">→</span>
+        </a>
+
+        <a class="category-card" href="#schemes" data-search="government schemes federal punjab sindh kpk balochistan kashmir">
+            <div class="category-icon">🇵🇰</div>
+            <h3>Government Schemes</h3>
+            <p>Explore federal and province-wise public programs.</p>
+            <span class="card-arrow">→</span>
+        </a>
+
+        <a class="category-card" href="#jobs" data-search="jobs rozgar employment government private career">
+            <div class="category-icon">💼</div>
+            <h3>Jobs & Rozgar</h3>
+            <p>Job information and official application links.</p>
+            <span class="card-arrow">→</span>
+        </a>
+
+        <a class="category-card" href="#education" data-search="education scholarship students admission university">
+            <div class="category-icon">🎓</div>
+            <h3>Education & Scholarships</h3>
+            <p>Find educational programs and scholarship resources.</p>
+            <span class="card-arrow">→</span>
+        </a>
+
+        <a class="category-card" href="#ai" data-search="ai studio cartoon animation script video thumbnail artificial intelligence">
+            <div class="category-icon">🤖</div>
+            <h3>AI Studio</h3>
+            <p>Discover AI tools for scripts, cartoons and thumbnails.</p>
+            <span class="card-arrow">→</span>
+        </a>
+
+        <a class="category-card" href="#creator" data-search="social media creator youtube tiktok facebook instagram views analytics">
+            <div class="category-icon">🎬</div>
+            <h3>Creator Tools</h3>
+            <p>Content resources and legitimate creator utilities.</p>
+            <span class="card-arrow">→</span>
+        </a>
+
+        <a class="category-card" href="#tools" data-search="online tools pdf image text calculator qr code">
+            <div class="category-icon">🛠️</div>
+            <h3>Online Tools</h3>
+            <p>Useful digital utilities for everyday tasks.</p>
+            <span class="card-arrow">→</span>
+        </a>
+
+        <a class="category-card" href="#directory" data-search="official government websites pakistan departments services">
+            <div class="category-icon">🌐</div>
+            <h3>Official Websites</h3>
+            <p>Find government departments and verified portals.</p>
+            <span class="card-arrow">→</span>
+        </a>
+
+        <a class="category-card" href="#islamic" data-search="islamic quran islamic information prayer resources">
+            <div class="category-icon">🕌</div>
+            <h3>Islamic Corner</h3>
+            <p>Islamic resources and useful information.</p>
+            <span class="card-arrow">→</span>
+        </a>
+
+        <a class="category-card" href="#rates" data-search="currency exchange rates gold petrol price market">
+            <div class="category-icon">📊</div>
+            <h3>Rates & Information</h3>
+            <p>Resources for checking everyday rates and information.</p>
+            <span class="card-arrow">→</span>
+        </a>
+
+        <a class="category-card" href="#developer" data-search="mr shani official developer portfolio apps websites contact projects">
+            <div class="category-icon">👨‍💻</div>
+            <h3>Mr Shani Official</h3>
+            <p>Developer portfolio, projects and contact details.</p>
+            <span class="card-arrow">→</span>
+        </a>
+
+    </div>
+
+    <div class="empty-message" id="emptyMessage">
+        No matching categories found. Try another search.
+    </div>
+</section>
+
+<div class="notice">
+    <strong>🔒 Our commitment to users</strong><br>
+    Digital Pakistan aims to guide users towards authentic sources.
+    Government services and scheme information will be linked to official sources
+    and checked before publication. We do not claim to be a government department.
+</div>
+
+<section class="developer" id="developer">
+    <h2>Mr Shani Official</h2>
+    <p>App development, websites and digital projects. Your next idea can become a reality.</p>
+    <a class="primary-btn" href="mailto:contact@example.com?subject=Digital%20Project%20Inquiry">Project Inquiry</a>
+    <p style="margin:12px 0 0;font-size:11px;">Developer contact details will be added after configuration.</p>
+</section>
+
+</main><footer id="footer">
+    <p><strong>Digital Pakistan</strong> 🇵🇰</p>
+    <p>A digital directory for useful services and tools.</p>
+    <p>
+        <a href="#about">About</a>
+        <a href="#privacy">Privacy</a>
+        <a href="#disclaimer">Disclaimer</a>
+    </p>
+    <p>© <span id="year">2026</span> Digital Pakistan. All rights reserved.</p>
+    <p>Independent information platform — not a government website.</p>
+</footer><div class="bottom-nav">
+    <a class="active" href="#home"><span>⌂</span>Home</a>
+    <a href="#categories"><span>▦</span>Categories</a>
+    <a href="#ai"><span>✧</span>AI Tools</a>
+    <a href="#developer"><span>♙</span>Profile</a>
+</div><script>
+const searchForm = document.getElementById("searchForm");
+const searchInput = document.getElementById("searchInput");
+const cards = Array.from(document.querySelectorAll(".category-card"));
+const emptyMessage = document.getElementById("emptyMessage");
+
+function searchCategories(event) {
+    if (event) event.preventDefault();
+
+    const query = searchInput.value.trim().toLowerCase();
+    let visibleCount = 0;
+
+    cards.forEach(function(card) {
+        const searchableText =
+            (card.innerText + " " + (card.dataset.search || "")).toLowerCase();
+
+        const matches = searchableText.includes(query);
+        card.style.display = matches ? "" : "none";
+
+        if (matches) visibleCount++;
+    });
+
+    emptyMessage.style.display = visibleCount === 0 ? "block" : "none";
+}
+
+searchForm.addEventListener("submit", searchCategories);
+
+searchInput.addEventListener("input", searchCategories);
+
+document.getElementById("year").textContent = new Date().getFullYear();
+</script></body>
+  </html>
