@@ -1,245 +1,464 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="theme-color" content="#087f5b">
-  <meta name="description" content="Digital Pakistan — official public services, government schemes, jobs, scholarships and digital tools.">
-  <title>Digital Pakistan | Public Services</title>
-  <style>
-    :root {
-      --green: #087f5b;
-      --dark: #064e3b;
-      --gold: #e8b84b;
-      --bg: #f4f8f6;
-      --text: #18352c;
-      --muted: #667970;
-      --white: #ffffff;
-    }
-    * { box-sizing: border-box; }
-    body {
-      margin: 0;
-      font-family: Arial, Helvetica, sans-serif;
-      background: var(--bg);
-      color: var(--text);
-    }
-    header {
-      background: linear-gradient(135deg, #064e3b, #087f5b);
-      color: white;
-      padding: 22px 18px 30px;
-      border-bottom: 4px solid var(--gold);
-    }
-    .topbar, main, footer {
-      max-width: 1050px;
-      margin: auto;
-    }
-    .topbar {
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      gap: 12px;
-    }
-    .brand { font-size: 21px; font-weight: 800; }
-    .brand span { color: #f5cf70; }
-    .tag { font-size: 12px; color: #d9eee5; margin-top: 5px; }
-    .hero { padding-top: 30px; }
-    .hero h1 { font-size: clamp(27px, 5vw, 43px); margin: 0 0 12px; }
-    .hero p { color: #e0f2e9; line-height: 1.7; max-width: 620px; }
-    .search {
-      display: flex;
-      gap: 8px;
-      margin-top: 22px;
-      max-width: 650px;
-    }
-    .search input {
-      flex: 1; min-width: 0; padding: 14px;
-      border: 1px solid #d6e4dc; border-radius: 10px;
-      font-size: 15px;
-    }
-    button, .btn {
-      border: 0; border-radius: 10px; padding: 13px 17px;
-      background: var(--gold); color: #17382d;
-      font-weight: 700; cursor: pointer; text-decoration: none;
-    }
-    main { padding: 25px 16px 35px; }
-    .welcome {
-      background: white; padding: 19px; border-radius: 14px;
-      border: 1px solid #e0eae4; margin-bottom: 24px;
-    }
-    .welcome h2 { margin: 0 0 8px; font-size: 20px; }
-    .welcome p { margin: 0; color: var(--muted); line-height: 1.6; }
-    .section-heading {
-      display: flex; align-items: end; justify-content: space-between;
-      gap: 12px; margin: 25px 0 15px;
-    }
-    .section-heading h2 { margin: 0; font-size: 23px; }
-    .section-heading p { margin: 5px 0 0; color: var(--muted); font-size: 13px; }
-    .grid {
-      display: grid; grid-template-columns: repeat(3, minmax(0, 1fr));
-      gap: 14px;
-    }
-    .service {
-      background: white; border: 1px solid #e0eae4;
-      border-radius: 14px; padding: 18px 15px;
-      text-decoration: none; color: inherit;
-      transition: transform .15s, box-shadow .15s;
-    }
-    .service:hover { transform: translateY(-3px); box-shadow: 0 8px 22px #123c2510; }
-    .service .emoji { font-size: 29px; }
-    .service h3 { margin: 12px 0 7px; font-size: 16px; }
-    .service p { margin: 0; font-size: 13px; color: var(--muted); line-height: 1.55; }
-    .arrow { display: inline-block; margin-top: 13px; color: var(--green); font-weight: 700; font-size: 13px; }
-    .notice {
-      margin-top: 23px; padding: 16px; border-radius: 12px;
-      background: #e7f4ed; border-left: 4px solid var(--green);
-      font-size: 13px; line-height: 1.6;
-    }
-    footer {
-      padding: 20px 16px 28px; color: var(--muted);
-      text-align: center; font-size: 12px; line-height: 1.7;
-    }
-    .hidden { display: none !important; }
-    @media (max-width: 650px) {
-      .grid { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 10px; }
-      .service { padding: 15px 12px; }
-      .service h3 { font-size: 14px; }
-      .search button { padding: 12px; }
-    }
-    @media (max-width: 360px) {
-      .grid { grid-template-columns: 1fr; }
-      .brand { font-size: 18px; }
-    }
-  </style>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="theme-color" content="#073d30">
+<meta name="description" content="Digital Pakistan — jobs, education, government services, Islamic resources, results, tools and useful links for Pakistan.">
+<title>Digital Pakistan | One Nation, One Digital Portal</title>
+
+<style>
+:root {
+  --green:#073d30;
+  --green2:#0b5b43;
+  --gold:#e7bd67;
+  --cream:#f7f8f4;
+  --ink:#18352d;
+  --muted:#718078;
+  --white:#ffffff;
+  --line:#e5ebe5;
+  --shadow:0 12px 32px rgba(12,48,35,.09);
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{
+  margin:0;
+  font-family:Arial,Helvetica,sans-serif;
+  background:var(--cream);
+  color:var(--ink);
+}
+a{color:inherit;text-decoration:none}
+button,input{font:inherit}
+button,a{-webkit-tap-highlight-color:transparent}
+button{cursor:pointer}
+.topline{
+  background:#052b22;color:#eaf5ed;
+  text-align:center;padding:8px 12px;font-size:12px;
+  letter-spacing:.3px
+}
+header{
+  position:sticky;top:0;z-index:20;
+  background:rgba(255,255,255,.97);
+  border-bottom:1px solid var(--line);
+  backdrop-filter:blur(12px)
+}
+.nav{
+  max-width:1200px;margin:auto;padding:14px 22px;
+  display:flex;align-items:center;justify-content:space-between;gap:15px
+}
+.brand{display:flex;align-items:center;gap:11px;min-width:0}
+.brand-logo{
+  width:43px;height:43px;flex-shrink:0;border-radius:14px;
+  display:grid;place-items:center;
+  color:white;background:linear-gradient(145deg,#087c53,#063d30);
+  border:1px solid #d5b05c;font-size:23px;
+  box-shadow:0 5px 15px #073d3022
+}
+.brand-name{font-weight:900;font-size:19px;color:var(--green)}
+.brand-tag{font-size:10px;color:var(--muted);margin-top:3px}
+.nav-actions{display:flex;align-items:center;gap:8px}
+.btn{
+  display:inline-flex;align-items:center;justify-content:center;
+  gap:7px;border:0;border-radius:11px;padding:11px 15px;
+  font-weight:750;font-size:13px
+}
+.btn-green{background:var(--green);color:white}
+.btn-light{background:#eef4ee;color:var(--green)}
+.btn-gold{background:var(--gold);color:#18382b}
+.btn:hover{filter:brightness(.96)}
+main{max-width:1200px;margin:auto;padding:22px}
+.hero{
+  position:relative;overflow:hidden;border-radius:25px;
+  padding:clamp(27px,6vw,68px);
+  color:white;
+  background:
+    radial-gradient(ellipse at 88% 20%,#d9b55c40,transparent 32%),
+    radial-gradient(ellipse at 10% 110%,#1c916340,transparent 42%),
+    linear-gradient(120deg,#052b22,#07553d 58%,#0a6848);
+  box-shadow:var(--shadow)
+}
+.hero:after{
+  content:"✦";position:absolute;right:7%;top:8%;
+  font-size:clamp(100px,19vw,210px);
+  color:#f1d58a13;pointer-events:none
+}
+.hero-content{position:relative;z-index:1;max-width:740px}
+.eyebrow{
+  display:inline-flex;align-items:center;gap:8px;
+  color:#f4d58e;border:1px solid #e7bd6755;
+  background:#ffffff0b;border-radius:99px;
+  padding:8px 12px;font-size:11px;font-weight:800;
+  letter-spacing:1.1px;text-transform:uppercase
+}
+.hero h1{
+  font-size:clamp(34px,6vw,64px);line-height:1.08;
+  margin:21px 0 15px;letter-spacing:-1.8px
+}
+.hero h1 span{color:var(--gold)}
+.hero p{max-width:600px;color:#d9e8df;line-height:1.8;font-size:15px}
+.hero-actions{display:flex;flex-wrap:wrap;gap:10px;margin-top:25px}
+.hero .btn{padding:14px 18px}
+.hero .btn-light{background:#ffffff;color:var(--green)}
+.hero .btn-outline{border:1px solid #ffffff65;color:white;background:#ffffff0b}
+.stats{
+  display:grid;grid-template-columns:repeat(3,1fr);gap:10px;
+  max-width:650px;margin-top:32px
+}
+.stat{border:1px solid #ffffff22;background:#ffffff0b;border-radius:13px;padding:13px}
+.stat strong{display:block;color:var(--gold);font-size:19px}
+.stat span{display:block;font-size:11px;color:#d7e7de;margin-top:4px}
+.search-wrap{margin:24px 0 30px}
+.searchbox{
+  display:flex;align-items:center;gap:12px;background:white;
+  border:1px solid var(--line);border-radius:16px;padding:8px 10px 8px 16px;
+  box-shadow:0 6px 24px #123a2410
+}
+.search-icon{font-size:21px}
+.searchbox input{
+  flex:1;min-width:0;border:0;outline:0;background:transparent;
+  color:var(--ink);padding:10px 0;font-size:14px
+}
+.searchbox button{white-space:nowrap}
+.section-head{
+  display:flex;align-items:end;justify-content:space-between;
+  gap:12px;margin:32px 0 17px
+}
+.section-kicker{
+  color:#997126;font-size:10px;font-weight:900;
+  text-transform:uppercase;letter-spacing:1.6px
+}
+.section-head h2{margin:7px 0 0;font-size:clamp(23px,4vw,31px);color:var(--green)}
+.section-head p{margin:8px 0 0;color:var(--muted);font-size:13px;line-height:1.6}
+.small-link{font-size:12px;font-weight:800;color:var(--green);white-space:nowrap}
+.category-grid{
+  display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:17px
+}
+.category{
+  overflow:hidden;background:white;border:1px solid var(--line);
+  border-radius:18px;min-width:0;
+  transition:transform .2s,box-shadow .2s,border-color .2s;
+  box-shadow:0 3px 12px #153c2410
+}
+.category:hover{transform:translateY(-4px);box-shadow:var(--shadow);border-color:#c5d7c8}
+.banner{
+  position:relative;min-height:142px;padding:17px;
+  display:flex;align-items:flex-end;overflow:hidden;color:white;
+  isolation:isolate;background:#155a43
+}
+.banner:before{
+  content:"";position:absolute;inset:0;z-index:-2;
+  background:var(--banner);
+  transition:transform .35s
+}
+.category:hover .banner:before{transform:scale(1.06)}
+.banner:after{
+  content:"";position:absolute;inset:0;z-index:-1;
+  background:linear-gradient(180deg,#061e1710 0%,#061e17cc 100%)
+}
+.banner-icon{
+  position:absolute;right:14px;top:12px;
+  width:54px;height:54px;border-radius:17px;
+  display:grid;place-items:center;font-size:29px;
+  background:#ffffff20;border:1px solid #ffffff50;
+  backdrop-filter:blur(6px)
+}
+.banner-label{
+  display:inline-block;font-size:9px;font-weight:900;
+  letter-spacing:1.2px;text-transform:uppercase;
+  color:#f3d28a;margin-bottom:7px
+}
+.banner h3{font-size:19px;line-height:1.2;margin:0;color:white}
+.card-body{padding:14px 15px 15px}
+.card-body p{
+  min-height:39px;font-size:12px;line-height:1.65;
+  color:var(--muted);margin:0 0 13px
+}
+.card-link{
+  display:flex;align-items:center;justify-content:space-between;
+  border-top:1px solid #edf0eb;padding-top:12px;
+  color:var(--green);font-size:12px;font-weight:850
+}
+.quick-grid{
+  display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:12px
+}
+.quick{
+  display:flex;align-items:center;gap:12px;padding:16px;
+  background:white;border:1px solid var(--line);border-radius:15px
+}
+.quick-icon{
+  flex-shrink:0;width:43px;height:43px;border-radius:13px;
+  display:grid;place-items:center;background:#eaf3e9;font-size:22px
+}
+.quick strong{font-size:13px;display:block}
+.quick span{font-size:11px;color:var(--muted);display:block;margin-top:5px;line-height:1.5}
+.notice{
+  margin-top:28px;padding:18px;border-radius:15px;
+  background:#fff9e9;border:1px solid #f0dfb6;
+  color:#715522;font-size:12px;line-height:1.8
+}
+.notice strong{display:block;margin-bottom:4px}
+.cta{
+  margin-top:30px;padding:28px;border-radius:20px;
+  background:linear-gradient(115deg,#e9f2e9,#fff9e9);
+  border:1px solid #dce8d8;display:flex;align-items:center;
+  justify-content:space-between;gap:20px
+}
+.cta h2{margin:0 0 8px;font-size:22px;color:var(--green)}
+.cta p{margin:0;color:var(--muted);font-size:13px;line-height:1.7}
+footer{margin-top:45px;background:#052b22;color:#e4eee7}
+.footer-inner{
+  max-width:1200px;margin:auto;padding:32px 22px 22px;
+  display:grid;grid-template-columns:2fr 1fr 1fr;gap:28px
+}
+.footer-title{font-size:17px;font-weight:900;color:white}
+.footer-inner p{font-size:12px;line-height:1.8;color:#c2d2c8;max-width:400px}
+.footer-col strong{display:block;color:var(--gold);font-size:12px;margin-bottom:12px}
+.footer-col a{display:block;font-size:12px;color:#d2dfd7;margin:10px 0}
+.footer-bottom{
+  border-top:1px solid #ffffff20;padding:16px 22px;text-align:center;
+  color:#bdcec3;font-size:11px
+}
+.empty-state{
+  display:none;text-align:center;background:white;border:1px dashed #cbd9cc;
+  padding:35px;border-radius:15px;color:var(--muted);grid-column:1/-1
+}
+.modal-backdrop{
+  position:fixed;inset:0;z-index:100;background:#061b15b8;
+  display:none;align-items:center;justify-content:center;padding:18px
+}
+.modal-backdrop.show{display:flex}
+.modal{
+  width:100%;max-width:440px;background:white;border-radius:22px;
+  padding:25px;box-shadow:0 25px 90px #0005
+}
+.modal-top{display:flex;justify-content:space-between;align-items:center;gap:12px}
+.modal h2{margin:0;color:var(--green);font-size:23px}
+.close{
+  width:36px;height:36px;border:0;border-radius:10px;
+  background:#edf3ed;font-size:21px;color:var(--green)
+}
+.modal p{font-size:13px;color:var(--muted);line-height:1.7}
+.login-options{display:grid;gap:10px;margin-top:18px}
+.login-option{
+  display:flex;align-items:center;gap:12px;width:100%;padding:13px;
+  border:1px solid var(--line);border-radius:12px;background:white;
+  color:var(--ink);text-align:left;font-weight:750
+}
+.login-option span{font-size:20px;width:27px;text-align:center}
+.login-option:hover{background:#f3f7f1}
+.setup-note{
+  margin-top:14px;padding:12px;background:#fff8e8;border-radius:11px;
+  color:#725722;font-size:11px;line-height:1.7
+}
+body.modal-open{overflow:hidden}
+@media(max-width:900px){
+  .category-grid{grid-template-columns:repeat(3,minmax(0,1fr))}
+  .quick-grid{grid-template-columns:repeat(2,minmax(0,1fr))}
+}
+@media(max-width:620px){
+  .topline{font-size:10px}
+  .nav{padding:11px 14px}
+  .brand-logo{width:38px;height:38px;font-size:20px}
+  .brand-name{font-size:16px}
+  .brand-tag{font-size:9px}
+  .nav-actions{gap:5px}
+  .nav-actions .btn{padding:10px;font-size:11px}
+  main{padding:14px}
+  .hero{border-radius:20px;padding:27px 21px}
+  .hero h1{letter-spacing:-1px}
+  .hero p{font-size:13px}
+  .stats{gap:7px}
+  .stat{padding:10px}
+  .stat strong{font-size:16px}
+  .stat span{font-size:9px}
+  .searchbox{gap:8px}
+  .searchbox button{padding:10px;font-size:11px}
+  .category-grid{grid-template-columns:repeat(2,minmax(0,1fr));gap:11px}
+  .banner{min-height:125px;padding:12px}
+  .banner-icon{width:43px;height:43px;font-size:23px;right:10px;top:10px}
+  .banner h3{font-size:16px}
+  .banner-label{font-size:8px}
+  .card-body{padding:12px}
+  .card-body p{font-size:11px;min-height:53px}
+  .card-link{font-size:11px}
+  .quick{padding:12px;gap:9px}
+  .quick-icon{width:36px;height:36px;font-size:19px}
+  .quick strong{font-size:12px}
+  .quick span{font-size:10px}
+  .section-head{align-items:start}
+  .section-head p{font-size:12px}
+  .cta{padding:21px;align-items:flex-start;flex-direction:column}
+  .footer-inner{grid-template-columns:1fr 1fr;padding:28px 18px}
+  .footer-brand{grid-column:1/-1}
+}
+@media(max-width:360px){
+  .brand-tag{display:none}
+  .nav-actions .btn{padding:9px 7px}
+  .category-grid{gap:8px}
+  .banner h3{font-size:14px}
+}
+</style>
 </head>
+
 <body>
-  <header>
-    <div class="topbar">
+<div class="topline">
+  🇵🇰 DIGITAL PAKISTAN · Useful services, information and resources in one place
+</div>
+
+<header>
+  <nav class="nav" aria-label="Main navigation">
+    <a class="brand" href="index.html" aria-label="Digital Pakistan Home">
+      <div class="brand-logo">🇵🇰</div>
       <div>
-        <div class="brand">🇵🇰 Digital <span>Pakistan</span></div>
-        <div class="tag">One platform. Useful services for everyone.</div>
+        <div class="brand-name">Digital Pakistan</div>
+        <div class="brand-tag">YOUR COUNTRY. YOUR DIGITAL GUIDE.</div>
+      </div>
+    </a>
+    <div class="nav-actions">
+      <button class="btn btn-light" type="button" onclick="openModal('profileModal')">👤 Profile</button>
+      <button class="btn btn-green" type="button" onclick="openModal('loginModal')">Login ↗</button>
+    </div>
+  </nav>
+</header>
+
+<main>
+  <section class="hero">
+    <div class="hero-content">
+      <div class="eyebrow">✦ One Nation · One Digital Portal</div>
+      <h1>Discover Pakistan.<br><span>Do More Digitally.</span></h1>
+      <p>
+        Your digital guide to government services, jobs, education,
+        scholarships, Islamic resources, exam results and useful online tools.
+      </p>
+      <div class="hero-actions">
+        <a class="btn btn-light" href="#categories">Explore Categories ↓</a>
+        <a class="btn btn-outline" href="#quick-access">Quick Services →</a>
+      </div>
+      <div class="stats">
+        <div class="stat"><strong>20+</strong><span>Service Categories</span></div>
+        <div class="stat"><strong>Pakistan</strong><span>Nationwide Resources</span></div>
+        <div class="stat"><strong>24/7</strong><span>Online Access</span></div>
       </div>
     </div>
-    <div class="hero">
-      <h1>Pakistan's Digital Services Hub</h1>
-      <p>Find public service portals, government information, jobs, scholarships and helpful digital resources in one place.</p>
-      <form class="search" id="searchForm">
-        <input id="searchInput" type="search" placeholder="Search services, jobs, schemes..." aria-label="Search services">
-        <button type="submit">Search</button>
-      </form>
-    </div>
-  </header>
+  </section>
 
-  <main>
-    <section class="welcome">
-      <h2>Welcome to Digital Pakistan</h2>
-      <p>Explore useful services and trusted resources. Always verify eligibility, fees and application deadlines on the official website before sharing information or making payments.</p>
-    </section>
+  <div class="search-wrap">
+    <form class="searchbox" id="searchForm" role="search">
+      <span class="search-icon" aria-hidden="true">⌕</span>
+      <input id="categorySearch" type="search"
+        placeholder="Search jobs, CNIC, Islamic Hub, results, tools..."
+        aria-label="Search categories">
+      <button class="btn btn-green" type="submit">Search</button>
+    </form>
+  </div>
 
-    <div class="section-heading">
+  <section id="categories">
+    <div class="section-head">
       <div>
-        <h2>Explore Services</h2>
-        <p>Choose a category to get started.</p>
+        <div class="section-kicker">Explore our portal</div>
+        <h2>All Categories</h2>
+        <p>Choose a category to explore its dedicated services and resources.</p>
       </div>
+      <a class="small-link" href="#categories">Browse all ↗</a>
     </div>
 
-    <section class="grid" id="serviceGrid">
-      <a class="service" href="#vehicles" data-search="vehicle car bike driving license excise">
-        <div class="emoji">🚘</div><h3>Vehicles & Driving</h3>
-        <p>Vehicle registration, verification and driving services.</p><span class="arrow">Explore services →</span>
-      </a>
-      <a class="service" href="#identity" data-search="nadra cnic identity id card">
-        <div class="emoji">🪪</div><h3>NADRA & CNIC</h3>
-        <p>Identity information and official NADRA resources.</p><span class="arrow">Explore services →</span>
-      </a>
-      <a class="service" href="#schemes" data-search="government schemes benefits punjab sindh kpk pakistan">
-        <div class="emoji">🏛️</div><h3>Government Schemes</h3>
-        <p>Explore public programs and provincial initiatives.</p><span class="arrow">Explore services →</span>
-      </a>
-      <a class="service" href="#jobs" data-search="jobs employment career government private">
-        <div class="emoji">💼</div><h3>Jobs & Careers</h3>
-        <p>Find job resources and employment opportunities.</p><span class="arrow">Explore services →</span>
-      </a>
-      <a class="service" href="#education" data-search="education scholarships students university">
-        <div class="emoji">🎓</div><h3>Education & Scholarships</h3>
-        <p>Study resources, scholarships and student support.</p><span class="arrow">Explore services →</span>
-      </a>
-      <a class="service" href="#benefits" data-search="bisp social support financial assistance">
-        <div class="emoji">🤝</div><h3>BISP & Public Support</h3>
-        <p>Official social support and eligibility resources.</p><span class="arrow">Explore services →</span>
-      </a>
-      <a class="service" href="#ai-tools" data-search="AI tools cartoon animation writing thumbnails">
-        <div class="emoji">✨</div><h3>AI Tools & Creativity</h3>
-        <p>Tools for ideas, writing, cartoons and content creation.</p><span class="arrow">Explore services →</span>
-      </a>
-      <a class="service" href="#creator-tools" data-search="youtube tiktok facebook instagram creator social media">
-        <div class="emoji">📱</div><h3>Social Creator Tools</h3>
-        <p>Resources for creators and social media publishing.</p><span class="arrow">Explore services →</span>
-      </a>
-      <a class="service" href="#islamic" data-search="islamic quran prayer islam">
-        <div class="emoji">🕌</div><h3>Islamic Resources</h3>
-        <p>Explore Islamic learning and useful resources.</p><span class="arrow">Explore services →</span>
-      </a>
-      <a class="service" href="#rates" data-search="rates currency petrol gold utility prices">
-        <div class="emoji">📊</div><h3>Rates & Utilities</h3>
-        <p>Useful rate and everyday information resources.</p><span class="arrow">Explore services →</span>
-      </a>
-      <a class="service" href="#official-portals" data-search="official government portals pakistan federal provincial">
-        <div class="emoji">🌐</div><h3>Official Portals</h3>
-        <p>Access official government websites and departments.</p><span class="arrow">Explore services →</span>
-      </a>
-      <a class="service" href="#about" data-search="about developer contact mr shani official">
-        <div class="emoji">👨‍💻</div><h3>Mr Shani Official</h3>
-        <p>Developer portfolio, projects and contact information.</p><span class="arrow">Meet the developer →</span>
-      </a>
-    </section>
+    <div class="category-grid" id="categoryGrid">
 
-    <div class="notice">
-      <strong>Stay safe online:</strong> Digital Pakistan is an independent information directory, not a government department. Never share your PIN, password or verification code with strangers. Use official portals for applications and payments.
-    </div>
-  </main>
+      <a class="category" href="vehicles.html" data-search="vehicles driving cars bikes excise registration licence traffic">
+        <div class="banner" style="--banner:linear-gradient(120deg,#124a38,#32795a)">
+          <div class="banner-icon">🚘</div>
+          <div><span class="banner-label">Travel & transport</span><h3>Vehicles & Driving</h3></div>
+        </div>
+        <div class="card-body"><p>Vehicle verification, registration, driving licences and traffic services.</p><div class="card-link">Explore services <span>↗</span></div></div>
+      </a>
 
-  <footer>
-    <strong>Digital Pakistan 🇵🇰</strong><br>
-    An independent directory of public services and digital resources.<br>
-    Information and external links should be verified before use.<br>
-    © <span id="year"></span> Digital Pakistan
-  </footer>
+      <a class="category" href="nadra.html" data-search="nadra cnic identity card b form passport documents">
+        <div class="banner" style="--banner:linear-gradient(120deg,#164d4b,#368a7d)">
+          <div class="banner-icon">🪪</div>
+          <div><span class="banner-label">Identity services</span><h3>NADRA & CNIC</h3></div>
+        </div>
+        <div class="card-body"><p>Identity-related information and links to official citizen services.</p><div class="card-link">Explore services <span>↗</span></div></div>
+      </a>
 
-  <script>
-    document.getElementById("year").textContent = new Date().getFullYear();
+      <a class="category" href="schemes.html" data-search="government schemes public programmes housing youth financial assistance">
+        <div class="banner" style="--banner:linear-gradient(120deg,#64471d,#b38a42)">
+          <div class="banner-icon">🏛️</div>
+          <div><span class="banner-label">Public programmes</span><h3>Government Schemes</h3></div>
+        </div>
+        <div class="card-body"><p>Discover public programmes, eligibility details and official application links.</p><div class="card-link">View schemes <span>↗</span></div></div>
+      </a>
 
-    const form = document.getElementById("searchForm");
-    const input = document.getElementById("searchInput");
-    const cards = [...document.querySelectorAll(".service")];
+      <a class="category" href="jobs.html" data-search="jobs rozgar career government private overseas remote internship">
+        <div class="banner" style="--banner:linear-gradient(120deg,#193b6a,#477bc0)">
+          <div class="banner-icon">💼</div>
+          <div><span class="banner-label">Build your future</span><h3>Jobs & Rozgar</h3></div>
+        </div>
+        <div class="card-body"><p>Government, private, overseas and remote job resources.</p><div class="card-link">Find opportunities <span>↗</span></div></div>
+      </a>
 
-    form.addEventListener("submit", function (event) {
-      event.preventDefault();
-      const query = input.value.trim().toLowerCase();
-      let matches = 0;
+      <a class="category" href="education.html" data-search="education scholarships university admissions courses students">
+        <div class="banner" style="--banner:linear-gradient(120deg,#3b326c,#7566bb)">
+          <div class="banner-icon">🎓</div>
+          <div><span class="banner-label">Learn & grow</span><h3>Education & Scholarships</h3></div>
+        </div>
+        <div class="card-body"><p>Scholarships, admissions, learning resources and education portals.</p><div class="card-link">Explore education <span>↗</span></div></div>
+      </a>
 
-      cards.forEach(function (card) {
-        const text = (card.innerText + " " + card.dataset.search).toLowerCase();
-        const match = !query || text.includes(query);
-        card.classList.toggle("hidden", !match);
-        if (match) matches++;
-      });
+      <a class="category" href="results.html" data-search="results check examination board roll number university matric intermediate">
+        <div class="banner" style="--banner:linear-gradient(120deg,#17465a,#398ba5)">
+          <div class="banner-icon">📋</div>
+          <div><span class="banner-label">Exams & education</span><h3>Results Check</h3></div>
+        </div>
+        <div class="card-body"><p>Find official board, university and examination result portals.</p><div class="card-link">Check results <span>↗</span></div></div>
+      </a>
 
-      document.querySelector(".section-heading h2").textContent =
-        query ? "Search Results (" + matches + ")" : "Explore Services";
+      <a class="category" href="benefits.html" data-search="bisp ehsaas public support welfare benefits assistance">
+        <div class="banner" style="--banner:linear-gradient(120deg,#60442a,#ac7945)">
+          <div class="banner-icon">🤝</div>
+          <div><span class="banner-label">Support & welfare</span><h3>BISP & Public Support</h3></div>
+        </div>
+        <div class="card-body"><p>Welfare programme information and official support channels.</p><div class="card-link">View support <span>↗</span></div></div>
+      </a>
 
-      document.getElementById("serviceGrid").scrollIntoView({
-        behavior: "smooth",
-        block: "start"
-      });
-    });
+      <a class="category" href="islamic.html" data-search="islamic hub quran pak tarjuma prayer times qibla duas hadith">
+        <div class="banner" style="--banner:linear-gradient(120deg,#064d3d,#148467)">
+          <div class="banner-icon">🕌</div>
+          <div><span class="banner-label">Faith & knowledge</span><h3>Islamic Hub</h3></div>
+        </div>
+        <div class="card-body"><p>Quran resources, prayer information, Qibla, duas and Islamic calendar.</p><div class="card-link">Visit Islamic Hub <span>↗</span></div></div>
+      </a>
 
-    input.addEventListener("input", function () {
-      if (!input.value.trim()) {
-        cards.forEach(card => card.classList.remove("hidden"));
-        document.querySelector(".section-heading h2").textContent = "Explore Services";
-      }
-    });
-  </script>
-</body>
-      </html>
-      
+      <a class="category" href="ai-tools.html" data-search="ai tools artificial intelligence writing image video voice script">
+        <div class="banner" style="--banner:linear-gradient(120deg,#29366e,#636ed0)">
+          <div class="banner-icon">🤖</div>
+          <div><span class="banner-label">Create with AI</span><h3>AI Tools & Creativity</h3></div>
+        </div>
+        <div class="card-body"><p>Discover AI writing, image, video, voice and productivity tools.</p><div class="card-link">Explore AI tools <span>↗</span></div></div>
+      </a>
+
+      <a class="category" href="creator-tools.html" data-search="social creator tools youtube tiktok facebook instagram thumbnails captions">
+        <div class="banner" style="--banner:linear-gradient(120deg,#702d56,#c15b81)">
+          <div class="banner-icon">🎬</div>
+          <div><span class="banner-label">Creator studio</span><h3>Social Creator Tools</h3></div>
+        </div>
+        <div class="card-body"><p>Tools and resources for video creators and social media publishers.</p><div class="card-link">Open creator studio <span>↗</span></div></div>
+      </a>
+
+      <a class="category" href="rates.html" data-search="market rates dollar currency gold calculator units age">
+        <div class="banner" style="--banner:linear-gradient(120deg,#65511d,#b49a45)">
+          <div class="banner-icon">📈</div>
+          <div><span class="banner-label">Money & numbers</span><h3>Rates & Calculators</h3></div>
+        </div>
+        <div class="card-body"><p>Currency and market information, converters and everyday calculators.</p><div class="card-link">View rates & tools <span>↗</span></div></div>
+      </a>
+
+      <a class="category" href="official-portals.html" data-search="official portals government departments federal provincial websites">
+        <div class="banner" style="--banner:linear-gradient(120deg,#30473b,#6c9275)">
+          <div class="banner-icon">🌐</div>
+          <div><span class="banner-label">Verified destinations</span><h3>Official Portals</h3></div>
+        </div>
+        <div class="card-body"><p>A directory of government departments and public-service websites.</p><div class="card-link">Browse portals <span>↗</span></div></div>
+      </a>
+
+      <a class="category" href="health.html" data-search="health hospital doctor medical emergency healthcare">
+        <div class="banner" s
