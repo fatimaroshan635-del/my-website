@@ -1,0 +1,225 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="theme-color" content="#064e3b">
+<title>All Pakistan Government Schemes | Digital Pakistan</title>
+<style>
+:root{--g:#064e3b;--g2:#087b58;--gold:#e8bd62;--bg:#f3f7f4;--ink:#18372d;--muted:#63756d}
+*{box-sizing:border-box}
+body{margin:0;font-family:Arial,sans-serif;background:var(--bg);color:var(--ink)}
+header{padding:16px 5%;background:#043c2d;color:white;display:flex;justify-content:space-between;align-items:center;gap:12px;flex-wrap:wrap}
+.brand{font-size:20px;font-weight:800}.brand span{color:var(--gold)}
+header a{color:white;text-decoration:none;border:1px solid #ffffff66;border-radius:11px;padding:10px 14px}
+.hero{padding:43px 6%;color:white;background:linear-gradient(120deg,#032f25,#087b58 65%,#ad873b);position:relative;overflow:hidden}
+.hero:after{content:"🇵🇰";position:absolute;right:7%;top:25px;font-size:85px;opacity:.23}
+.kicker{color:#ffe5a6;font-weight:bold;font-size:12px;letter-spacing:2px}
+h1{font-size:clamp(29px,5vw,45px);margin:12px 0}
+.hero p{max-width:680px;line-height:1.7;color:#e6f5ed}
+main{max-width:1150px;margin:auto;padding:26px 17px 48px}
+h2{font-size:23px;margin:8px 0}
+.intro{color:var(--muted);line-height:1.7;margin-top:7px}
+.search{width:100%;padding:15px;border:1px solid #d6e4d9;border-radius:13px;background:white;font-size:15px;outline-color:var(--g2);margin:16px 0}
+.regions{display:grid;grid-template-columns:repeat(auto-fit,minmax(125px,1fr));gap:10px;margin:18px 0 25px}
+.region{background:white;border:1px solid #dce8df;border-radius:14px;padding:14px 10px;text-align:left;cursor:pointer;color:var(--ink);transition:.2s}
+.region:hover,.region.active{border-color:var(--g2);background:#e2f4e9;transform:translateY(-2px)}
+.region span{display:block;font-size:25px;margin-bottom:8px}
+.region strong{font-size:13px;display:block}
+.region small{font-size:11px;color:var(--muted);display:block;margin-top:5px}
+.sectionhead{display:flex;justify-content:space-between;align-items:center;gap:10px;flex-wrap:wrap;margin-bottom:15px}
+.badge{font-size:11px;background:#e0f3e7;color:#176340;padding:8px 10px;border-radius:20px;font-weight:bold}
+.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(235px,1fr));gap:14px}
+.card{background:white;border:1px solid #dce8df;border-radius:17px;overflow:hidden;box-shadow:0 6px 18px #153d270b;display:flex;flex-direction:column;min-height:225px}
+.banner{height:83px;padding:17px;background:linear-gradient(120deg,#064e3b,#087b58 65%,#b08b40);color:white;display:flex;justify-content:space-between;align-items:center}
+.banner .emoji{font-size:36px}
+.banner small{color:#ffe5a6;font-size:10px;letter-spacing:1px;font-weight:bold}
+.content{padding:17px;display:flex;flex-direction:column;align-items:flex-start;flex:1}
+.content h3{font-size:16px;line-height:1.4;margin:0 0 9px}
+.content p{font-size:13px;color:var(--muted);line-height:1.65;margin:0 0 16px}
+.tag{display:inline-block;font-size:10px;background:#e7f4eb;color:#176340;padding:6px 8px;border-radius:20px;margin-bottom:10px;font-weight:bold}
+.content a{margin-top:auto;display:inline-block;background:var(--g);color:white;text-decoration:none;border-radius:10px;padding:11px 13px;font-size:12px;font-weight:bold}
+.content a:hover{background:var(--g2)}
+.empty{background:white;border:1px dashed #b8cbbd;border-radius:15px;padding:25px;line-height:1.7;color:var(--muted);grid-column:1/-1}
+.notice{margin-top:23px;padding:16px;border-radius:13px;background:#fff7e5;border:1px solid #f0dfb7;color:#70531c;font-size:13px;line-height:1.8}
+.back{display:inline-block;margin-top:22px;color:var(--g);font-weight:bold;text-decoration:none}
+footer{text-align:center;padding:24px;color:var(--muted);font-size:13px;line-height:1.8}
+@media(max-width:500px){.hero{padding:34px 5%}.hero:after{font-size:55px;right:5%}.regions{grid-template-columns:repeat(2,minmax(0,1fr))}.card{min-height:205px}}
+</style>
+</head>
+<body>
+<header>
+  <div class="brand">🇵🇰 Digital <span>Pakistan</span></div>
+  <a href="index.html">← Home</a>
+</header>
+
+<section class="hero">
+  <div class="kicker">PUBLIC SUPPORT • HOUSING • YOUTH • EDUCATION</div>
+  <h1>Pakistan Government Schemes</h1>
+  <p>Apna Ghar, Apna Karobar, student support, electric bikes, scholarships, financial assistance aur provincial schemes ke links ek jagah.</p>
+</section>
+
+<main>
+  <h2>Find a Scheme</h2>
+  <p class="intro">Pehle Pakistan-wide programmes dekhein ya apna province select karein. Search se housing, business, bikes, students aur welfare programmes dhoondhein.</p>
+
+  <input id="search" class="search" type="search" placeholder="Search: Apna Ghar, Karobar, BISP, e-bike..." aria-label="Search schemes">
+
+  <div class="sectionhead">
+    <h2>Pakistan-Wide Schemes</h2>
+    <span class="badge">FEDERAL / NATIONAL</span>
+  </div>
+
+  <div class="grid" id="national">
+    <article class="card">
+      <div class="banner"><small>HOUSING FINANCE</small><span class="emoji">🏠</span></div>
+      <div class="content"><span class="tag">ALL PAKISTAN</span><h3>Wazir-e-Azam Apna Ghar Program</h3><p>Eligible first-time homebuyers ke liye affordable housing finance, house/flat purchase aur construction ki maloomat.</p><a href="https://www.apnaghar.gov.pk/" target="_blank" rel="noopener noreferrer">Official Program ↗</a></div>
+    </article>
+    <article class="card">
+      <div class="banner"><small>BUSINESS & AGRICULTURE</small><span class="emoji">💼</span></div>
+      <div class="content"><span class="tag">YOUTH / NATIONAL</span><h3>PM Youth Business & Agriculture Loan</h3><p>Eligible young entrepreneurs aur agriculture-related businesses ke liye loan details aur online application.</p><a href="https://pmybals.pmyp.gov.pk/" target="_blank" rel="noopener noreferrer">Official Youth Portal ↗</a></div>
+    </article>
+    <article class="card">
+      <div class="banner"><small>ELECTRIC VEHICLES</small><span class="emoji">🛵</span></div>
+      <div class="content"><span class="tag">NATIONAL PROGRAMME</span><h3>Pakistan EV / PAVE Scheme</h3><p>Electric bikes aur doosri EV financing/subsidy initiatives ki official information. Registration status portal par check karein.</p><a href="https://www.pave.gov.pk/" target="_blank" rel="noopener noreferrer">PAVE Official Site ↗</a></div>
+    </article>
+    <article class="card">
+      <div class="banner"><small>FAMILY SUPPORT</small><span class="emoji">🤝</span></div>
+      <div class="content"><span class="tag">NATIONAL</span><h3>Benazir Income Support Programme</h3><p>Eligible families ke liye BISP support programmes, announcements aur official guidance.</p><a href="https://www.bisp.gov.pk/" target="_blank" rel="noopener noreferrer">BISP Official Site ↗</a></div>
+    </article>
+    <article class="card">
+      <div class="banner"><small>STUDENTS</small><span class="emoji">🎓</span></div>
+      <div class="content"><span class="tag">EDUCATION</span><h3>HEC Scholarships & Student Support</h3><p>Scholarships aur student programmes ki eligibility aur application announcements.</p><a href="https://www.hec.gov.pk/english/scholarshipsgrants/Pages/default.aspx" target="_blank" rel="noopener noreferrer">HEC Scholarships ↗</a></div>
+    </article>
+    <article class="card">
+      <div class="banner"><small>YOUTH OPPORTUNITIES</small><span class="emoji">💻</span></div>
+      <div class="content"><span class="tag">NATIONAL</span><h3>Prime Minister's Youth Programme</h3><p>Youth employment, business loans, skills, training aur programme announcements.</p><a href="https://pmybals.pmyp.gov.pk/" target="_blank" rel="noopener noreferrer">PM Youth Portal ↗</a></div>
+    </article>
+  </div>
+
+  <section style="margin-top:34px">
+    <div class="sectionhead">
+      <h2 id="regionTitle">Punjab Schemes</h2>
+      <span class="badge" id="regionBadge">PROVINCIAL</span>
+    </div>
+    <p class="intro" id="regionDesc">Punjab select karein ya kisi aur region par click karke relevant schemes dekhein.</p>
+
+    <div class="regions" id="regions">
+      <button class="region active" data-region="punjab"><span>🏙️</span><strong>Punjab</strong><small>Province</small></button>
+      <button class="region" data-region="sindh"><span>🌊</span><strong>Sindh</strong><small>Province</small></button>
+      <button class="region" data-region="kpk"><span>🏔️</span><strong>Khyber Pakhtunkhwa</strong><small>Province</small></button>
+      <button class="region" data-region="balochistan"><span>⛰️</span><strong>Balochistan</strong><small>Province</small></button>
+      <button class="region" data-region="ajk"><span>🌲</span><strong>Azad Kashmir</strong><small>Territory</small></button>
+      <button class="region" data-region="gb"><span>❄️</span><strong>Gilgit-Baltistan</strong><small>Territory</small></button>
+      <button class="region" data-region="islamabad"><span>🏛️</span><strong>Islamabad ICT</strong><small>Capital Territory</small></button>
+    </div>
+    <div class="grid" id="regional"></div>
+  </section>
+
+  <div class="notice">
+    <strong>Important:</strong> Digital Pakistan ek independent information directory hai, government department nahi. Scheme ka card nazar aane ka matlab yeh nahi ke registration abhi khuli hai. Eligibility, domicile, age limit, income, deadlines aur available funding official portal par check karein. Kisi agent ko advance fee, OTP, password ya bank PIN na dein.
+  </div>
+  <a class="back" href="index.html">← Back to Digital Pakistan Home</a>
+</main>
+
+<footer>Digital Pakistan • Public Information Directory<br>Independent portal — not affiliated with any government department.</footer>
+
+<script>
+const schemes = {
+punjab:{
+ title:"Punjab Schemes",desc:"Punjab domicile walay users ke liye provincial programmes aur official portals.",items:[
+ {icon:"🏠",category:"HOUSING",title:"Apni Chhat Apna Ghar",desc:"Eligible Punjab residents ke liye affordable housing programme ki details aur application portal.",url:"https://acag.punjab.gov.pk/"},
+ {icon:"🏢",category:"HOUSING / LAND",title:"Apni Zameen Apna Ghar",desc:"Punjab government ke housing aur land-related announcements. Current eligibility official portal par dekhein.",url:"https://punjab.gov.pk/"},
+ {icon:"💼",category:"BUSINESS LOAN",title:"Asaan Karobar",desc:"Punjab business financing aur business-support initiatives ki details aur current application status.",url:"https://punjab.gov.pk/"},
+ {icon:"🛵",category:"STUDENTS / TRANSPORT",title:"CM E-Bikes Scheme",desc:"Students ke liye electric bike initiative. Eligibility aur current registration availability verify karein.",url:"https://www.punjab.gov.pk/index.php/cm-ebikes-scheme"},
+ {icon:"🏪",category:"BUSINESS SERVICES",title:"eBiz Punjab",desc:"Business registration, licences aur provincial business services ke liye official digital platform.",url:"https://ebiz.punjab.gov.pk/"},
+ {icon:"☀️",category:"ENERGY",title:"Punjab Solar & Energy Schemes",desc:"Solar, energy subsidy aur related government initiatives ke current announcements check karein.",url:"https://punjab.gov.pk/"},
+ {icon:"🌾",category:"AGRICULTURE",title:"Agriculture & Farmer Schemes",desc:"Farmers ke liye agriculture support, machinery aur provincial initiatives.",url:"https://agripunjab.gov.pk/"},
+ {icon:"🎓",category:"STUDENTS",title:"Punjab Scholarships",desc:"University scholarships aur student assistance ke official announcements.",url:"https://hed.punjab.gov.pk/uni-scho"}
+]},
+sindh:{
+ title:"Sindh Schemes",desc:"Sindh residents ke liye provincial government ke official programme links.",items:[
+ {icon:"🏛️",category:"GOVERNMENT PORTAL",title:"Sindh Government Programmes",desc:"Provincial departments, public services aur government announcements.",url:"https://www.sindh.gov.pk/"},
+ {icon:"🎓",category:"EDUCATION",title:"Sindh Education & Scholarships",desc:"Education department se scholarships, student support aur announcements ki maloomat.",url:"https://sindheducation.gov.pk/"},
+ {icon:"🌾",category:"AGRICULTURE",title:"Sindh Agriculture Support",desc:"Farmers aur agriculture programmes ki official provincial information.",url:"https://sindhagri.gov.pk/"},
+ {icon:"🤝",category:"SOCIAL WELFARE",title:"Social Welfare Sindh",desc:"Social welfare services aur public support programme information.",url:"https://www.sindh.gov.pk/"},
+ {icon:"🏠",category:"HOUSING",title:"Housing & Public Development",desc:"Sindh government ki housing aur development announcements check karein.",url:"https://www.sindh.gov.pk/"},
+ {icon:"💼",category:"BUSINESS",title:"Business & Employment Support",desc:"Provincial business services aur employment-related official announcements.",url:"https://www.sindh.gov.pk/"}
+]},
+kpk:{
+ title:"Khyber Pakhtunkhwa Schemes",desc:"KP residents ke liye official provincial programme links.",items:[
+ {icon:"🏛️",category:"GOVERNMENT PORTAL",title:"KP Government Programmes",desc:"Provincial initiatives, department services aur government announcements.",url:"https://kp.gov.pk/"},
+ {icon:"🎓",category:"EDUCATION",title:"KP Education & Scholarships",desc:"Student support aur scholarship announcements ke liye official provincial portal.",url:"https://kp.gov.pk/"},
+ {icon:"🌾",category:"AGRICULTURE",title:"KP Agriculture Schemes",desc:"Farmers, livestock aur agriculture support ki provincial information.",url:"https://kp.gov.pk/"},
+ {icon:"🤝",category:"SOCIAL SUPPORT",title:"Social Welfare KP",desc:"Public welfare programmes aur eligible residents ke liye department information.",url:"https://kp.gov.pk/"},
+ {icon:"🏠",category:"HOUSING",title:"Housing & Development",desc:"Provincial housing aur development programme announcements.",url:"https://kp.gov.pk/"},
+ {icon:"💼",category:"BUSINESS",title:"Youth & Business Opportunities",desc:"Youth employment, training aur business-related announcements.",url:"https://kp.gov.pk/"}
+]},
+balochistan:{
+ title:"Balochistan Schemes",desc:"Balochistan residents ke liye government announcements aur departmental portals.",items:[
+ {icon:"🏛️",category:"GOVERNMENT PORTAL",title:"Balochistan Government Programmes",desc:"Provincial initiatives aur official department information.",url:"https://balochistan.gov.pk/"},
+ {icon:"🎓",category:"EDUCATION",title:"Student Support & Scholarships",desc:"Education department ke scholarships aur student announcements check karein.",url:"https://balochistan.gov.pk/"},
+ {icon:"🌾",category:"AGRICULTURE",title:"Farmer & Agriculture Support",desc:"Provincial agriculture programmes aur farmer support information.",url:"https://balochistan.gov.pk/"},
+ {icon:"🤝",category:"SOCIAL WELFARE",title:"Social Welfare Programmes",desc:"Public assistance aur welfare department information.",url:"https://balochistan.gov.pk/"},
+ {icon:"🏠",category:"HOUSING",title:"Housing & Development",desc:"Housing, development aur government project announcements.",url:"https://balochistan.gov.pk/"},
+ {icon:"💼",category:"YOUTH / BUSINESS",title:"Youth & Business Information",desc:"Youth, employment aur business support ki government announcements.",url:"https://balochistan.gov.pk/"}
+]},
+ajk:{
+ title:"Azad Kashmir Schemes",desc:"AJK residents ke liye regional government programme information.",items:[
+ {icon:"🏛️",category:"GOVERNMENT PORTAL",title:"AJK Government Programmes",desc:"Azad Jammu and Kashmir government ki official announcements aur departments.",url:"https://ajk.gov.pk/"},
+ {icon:"🎓",category:"EDUCATION",title:"Education & Student Support",desc:"Student scholarships aur education-related government announcements.",url:"https://ajk.gov.pk/"},
+ {icon:"🌾",category:"AGRICULTURE",title:"Agriculture & Rural Support",desc:"Rural development aur agriculture programme information.",url:"https://ajk.gov.pk/"},
+ {icon:"🤝",category:"SOCIAL WELFARE",title:"Public Welfare Services",desc:"Social support aur welfare-related department information.",url:"https://ajk.gov.pk/"},
+ {icon:"🏠",category:"HOUSING",title:"Housing & Development",desc:"Regional housing aur public development announcements.",url:"https://ajk.gov.pk/"},
+ {icon:"💼",category:"YOUTH / BUSINESS",title:"Youth & Employment",desc:"Youth development, employment aur business announcements.",url:"https://ajk.gov.pk/"}
+]},
+gb:{
+ title:"Gilgit-Baltistan Schemes",desc:"GB residents ke liye regional government programme information.",items:[
+ {icon:"🏛️",category:"GOVERNMENT PORTAL",title:"GB Government Programmes",desc:"Gilgit-Baltistan government ki official announcements aur departments.",url:"https://gilgitbaltistan.gov.pk/"},
+ {icon:"🎓",category:"EDUCATION",title:"Education & Scholarships",desc:"Education support aur student-related government announcements.",url:"https://gilgitbaltistan.gov.pk/"},
+ {icon:"🌾",category:"AGRICULTURE",title:"Agriculture & Rural Support",desc:"Farmers aur rural development programmes ki information.",url:"https://gilgitbaltistan.gov.pk/"},
+ {icon:"🤝",category:"SOCIAL WELFARE",title:"Public Welfare Programmes",desc:"Regional welfare services aur official public support announcements.",url:"https://gilgitbaltistan.gov.pk/"},
+ {icon:"🏠",category:"HOUSING",title:"Housing & Development",desc:"Housing aur development programme announcements.",url:"https://gilgitbaltistan.gov.pk/"},
+ {icon:"💼",category:"YOUTH / BUSINESS",title:"Youth & Employment Support",desc:"Youth, employment aur business support announcements.",url:"https://gilgitbaltistan.gov.pk/"}
+]},
+islamabad:{
+ title:"Islamabad Capital Territory Schemes",desc:"Islamabad residents ke liye federal aur capital territory programme links.",items:[
+ {icon:"🏛️",category:"FEDERAL",title:"Pakistan Government Portal",desc:"Federal ministries, departments aur nationwide public programmes.",url:"https://pakistan.gov.pk/"},
+ {icon:"🏠",category:"HOUSING",title:"PM Apna Ghar Programme",desc:"Eligible applicants across Pakistan ke liye housing finance details.",url:"https://www.apnaghar.gov.pk/"},
+ {icon:"💼",category:"BUSINESS",title:"PM Youth Business Loan",desc:"Eligible youth ke business aur agriculture loan programme ki details.",url:"https://pmybals.pmyp.gov.pk/"},
+ {icon:"🛵",category:"ELECTRIC VEHICLES",title:"National EV / PAVE Programme",desc:"Electric vehicle programme ki current eligibility aur registration status check karein.",url:"https://www.pave.gov.pk/"},
+ {icon:"🎓",category:"EDUCATION",title:"HEC Scholarships",desc:"Federal scholarship opportunities aur higher education support.",url:"https://www.hec.gov.pk/english/scholarshipsgrants/Pages/default.aspx"},
+ {icon:"🤝",category:"SOCIAL SUPPORT",title:"BISP & Family Support",desc:"Nationwide family support programmes ki official information.",url:"https://www.bisp.gov.pk/"}
+]}
+};
+
+let currentRegion="punjab";
+const national=document.getElementById("national");
+const regional=document.getElementById("regional");
+const search=document.getElementById("search");
+
+function cardHTML(s,scope){
+ return `<article class="card" data-search="${(s.title+" "+s.desc+" "+s.category+" "+scope).toLowerCase().replace(/"/g,"&quot;")}">
+ <div class="banner"><small>${s.category}</small><span class="emoji">${s.icon}</span></div>
+ <div class="content"><span class="tag">${scope}</span><h3>${s.title}</h3><p>${s.desc}</p><a href="${s.url}" target="_blank" rel="noopener noreferrer">Official Information ↗</a></div></article>`;
+}
+function renderRegion(key){
+ currentRegion=key;
+ const d=schemes[key];
+ document.getElementById("regionTitle").textContent=d.title;
+ document.getElementById("regionDesc").textContent=d.desc;
+ document.querySelectorAll(".region").forEach(b=>{
+  const active=b.dataset.region===key;
+  b.classList.toggle("active",active);
+  b.setAttribute("aria-pressed",String(active));
+ });
+ regional.innerHTML=d.items.map(s=>cardHTML(s,d.title)).join("");
+ applySearch();
+}
+function applySearch(){
+ const q=search.value.trim().toLowerCase();
+ document.querySelectorAll("#national .card, #regional .card").forEach(card=>{
+  card.hidden=!card.dataset.search.includes(q);
+ });
+}
+document.querySelectorAll(".region").forEach(b=>b.addEventListener("click",()=>renderRegion(
