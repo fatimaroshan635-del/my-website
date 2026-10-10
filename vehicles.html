@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#087f5b">
+  <meta name="description" content="Vehicle registration, verification and driving licence resources for Pakistan.">
+  <title>Vehicles & Driving | Digital Pakistan</title>
+  <style>
+    :root {
+      --green: #087f5b;
+      --dark: #064e3b;
+      --gold: #e8b84b;
+      --bg: #f4f8f6;
+      --text: #18352c;
+      --muted: #667970;
+      --white: #fff;
+    }
+    * { box-sizing: border-box; }
+    body {
+      margin: 0;
+      font-family: Arial, Helvetica, sans-serif;
+      color: var(--text);
+      background: var(--bg);
+    }
+    header {
+      background: linear-gradient(135deg, var(--dark), var(--green));
+      color: white;
+      border-bottom: 4px solid var(--gold);
+      padding: 18px 16px 35px;
+    }
+    .topbar, main, footer {
+      max-width: 1000px;
+      margin: auto;
+    }
+    .topbar {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 12px;
+    }
+    .brand { font-size: 20px; font-weight: 800; }
+    .brand span { color: #f5cf70; }
+    .home-link {
+      display: inline-block;
+      color: white;
+      text-decoration: none;
+      border: 1px solid #ffffff80;
+      border-radius: 9px;
+      padding: 10px 12px;
+      font-size: 13px;
+      font-weight: bold;
+    }
+    .hero { padding-top: 28px; }
+    .eyebrow {
+      color: #f5cf70;
+      font-weight: bold;
+      font-size: 12px;
+      text-transform: uppercase;
+      letter-spacing: 1.5px;
+    }
+    h1 { font-size: clamp(28px, 5vw, 42px); margin: 12px 0; }
+    .hero p { color: #e0f2e9; line-height: 1.7; max-width: 650px; }
+    main { padding: 25px 16px 35px; }
+    .intro {
+      background: white;
+      border: 1px solid #e0eae4;
+      border-radius: 14px;
+      padding: 19px;
+      line-height: 1.7;
+      margin-bottom: 25px;
+    }
+    .intro h2 { margin: 0 0 8px; font-size: 19px; }
+    .intro p { margin: 0; color: var(--muted); font-size: 14px; }
+    .section-title { margin: 28px 0 14px; font-size: 23px; }
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 14px;
+    }
+    .service {
+      background: white;
+      border: 1px solid #e0eae4;
+      border-radius: 14px;
+      padding: 18px;
+    }
+    .icon { font-size: 29px; }
+    .service h3 { font-size: 17px; margin: 12px 0 8px; }
+    .service p {
+      color: var(--muted);
+      font-size: 13px;
+      line-height: 1.65;
+      margin: 0 0 15px;
+    }
+    .links { display: flex; flex-wrap: wrap; gap: 8px; }
+    .btn {
+      display: inline-block;
+      background: var(--green);
+      color: white;
+      padding: 11px 13px;
+      border-radius: 9px;
+      font-size: 12px;
+      font-weight: bold;
+      text-decoration: none;
+    }
+    .btn.secondary {
+      background: #e7f4ed;
+      color: var(--dark);
+    }
+    .notice {
+      margin-top: 22px;
+      padding: 16px;
+      background: #fff8e6;
+      border: 1px solid #f0dfad;
+      border-radius: 12px;
+      font-size: 13px;
+      line-height: 1.7;
+    }
+    .notice strong { color: #785817; }
+    footer {
+      padding: 20px 16px 28px;
+      text-align: center;
+      color: var(--muted);
+      font-size: 12px;
+      line-height: 1.8;
+    }
+    @media (max-width: 520px) {
+      .grid { grid-template-columns: 1fr; }
+      .brand { font-size: 17px; }
+      .home-link { padding: 9px; }
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <div class="topbar">
+      <div class="brand">🇵🇰 Digital <span>Pakistan</span></div>
+      <a class="home-link" href="index.html">← Home</a>
+    </div>
+    <section class="hero">
+      <div class="eyebrow">Public service directory</div>
+      <h1>Vehicles & Driving</h1>
+      <p>Find official resources for vehicle registration, car and bike verification, driving licences and traffic services in Pakistan.</p>
+    </section>
+  </header>
+
+  <main>
+    <section class="intro">
+      <h2>Vehicle services in one place</h2>
+      <p>Select the service you need. Government services are managed by the relevant provincial or regional department, so choose the correct location before applying.</p>
+    </section>
+
+    <h2 class="section-title">Choose a service</h2>
+
+    <section class="grid">
+      <article class="service">
+        <div class="icon">🚘</div>
+        <h3>Car & Bike Verification</h3>
+        <p>Look for official registration verification services. The correct portal depends on where the vehicle is registered.</p>
+        <div class="links">
+          <a class="btn" href="https://excise.gos.pk/" target="_blank" rel="noopener noreferrer">Sindh Excise ↗</a>
+          <a class="btn secondary" href="https://mtmis.excise.punjab.gov.pk/" target="_blank" rel="noopener noreferrer">Punjab MTMIS ↗</a>
+        </div>
+      </article>
+
+      <article class="service">
+        <div class="icon">📋</div>
+        <h3>Vehicle Registration</h3>
+        <p>Find the relevant Excise and Taxation department for registration, transfer and vehicle record services.</p>
+        <div class="links">
+          <a class="btn" href="https://excise.gos.pk/" target="_blank" rel="noopener noreferrer">Sindh Excise ↗</a>
+          <a class="btn secondary" href="https://excise.punjab.gov.pk/" target="_blank" rel="noopener noreferrer">Punjab Excise ↗</a>
+        </div>
+      </article>
+
+      <article class="service">
+        <div class="icon">🪪</div>
+        <h3>Driving Licence</h3>
+        <p>Use the relevant official traffic police or licensing authority website for licence information and services.</p>
+        <div class="links">
+          <a class="btn" href="https://dls.gos.pk/" target="_blank" rel="noopener noreferrer">Sindh DLS ↗</a>
+          <a class="btn secondary" href="https://dlims.punjab.gov.pk/" target="_blank" rel="noopener noreferrer">Punjab DLIMS ↗</a>
+        </div>
+      </article>
+
+      <article class="service">
+        <div class="icon">🚦</div>
+        <h3>Traffic Police & Road Safety</h3>
+        <p>Find road safety information, traffic updates and official guidance for your province or city.</p>
+        <div class="links">
+          <a class="btn" href="https://www.sindhpolice.gov.pk/" target="_blank" rel="noopener noreferrer">Sindh Police ↗</a>
+          <a class="btn secondary" href="https://punjabpolice.gov.pk/" target="_blank" rel="noopener noreferrer">Punjab Police ↗</a>
+        </div>
+      </article>
+    </section>
+
+    <section class="notice">
+      <strong>Safety reminder:</strong> Always confirm the official portal and requirements before submitting personal information or paying a fee. Digital Pakistan is an independent directory, not a government department. Never share your PIN, password or verification code with anyone.
+    </section>
+  </main>
+
+  <footer>
+    <strong>Digital Pakistan 🇵🇰</strong><br>
+    Vehicles & Driving Services<br>
+    <a href="index.html">Return to Home</a><br>
+    © <span id="year"></span> Digital Pakistan
+  </footer>
+
+  <script>
+    document.getElementById("year").textContent = new Date().getFullYear();
+  </script>
+</body>
+                                     </html>
+        
