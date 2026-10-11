@@ -1,0 +1,255 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="Pakistan Education and Scholarships Portal: scholarships, admissions, education boards, skills and official student resources.">
+<title>Education & Scholarships Pakistan</title>
+<style>
+:root{--green:#075b43;--deep:#063c30;--gold:#e6b85c;--bg:#f3f7f5;--ink:#172b25;--muted:#63746d;--white:#fff}
+*{box-sizing:border-box}
+body{margin:0;font-family:Arial,Helvetica,sans-serif;background:var(--bg);color:var(--ink)}
+a{text-decoration:none;color:inherit}
+header{background:linear-gradient(130deg,#063c30,#087456);color:white;padding:18px 16px 30px}
+.top{max-width:1100px;margin:auto;display:flex;align-items:center;justify-content:space-between;gap:12px}
+.logo{font-size:19px;font-weight:800}.back{border:1px solid #ffffff65;padding:9px 13px;border-radius:12px;font-size:13px}
+.hero{max-width:1100px;margin:28px auto 0}
+.tag{display:inline-block;background:#ffffff18;border:1px solid #ffffff30;border-radius:30px;padding:7px 11px;font-size:12px;color:#ffe4a7}
+h1{font-size:clamp(29px,6vw,46px);line-height:1.12;margin:16px 0 12px;max-width:700px}
+.hero p{line-height:1.7;color:#e0eee8;max-width:680px;font-size:15px}
+.search{display:flex;gap:8px;margin-top:20px;max-width:650px}
+.search input{width:100%;min-width:0;border:0;border-radius:12px;padding:15px;font-size:15px;outline:2px solid transparent}
+.search input:focus{outline-color:var(--gold)}
+.search button{border:0;border-radius:12px;background:var(--gold);color:#27372d;font-weight:800;padding:0 18px}
+main{max-width:1100px;margin:auto;padding:22px 15px 90px}
+.stats{display:grid;grid-template-columns:repeat(3,1fr);gap:10px;margin:0 0 24px}
+.stat{background:white;border:1px solid #e1eae5;border-radius:15px;padding:15px 10px;text-align:center}
+.stat b{display:block;font-size:20px;color:var(--green)}.stat span{font-size:12px;color:var(--muted)}
+.section-title{display:flex;align-items:end;justify-content:space-between;gap:10px;margin:27px 0 13px}
+.section-title h2{font-size:21px;margin:0}.section-title p{margin:5px 0 0;color:var(--muted);font-size:13px}
+.filters{display:flex;gap:8px;overflow-x:auto;padding:2px 0 13px}
+.filter{white-space:nowrap;border:1px solid #d8e5dd;background:#fff;border-radius:25px;padding:9px 13px;font-size:13px;cursor:pointer}
+.filter.active{background:var(--green);color:#fff;border-color:var(--green)}
+.grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:13px}
+.card{background:#fff;border:1px solid #e0e9e4;border-radius:17px;padding:16px;display:flex;flex-direction:column;min-width:0;box-shadow:0 4px 14px #123b2510;transition:transform .15s}
+.card:hover{transform:translateY(-2px)}
+.icon{height:46px;width:46px;display:grid;place-items:center;border-radius:14px;background:#e8f4ed;font-size:24px;margin-bottom:12px}
+.card h3{font-size:16px;line-height:1.35;margin:0 0 7px}
+.card p{font-size:13px;color:var(--muted);line-height:1.55;margin:0 0 15px;flex:1}
+.card a{display:block;text-align:center;background:#eaf4ef;color:var(--green);padding:11px 10px;border-radius:10px;font-size:13px;font-weight:800}
+.card a:hover{background:#d8ecdf}
+.notice{margin-top:22px;background:#fff8e9;border:1px solid #f1dfb5;padding:15px;border-radius:14px;font-size:13px;line-height:1.7;color:#624d25}
+.empty{display:none;background:#fff;padding:22px;border-radius:14px;color:var(--muted);text-align:center}
+footer{text-align:center;color:var(--muted);font-size:12px;padding:22px 15px;border-top:1px solid #dfe8e3;background:white}
+.bottom{position:fixed;bottom:0;left:0;right:0;z-index:5;background:#fff;border-top:1px solid #dce7e0;display:flex;justify-content:center;gap:clamp(12px,5vw,55px);padding:11px 8px calc(11px + env(safe-area-inset-bottom))}
+.bottom a{font-size:12px;color:var(--green);font-weight:700;text-align:center}
+@media(max-width:760px){.grid{grid-template-columns:repeat(2,minmax(0,1fr))}.hero{margin-top:22px}}
+@media(max-width:420px){.grid{grid-template-columns:1fr}.card{padding:15px}.stats{gap:7px}.stat{padding:12px 5px}.stat b{font-size:18px}.search button{padding:0 12px}}
+</style>
+</head>
+<body>
+<header>
+  <div class="top">
+    <div class="logo">🇵🇰 Digital Pakistan</div>
+    <a class="back" href="index.html">← Home</a>
+  </div>
+  <div class="hero">
+    <span class="tag">🎓 STUDENT RESOURCE CENTER</span>
+    <h1>Education & Scholarships Pakistan</h1>
+    <p>Find official scholarship portals, university admissions, education boards, online learning and skill-development resources from across Pakistan — all in one place.</p>
+    <div class="search">
+      <input id="searchInput" type="search" placeholder="Search scholarships, universities, courses..." aria-label="Search education resources">
+      <button type="button" onclick="applyFilters()">Search</button>
+    </div>
+  </div>
+</header>
+
+<main>
+  <div class="stats">
+    <div class="stat"><b>🇵🇰</b><span>All Pakistan</span></div>
+    <div class="stat"><b>🎓</b><span>Scholarships</span></div>
+    <div class="stat"><b>💻</b><span>Online Skills</span></div>
+  </div>
+
+  <div class="section-title">
+    <div><h2>Explore Education</h2><p>Choose a category or search for a resource.</p></div>
+  </div>
+  <div class="filters" id="filters">
+    <button class="filter active" data-category="all">All Resources</button>
+    <button class="filter" data-category="scholarship">Scholarships</button>
+    <button class="filter" data-category="admission">Admissions</button>
+    <button class="filter" data-category="board">Boards & Results</button>
+    <button class="filter" data-category="skills">Skills & Courses</button>
+    <button class="filter" data-category="province">Provincial Education</button>
+  </div>
+
+  <div class="grid" id="resourceGrid">
+    <article class="card" data-category="scholarship">
+      <div class="icon">🎓</div><h3>HEC Scholarships</h3>
+      <p>Explore Higher Education Commission scholarship announcements and student funding opportunities.</p>
+      <a href="https://www.hec.gov.pk/english/scholarshipsgrants/Pages/default.aspx" target="_blank" rel="noopener noreferrer">Open HEC Scholarships ↗</a>
+    </article>
+    <article class="card" data-category="scholarship">
+      <div class="icon">📚</div><h3>PEEF Scholarships</h3>
+      <p>Punjab Educational Endowment Fund information and scholarship opportunities for eligible students.</p>
+      <a href="https://peef.org.pk/" target="_blank" rel="noopener noreferrer">Open PEEF ↗</a>
+    </article>
+    <article class="card" data-category="scholarship">
+      <div class="icon">🌍</div><h3>International Scholarships</h3>
+      <p>Check official HEC announcements for foreign scholarships and overseas study opportunities.</p>
+      <a href="https://www.hec.gov.pk/" target="_blank" rel="noopener noreferrer">Visit HEC ↗</a>
+    </article>
+    <article class="card" data-category="scholarship">
+      <div class="icon">🧑‍🎓</div><h3>Need-Based Scholarships</h3>
+      <p>Review official university and HEC information about financial assistance and eligibility.</p>
+      <a href="https://www.hec.gov.pk/" target="_blank" rel="noopener noreferrer">Check Official Information ↗</a>
+    </article>
+
+    <article class="card" data-category="admission">
+      <div class="icon">🏛️</div><h3>University Admissions</h3>
+      <p>Find recognized higher-education institutions and visit their official admission pages.</p>
+      <a href="https://www.hec.gov.pk/" target="_blank" rel="noopener noreferrer">HEC University Resources ↗</a>
+    </article>
+    <article class="card" data-category="admission">
+      <div class="icon">🩺</div><h3>Medical & Dental Admissions</h3>
+      <p>Check official Pakistan Medical and Dental Council information and relevant admission announcements.</p>
+      <a href="https://pmdc.pk/" target="_blank" rel="noopener noreferrer">Visit PMDC ↗</a>
+    </article>
+    <article class="card" data-category="admission">
+      <div class="icon">⚙️</div><h3>Technical Education</h3>
+      <p>Explore technical and vocational education resources, institutes and training information.</p>
+      <a href="https://navttc.gov.pk/" target="_blank" rel="noopener noreferrer">Visit NAVTTC ↗</a>
+    </article>
+
+    <article class="card" data-category="board">
+      <div class="icon">📝</div><h3>Punjab Boards</h3>
+      <p>Find Punjab education-board resources for examinations, roll numbers, datesheets and results.</p>
+      <a href="https://biselahore.com/" target="_blank" rel="noopener noreferrer">Lahore Board ↗</a>
+    </article>
+    <article class="card" data-category="board">
+      <div class="icon">📋</div><h3>Sindh Boards</h3>
+      <p>Access Sindh board information. Select your own board to check its official examination updates.</p>
+      <a href="https://www.biek.edu.pk/" target="_blank" rel="noopener noreferrer">Karachi Intermediate Board ↗</a>
+    </article>
+    <article class="card" data-category="board">
+      <div class="icon">📖</div><h3>Federal Board (FBISE)</h3>
+      <p>Official resources for examinations, results, date sheets and student services.</p>
+      <a href="https://www.fbise.edu.pk/" target="_blank" rel="noopener noreferrer">Visit FBISE ↗</a>
+    </article>
+    <article class="card" data-category="board">
+      <div class="icon">🏫</div><h3>Khyber Pakhtunkhwa Boards</h3>
+      <p>Find board examination information and official student services in KPK.</p>
+      <a href="https://www.bisep.edu.pk/" target="_blank" rel="noopener noreferrer">Peshawar Board ↗</a>
+    </article>
+    <article class="card" data-category="board">
+      <div class="icon">📑</div><h3>Balochistan Board</h3>
+      <p>Visit the Balochistan Board of Intermediate and Secondary Education for official updates.</p>
+      <a href="https://bbiseqta.edu.pk/" target="_blank" rel="noopener noreferrer">Visit BBISE Quetta ↗</a>
+    </article>
+
+    <article class="card" data-category="skills">
+      <div class="icon">💻</div><h3>DigiSkills Pakistan</h3>
+      <p>Explore online courses for freelancing, digital marketing, design and other digital skills.</p>
+      <a href="https://digiskills.pk/" target="_blank" rel="noopener noreferrer">Start at DigiSkills ↗</a>
+    </article>
+    <article class="card" data-category="skills">
+      <div class="icon">🛠️</div><h3>NAVTTC Skills Training</h3>
+      <p>Check official vocational training programmes, skills initiatives and announcements.</p>
+      <a href="https://navttc.gov.pk/" target="_blank" rel="noopener noreferrer">Explore Training ↗</a>
+    </article>
+    <article class="card" data-category="skills">
+      <div class="icon">🌐</div><h3>Virtual University</h3>
+      <p>Explore distance-learning programmes, admissions and online education resources.</p>
+      <a href="https://www.vu.edu.pk/" target="_blank" rel="noopener noreferrer">Visit VU ↗</a>
+    </article>
+    <article class="card" data-category="skills">
+      <div class="icon">📘</div><h3>Allama Iqbal Open University</h3>
+      <p>Check distance education programmes, admissions, examination schedules and student services.</p>
+      <a href="https://www.aiou.edu.pk/" target="_blank" rel="noopener noreferrer">Visit AIOU ↗</a>
+    </article>
+
+    <article class="card" data-category="province">
+      <div class="icon">🌾</div><h3>Punjab Education</h3>
+      <p>Official provincial education department information and announcements.</p>
+      <a href="https://schools.punjab.gov.pk/" target="_blank" rel="noopener noreferrer">Punjab Schools ↗</a>
+    </article>
+    <article class="card" data-category="province">
+      <div class="icon">🌊</div><h3>Sindh Education</h3>
+      <p>Explore Sindh school education department information and official notices.</p>
+      <a href="https://sindheducation.gov.pk/" target="_blank" rel="noopener noreferrer">Sindh Education ↗</a>
+    </article>
+    <article class="card" data-category="province">
+      <div class="icon">⛰️</div><h3>KPK Education</h3>
+      <p>Provincial elementary and secondary education information and announcements.</p>
+      <a href="https://kpese.gov.pk/" target="_blank" rel="noopener noreferrer">KPK Education ↗</a>
+    </article>
+    <article class="card" data-category="province">
+      <div class="icon">🏞️</div><h3>Balochistan Education</h3>
+      <p>Find provincial education information, department updates and official notices.</p>
+      <a href="https://balochistan.gov.pk/" target="_blank" rel="noopener noreferrer">Balochistan Government ↗</a>
+    </article>
+    <article class="card" data-category="province">
+      <div class="icon">🏔️</div><h3>AJK Education</h3>
+      <p>Access Azad Jammu and Kashmir government information and education-related announcements.</p>
+      <a href="https://ajk.gov.pk/" target="_blank" rel="noopener noreferrer">AJK Government ↗</a>
+    </article>
+    <article class="card" data-category="province">
+      <div class="icon">❄️</div><h3>Gilgit-Baltistan Education</h3>
+      <p>Explore government information and education announcements for Gilgit-Baltistan.</p>
+      <a href="https://gilgitbaltistan.gov.pk/" target="_blank" rel="noopener noreferrer">GB Government ↗</a>
+    </article>
+    <article class="card" data-category="province">
+      <div class="icon">🏢</div><h3>Islamabad Education</h3>
+      <p>Official Federal Directorate of Education resources and school-related information.</p>
+      <a href="https://fde.gov.pk/" target="_blank" rel="noopener noreferrer">Federal Directorate of Education ↗</a>
+    </article>
+  </div>
+
+  <div class="empty" id="emptyState">No matching resources found. Try another search or category.</div>
+
+  <div class="notice">
+    <strong>Important student notice:</strong> Digital Pakistan is an information directory, not a government department. Scholarship deadlines, eligibility, admission dates and course availability can change. Always verify details on the official website before applying. A link may open a department homepage rather than a specific active application form. Never pay an unofficial person for a scholarship or share OTPs and passwords.
+  </div>
+</main>
+
+<footer>© <span id="year"></span> Digital Pakistan · Education & Scholarships · Verify information from official sources.</footer>
+<nav class="bottom" aria-label="Main navigation">
+  <a href="index.html">🏠<br>Home</a>
+  <a href="schemes.html">🇵🇰<br>Schemes</a>
+  <a href="jobs.html">💼<br>Jobs</a>
+  <a href="results.html">📋<br>Results</a>
+</nav>
+
+<script>
+const searchInput=document.getElementById('searchInput');
+const cards=[...document.querySelectorAll('.card')];
+const buttons=[...document.querySelectorAll('.filter')];
+const emptyState=document.getElementById('emptyState');
+let activeCategory='all';
+
+function applyFilters(){
+  const term=searchInput.value.trim().toLowerCase();
+  let visible=0;
+  cards.forEach(card=>{
+    const categoryMatch=activeCategory==='all'||card.dataset.category===activeCategory;
+    const textMatch=card.innerText.toLowerCase().includes(term);
+    const show=categoryMatch&&textMatch;
+    card.style.display=show?'flex':'none';
+    if(show) visible++;
+  });
+  emptyState.style.display=visible?'none':'block';
+}
+buttons.forEach(button=>{
+  button.addEventListener('click',()=>{
+    buttons.forEach(item=>item.classList.remove('active'));
+    button.classList.add('active');
+    activeCategory=button.dataset.category;
+    applyFilters();
+  });
+});
+searchInput.addEventListener('input',applyFilters);
+document.getElementById('year').textContent=new Date().getFullYear();
+</script>
+</body>
+        </html>
+        
