@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="theme-color" content="#064e3b">
+<title>Islamic Hub | Digital Pakistan</title>
+<meta name="description" content="Islamic Hub Pakistan: Quran Pak, Urdu translation, Hadith, prayer times, Qibla, Islamic calendar and Tasbeeh.">
+<style>
+:root{--green:#064e3b;--green2:#08765b;--gold:#e9bd62;--bg:#f5f8f4;--ink:#19382d;--muted:#687a70}
+*{box-sizing:border-box}
+body{margin:0;font-family:Arial,Helvetica,sans-serif;background:var(--bg);color:var(--ink)}
+a{text-decoration:none;color:inherit}
+header{background:var(--green);color:white;padding:16px 5%;display:flex;justify-content:space-between;align-items:center;gap:12px;flex-wrap:wrap}
+.brand{font-size:19px;font-weight:800}.brand span{color:var(--gold)}
+.back{border:1px solid #ffffff70;border-radius:25px;padding:9px 14px;font-size:13px}
+.hero{background:linear-gradient(135deg,#043e30,#08765b);color:white;text-align:center;padding:38px 5%}
+.eyebrow{font-size:11px;font-weight:800;letter-spacing:2px;color:var(--gold);text-transform:uppercase}
+.hero h1{font-size:clamp(30px,6vw,46px);margin:13px 0}
+.hero p{max-width:650px;margin:auto;line-height:1.7;font-size:14px;color:#e0eee7}
+.arabic{font-family:"Times New Roman",serif;font-size:27px;color:var(--gold);margin:18px 0 5px}
+main{width:min(1050px,92%);margin:25px auto 40px}
+.search{background:white;border:1px solid #e1e9e1;border-radius:13px;padding:14px;width:100%;font-size:15px;outline-color:var(--green);margin-bottom:15px}
+.filters{display:flex;gap:8px;flex-wrap:wrap;margin-bottom:20px}
+.filter{background:white;border:1px solid #d9e4da;color:var(--green);padding:10px 13px;border-radius:25px;font-size:12px;font-weight:700;cursor:pointer}
+.filter.active{background:var(--green);color:white}
+.grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:15px}
+.card{background:white;border:1px solid #e3ebe3;border-radius:16px;padding:18px;display:flex;flex-direction:column;min-height:220px}
+.symbol{width:46px;height:46px;display:grid;place-items:center;background:#e7f3e9;border-radius:13px;font-size:24px;margin-bottom:13px}
+.tag{font-size:10px;color:var(--green2);font-weight:800;letter-spacing:1px;text-transform:uppercase}
+.card h3{font-size:17px;margin:8px 0}
+.card p{font-size:13px;color:var(--muted);line-height:1.65;margin:0 0 16px}
+.card a{margin-top:auto;background:var(--green);color:white;text-align:center;border-radius:9px;padding:12px;font-size:13px;font-weight:700}
+.card a:hover{background:var(--green2)}
+.counter{margin-top:22px;background:white;border:1px solid #e3ebe3;border-radius:16px;padding:23px;text-align:center}
+.counter h2{margin:10px 0}
+.count{font-size:43px;font-weight:800;color:var(--green);margin:13px}
+.btn{border:0;background:var(--green);color:white;padding:13px 19px;border-radius:25px;font-weight:700;cursor:pointer;margin:4px}
+.reset{background:#e8eee9;color:var(--green)}
+.notice{margin-top:22px;padding:16px;background:#fff8e6;border:1px solid #ead9a8;border-radius:12px;font-size:12px;line-height:1.7;color:#66552f}
+#empty{display:none;text-align:center;padding:25px;color:var(--muted)}
+footer{text-align:center;background:#e8efe8;padding:23px;color:#52675a;font-size:12px;line-height:1.9}
+footer a{font-weight:700;color:var(--green)}
+@media(max-width:720px){.grid{grid-template-columns:repeat(2,minmax(0,1fr))}.card{padding:15px}}
+@media(max-width:450px){.grid{grid-template-columns:1fr}.card{min-height:0}.hero{padding:32px 5%}}
+</style>
+</head>
+<body>
+<header>
+  <a class="brand" href="index.html">🇵🇰 Digital <span>Pakistan</span></a>
+  <a class="back" href="index.html">← Back to Home</a>
+</header>
+
+<section class="hero">
+  <div class="eyebrow">Faith • Learning • Daily Life</div>
+  <h1>Islamic Hub</h1>
+  <p>Quran Pak, Urdu translation, Hadith and useful Islamic resources in one place for Pakistan.</p>
+  <div class="arabic" lang="ar" dir="rtl">بِسْمِ اللَّهِ الرَّحْمَٰنِ الرَّحِيمِ</div>
+  <div style="font-size:12px;color:#dcefe5">Islamic Resources for Everyday Life</div>
+</section>
+
+<main>
+  <input class="search" id="search" type="search" placeholder="Search Quran, Hadith, Qibla, Tasbeeh..." aria-label="Search Islamic resources">
+
+  <div class="filters">
+    <button class="filter active" data-filter="all">All Resources</button>
+    <button class="filter" data-filter="quran">Quran</button>
+    <button class="filter" data-filter="hadith">Hadith & Duas</button>
+    <button class="filter" data-filter="worship">Worship Tools</button>
+    <button class="filter" data-filter="learning">Learning</button>
+    <button class="filter" data-filter="pakistan">Pakistan</button>
+  </div>
+
+  <div class="grid" id="resourceGrid">
+    <article class="card" data-category="quran" data-search="quran pak holy quran read arabic">
+      <div class="symbol">📖</div><div class="tag">Quran Pak</div>
+      <h3>Read Quran Pak</h3>
+      <p>Yahan aapki verified Quran Pak PDF ka link add hoga. PDF upload karne ke baad yeh button kaam karega.</p>
+      <a href="#quran-coming">Quran PDF — Next Step</a>
+    </article>
+
+    <article class="card" data-category="quran" data-search="urdu translation tarjuma quran">
+      <div class="symbol">📘</div><div class="tag">Urdu Translation</div>
+      <h3>Quran Urdu Tarjuma</h3>
+      <p>Aapki alag Urdu translation file ko agle steps mein upload karke yahan link lagayenge.</p>
+      <a href="#translation-coming">Urdu Tarjuma — Next Step</a>
+    </article>
+
+    <article class="card" data-category="hadith" data-search="hadith sunnah bukhari muslim tirmidhi">
+      <div class="symbol">📚</div><div class="tag">Hadith</div>
+      <h3>Hadith Library</h3>
+      <p>Hadith collections aur Sunnah resources ke liye trusted external website.</p>
+      <a href="https://sunnah.com/" target="_blank" rel="noopener noreferrer">Explore Hadith ↗</a>
+    </article>
+
+    <article class="card" data-category="worship" data-search="namaz salah prayer times Pakistan city">
+      <div class="symbol">🕌</div><div class="tag">Namaz</div>
+      <h3>Prayer Timings</h3>
+      <p>Apne shehar ke namaz timings check karein. Local mosque ke timetable se bhi tasdeeq karein.</p>
+      <a href="https://www.islamicfinder.org/world/pakistan/" target="_blank" rel="noopener noreferrer">Check Timings ↗</a>
+    </article>
+
+    <article class="card" data-category="worship" data-search="qibla direction compass kaaba">
+      <div class="symbol">🧭</div><div class="tag">Qibla</div>
+      <h3>Qibla Finder</h3>
+      <p>Apne mobile se Qibla direction maloom karein. Compass ko calibrate karna zaroori ho sakta hai.</p>
+      <a href="https://qiblafinder.withgoogle.com/" target="_blank" rel="noopener noreferrer">Find Qibla ↗</a>
+    </article>
+
+    <article class="card" data-category="worship" data-search="digital tasbeeh zikr dhikr counter">
+      <div class="symbol">📿</div><div class="tag">Zikr</div>
+      <h3>Digital Tasbeeh</h3>
+      <p>Is page par apni tasbeeh count karein. Page reload hone par count reset ho jayega.</p>
+      <a href="#tasbeeh">Use Tasbeeh ↓</a>
+    </article>
+
+    <article class="card" data-category="learning" data-search="99 names of Allah asma ul husna">
+      <div class="symbol">✨</div><div class="tag">Asma ul Husna</div>
+      <h3>99 Names of Allah</h3>
+      <p>Allah ke Asma ul Husna ke mutalliq learning resources explore karein.</p>
+      <a href="https://quran.com/" target="_blank" rel="noopener noreferrer">Explore Quran Resources ↗</a>
+    </article>
+
+    <article class="card" data-category="hadith" data-search="daily duas supplications morning evening sleep travel">
+      <div class="symbol">🤲</div><div class="tag">Duas</div>
+      <h3>Daily Duas</h3>
+      <p>Rozmarra ki supplications aur Hadith-based learning resources dekhein.</p>
+      <a href="https://sunnah.com/" target="_blank" rel="noopener noreferrer">Browse Duas & Hadith ↗</a>
+    </article>
+
+    <article class="card" data-category="worship" data-search="hijri islamic calendar ramadan eid moon sighting">
+      <div class="symbol">🌙</div><div class="tag">Calendar</div>
+      <h3>Islamic Calendar</h3>
+      <p>Hijri calendar dekhein. Pakistan mein Ramadan aur Eid ki official dates moon-sighting announcements par depend kar sakti hain.</p>
+      <a href="https://www.islamicfinder.org/islamic-calendar/" target="_blank" rel="noopener noreferrer">Open Calendar ↗</a>
+    </article>
+
+    <article class="card" data-category="learning" data-search="quran study tafsir translation learning">
+      <div class="symbol">🎓</div><div class="tag">Learning</div>
+      <h3>Quran Study & Tafsir</h3>
+      <p>Quran study, translation aur tafsir ke resources trusted platform par dekhein.</p>
+      <a href="https://quran.com/" target="_blank" rel="noopener noreferrer">Start Learning ↗</a>
+    </article>
+
+    <article class="card" data-category="pakistan" data-search="Pakistan ministry religious affairs Hajj Umrah">
+      <div class="symbol">🇵🇰</div><div class="tag">Pakistan</div>
+      <h3>Religious Affairs & Hajj</h3>
+      <p>Pakistan Ministry of Religious Affairs ki official information aur Hajj updates.</p>
+      <a href="https://www.mora.gov.pk/" target="_blank" rel="noopener noreferrer">Official Website ↗</a>
+    </article>
+
+    <article class="card" data-category="pakistan" data-search="Pakistan moon sighting Ruet e Hilal Ramadan Eid">
+      <div class="symbol">🌙</div><div class="tag">Pakistan Updates</div>
+      <h3>Moon-Sighting Announcements</h3>
+      <p>Ramadan aur Eid ke official Pakistani announcements ke liye relevant government source check karein.</p>
+      <a href="https://www.mora.gov.pk/" target="_blank" rel="noopener noreferrer">Check Updates ↗</a>
+    </article>
+  </div>
+
+  <div id="empty">Koi matching resource nahi mila. Doosra lafz ya category try karein.</div>
+
+  <section class="counter" id="tasbeeh">
+    <div class="eyebrow" style="color:#08765b">Digital Tasbeeh</div>
+    <h2 lang="ur">ذکر و تسبیح</h2>
+    <p style="font-size:13px;color:#687a70">Count barhane ke liye button dabayein.</p>
+    <div class="count" id="count" aria-live="polite">0</div>
+    <button class="btn" id="countBtn">＋ Count Zikr</button>
+    <button class="btn reset" id="resetBtn">Reset</button>
+  </section>
+
+  <div class="notice">
+    <strong>Important:</strong> Yeh Islamic resources directory hai. Quran aur Urdu tarjuma upload hone ke baad hi unke actual document links kaam karenge. Religious text ko publish karne se pehle verify karein. Prayer timings location aur calculation method ke mutabiq farq ho sakte hain.
+  </div>
+</main>
+
+<footer>
+  <strong>Digital Pakistan 🇵🇰</strong><br>
+  Islamic resources directory<br>
+  <a href="index.html">Home</a> &nbsp;|&nbsp; <a href="about.html">About</a>
+</footer>
+
+<script>
+const searchInput = document.getElementById('search');
+const cards = [...document.querySelectorAll('.card')];
+const filters = [...document.querySelectorAll('.filter')];
+let activeFilter = 'all';
+
+function updateCards() {
+  const term = searchInput.value.trim().toLowerCase();
+  let visible = 0;
+
+  cards.forEach(card => {
+    const text = (card.innerText + ' ' + (card.dataset.search || '')).toLowerCase();
+    const show = (activeFilter === 'all' || card.dataset.category === activeFilter) && text.includes(term);
+    card.style.display = show ? 'flex' : 'none';
+    if (show) visible++;
+  });
+
+  document.getElementById('empty').style.display = visible ? 'none' : 'block';
+}
+
+searchInput.addEventListener('input', updateCards);
+filters.forEach(button => {
+  button.addEventListener('click', () => {
+    activeFilter = button.dataset.filter;
+    filters.forEach(item => item.classList.toggle('active', item === button));
+    updateCards();
+  });
+});
+
+let count = 0;
+document.getElementById('countBtn').addEventListener('click', () => {
+  count++;
+  document.getElementById('count').textContent = count;
+});
+document.getElementById('resetBtn').addEventListener('click', () => {
+  count = 0;
+  document.getElementById('count').textContent = count;
+});
+</script>
+</body>
+                                   </html>
+                                   
