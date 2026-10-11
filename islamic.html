@@ -2,59 +2,347 @@
 <html lang="ur">
 <head>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="viewport" content="width=device-width, initial-scale=1">
 <meta name="theme-color" content="#064e3b">
 <title>Islamic Hub | Digital Pakistan</title>
+
 <style>
 *{box-sizing:border-box}
-body{margin:0;font-family:Arial,"Noto Nastaliq Urdu",sans-serif;background:#f3f7f2;color:#18352a}
-header{background:linear-gradient(135deg,#064e3b,#087f5b);color:white;padding:27px 16px;text-align:center}
-header h1{margin:0 0 8px;font-size:28px}
-header p{margin:0;font-size:15px}
-.container{max-width:760px;margin:auto;padding:18px 14px 35px}
-.intro{background:#fff;border:1px solid #dce9df;border-radius:16px;padding:18px;margin-bottom:18px;text-align:center}
-.intro h2{color:#086344;margin:0 0 8px}
-.card{background:#fff;border:1px solid #dce9df;border-radius:16px;padding:19px;margin:14px 0;box-shadow:0 4px 15px #12331b0b}
-.card h3{margin:0 0 9px;color:#086344;font-size:21px}
-.card p{line-height:1.8;color:#53665b;margin:8px 0 15px}
-.btn{display:block;text-align:center;text-decoration:none;background:#087f5b;color:#fff;padding:13px 12px;border-radius:10px;font-weight:bold;margin-top:10px}
-.btn.gold{background:#a87916}
-.note{font-size:13px;color:#617268;text-align:center;line-height:1.8;margin-top:20px}
-footer{text-align:center;background:#064e3b;color:#e5f4e9;padding:18px;font-size:13px}
+:root{--green:#075b43;--dark:#06402f;--gold:#d5ad57;--bg:#f3f7f3}
+body{margin:0;background:var(--bg);color:#20382d;font-family:Arial,sans-serif}
+header{background:linear-gradient(135deg,#063d2e,#087b59);color:white;padding:25px 16px 22px;text-align:center}
+header h1{margin:0 0 8px;font-size:27px}
+header p{margin:0;line-height:1.7;font-size:14px}
+.toplinks{display:flex;justify-content:center;gap:8px;flex-wrap:wrap;margin-top:16px}
+.toplinks a{color:white;text-decoration:none;border:1px solid #ffffff66;border-radius:20px;padding:8px 13px;font-size:13px}
+.container{max-width:850px;margin:auto;padding:15px 13px 35px}
+.bismillah{background:#fff;border:1px solid #e3d5a8;border-radius:15px;text-align:center;padding:18px;margin-bottom:16px}
+.bismillah h2{color:var(--green);font-size:25px;margin:0 0 8px}
+.bismillah p{margin:0;color:#68766d;font-size:13px}
+.section-title{font-size:20px;color:var(--dark);margin:24px 2px 12px}
+.grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:11px}
+.card{background:white;border:1px solid #e0e9e1;border-radius:14px;padding:15px;box-shadow:0 3px 12px #173b2410;min-width:0}
+.card .emoji{font-size:26px;display:block;margin-bottom:8px}
+.card h3{margin:0 0 7px;font-size:16px;color:var(--green)}
+.card p{font-size:13px;line-height:1.7;color:#5d6c63;margin:0 0 12px}
+.btn{display:block;text-align:center;background:var(--green);color:white;border:0;border-radius:9px;padding:11px 10px;font-size:13px;font-weight:bold;text-decoration:none;cursor:pointer;width:100%;font-family:inherit}
+.btn.gold{background:#a87919}
+.panel{background:white;border:1px solid #e0e9e1;border-radius:15px;padding:17px;margin-top:13px}
+.panel h3{margin:0 0 10px;color:var(--green)}
+.panel p{line-height:1.8;color:#56685d;font-size:14px}
+.panel[hidden]{display:none}
+.counter{font-size:43px;text-align:center;font-weight:bold;color:var(--green);padding:12px}
+.center{text-align:center}
+.rowbtn{display:flex;gap:8px;margin-top:10px}
+.rowbtn button{flex:1}
+.small{font-size:12px;color:#65776b;line-height:1.8}
+select,input{width:100%;padding:12px;border:1px solid #cad8cd;border-radius:9px;background:#fff;font-size:15px;margin:5px 0 12px}
+.arabic{font-size:25px;line-height:2;text-align:center;color:var(--dark);direction:rtl}
+.book-list{padding-left:20px;line-height:2}
+.book-list li{margin-bottom:5px}
+footer{background:#063d2e;color:#e6f3eb;text-align:center;padding:20px 12px;font-size:13px;line-height:1.8}
+@media(min-width:600px){.grid{grid-template-columns:repeat(3,minmax(0,1fr))}}
 </style>
 </head>
+
 <body>
 <header>
 <h1>☪ Islamic Hub</h1>
-<p>Digital Pakistan — Deeni Maloomat aur Quran Pak</p>
+<p>Quran Pak, Hadith, Azkar aur Islami maloomat</p>
+<p>Digital Pakistan 🇵🇰</p>
+<div class="toplinks">
+<a href="index.html">Home</a>
+<a href="#quran">Quran Pak</a>
+<a href="#hadith">Hadith Books</a>
+<a href="#daily">Daily Zikr</a>
+</div>
 </header>
 
 <main class="container">
-<section class="intro">
+
+<div class="bismillah">
 <h2>بِسْمِ اللّٰهِ الرَّحْمٰنِ الرَّحِيْمِ</h2>
-<p>Quran Pak parhein aur Urdu tarjuma ke zariye apni samajh behtar banayein.</p>
+<p>Allah ke zikr se dilon ko sukoon milta hai.</p>
+</div>
+
+<h2 class="section-title">📚 Quran aur Deeni Kutub</h2>
+<div class="grid">
+
+<div class="card" id="quran">
+<span class="emoji">📖</span>
+<h3>Quran Pak</h3>
+<p>Apni uploaded Quran Pak PDF kholein aur tilawat karein.</p>
+<a class="btn" href="quran-simple-plain.pdf" target="_blank" rel="noopener">Read Quran Pak</a>
+</div>
+
+<div class="card">
+<span class="emoji">📘</span>
+<h3>Urdu Translation</h3>
+<p>Quran Pak ka Urdu tarjuma alag file mein parhein.</p>
+<a class="btn gold" href="ur.jalandhry.txt" target="_blank" rel="noopener">Read Urdu Translation</a>
+</div>
+
+<div class="card">
+<span class="emoji">📜</span>
+<h3>99 Names of Allah</h3>
+<p>Asma-ul-Husna ke naam, ma'ni aur zikr ke liye section.</p>
+<button class="btn" onclick="showPanel('namesPanel')">Open Names</button>
+</div>
+
+<div class="card" id="hadith">
+<span class="emoji">📚</span>
+<h3>Hadith Library</h3>
+<p>Mashhoor Hadith collections ki directory.</p>
+<button class="btn" onclick="showPanel('hadithPanel')">Open Hadith Books</button>
+</div>
+
+<div class="card">
+<span class="emoji">🤲</span>
+<h3>Dua Library</h3>
+<p>Rozmarrah aur masnoon duaein parhne ka section.</p>
+<button class="btn" onclick="showPanel('duaPanel')">Open Duas</button>
+</div>
+
+<div class="card">
+<span class="emoji">🌙</span>
+<h3>Islamic Calendar</h3>
+<p>Hijri tareekh aur Islami mahino ka section.</p>
+<button class="btn" onclick="showPanel('calendarPanel')">Open Calendar</button>
+</div>
+
+</div>
+
+<h2 class="section-title" id="daily">🤲 Rozana Ibadat aur Azkar</h2>
+<div class="grid">
+
+<div class="card">
+<span class="emoji">📿</span>
+<h3>Digital Tasbi</h3>
+<p>Apni tasbih count karein aur target set karein.</p>
+<button class="btn" onclick="showPanel('tasbiPanel')">Open Tasbi</button>
+</div>
+
+<div class="card">
+<span class="emoji">☀️</span>
+<h3>Daily Zikr</h3>
+<p>Rozana zikr parhein aur apni counting karein.</p>
+<button class="btn" onclick="showPanel('zikrPanel')">Open Daily Zikr</button>
+</div>
+
+<div class="card">
+<span class="emoji">💚</span>
+<h3>Durood Pak</h3>
+<p>Durood Sharif parhein aur count barhate jayein.</p>
+<button class="btn" onclick="showPanel('duroodPanel')">Read Durood Pak</button>
+</div>
+
+<div class="card">
+<span class="emoji">🌅</span>
+<h3>Masnoon Azkar</h3>
+<p>Subah aur shaam ke azkar ka section.</p>
+<button class="btn" onclick="showPanel('azkarPanel')">Open Azkar</button>
+</div>
+
+<div class="card">
+<span class="emoji">🕌</span>
+<h3>Namaz Time</h3>
+<p>Apne shehar ke mutabiq namaz timings check karne ka section.</p>
+<button class="btn" onclick="showPanel('namazPanel')">Open Namaz Time</button>
+</div>
+
+<div class="card">
+<span class="emoji">🧭</span>
+<h3>Qibla Direction</h3>
+<p>Qibla direction ke liye device location aur compass support darkar hai.</p>
+<button class="btn" onclick="showPanel('qiblaPanel')">Open Qibla</button>
+</div>
+
+</div>
+
+<!-- DIGITAL TASBI -->
+<section class="panel" id="tasbiPanel" hidden>
+<h3>📿 Digital Tasbi</h3>
+<label for="tasbiType">Zikr select karein</label>
+<select id="tasbiType">
+<option>سُبْحَانَ اللّٰهِ</option>
+<option>الْحَمْدُ لِلّٰهِ</option>
+<option>اللّٰهُ أَكْبَرُ</option>
+<option>أَسْتَغْفِرُ اللّٰهَ</option>
+<option>لَا إِلٰهَ إِلَّا اللّٰهُ</option>
+<option>لَا حَوْلَ وَلَا قُوَّةَ إِلَّا بِاللّٰهِ</option>
+</select>
+<label for="tasbiTarget">Target</label>
+<select id="tasbiTarget">
+<option value="33">33</option>
+<option value="100" selected>100</option>
+<option value="500">500</option>
+<option value="1000">1000</option>
+</select>
+<div class="counter" id="tasbiCount">0</div>
+<p class="center" id="tasbiStatus">Target: 100</p>
+<button class="btn" onclick="countTasbi()">+1 Zikr</button>
+<div class="rowbtn">
+<button class="btn gold" onclick="resetTasbi()">Reset</button>
+<button class="btn" onclick="changeTarget()">Update Target</button>
+</div>
 </section>
 
-<section class="card">
-<h3>📖 Quran Pak</h3>
-<p>Quran Pak ki PDF file kholne ke liye neeche button dabayein.</p>
-<a class="btn" href="quran-simple-plain.pdf" target="_blank" rel="noopener">Open Quran Pak PDF</a>
+<!-- DAILY ZIKR -->
+<section class="panel" id="zikrPanel" hidden>
+<h3>☀️ Daily Zikr</h3>
+<div class="arabic" id="zikrText">أَسْتَغْفِرُ اللّٰهَ</div>
+<p class="center">Astaghfirullah — Allah se maghfirat talab karna.</p>
+<div class="counter" id="zikrCount">0</div>
+<button class="btn" onclick="increment('zikrCount')">Zikr Parha +1</button>
+<button class="btn gold" style="margin-top:8px" onclick="resetCounter('zikrCount')">Reset Count</button>
+<p class="small">Zikr ki tadaad apni sahulat aur mustanad rehnumai ke mutabiq rakhein.</p>
 </section>
 
-<section class="card">
-<h3>اردو ترجمۂ قرآن</h3>
-<p dir="rtl">قرآن پاک کا اردو ترجمہ پڑھنے کے لیے نیچے دیے گئے بٹن کو دبائیں۔</p>
-<a class="btn gold" href="ur.jalandhry.txt" target="_blank" rel="noopener">Open Urdu Translation</a>
+<!-- DUROOD -->
+<section class="panel" id="duroodPanel" hidden>
+<h3>💚 Durood Pak</h3>
+<div class="arabic">اللَّهُمَّ صَلِّ عَلَىٰ مُحَمَّدٍ وَعَلَىٰ آلِ مُحَمَّدٍ</div>
+<p class="center">Allahumma salli 'ala Muhammad wa 'ala aali Muhammad.</p>
+<div class="counter" id="duroodCount">0</div>
+<button class="btn" onclick="increment('duroodCount')">Durood Parha +1</button>
+<button class="btn gold" style="margin-top:8px" onclick="resetCounter('duroodCount')">Reset Count</button>
 </section>
 
-<section class="card">
-<h3>🤲 Islamic Reminders</h3>
-<p>Rozana Quran Pak ki tilawat karein, namaz ka ehtimam karein aur achhe akhlaq apnayein.</p>
+<!-- ASMA UL HUSNA -->
+<section class="panel" id="namesPanel" hidden>
+<h3>🌙 Asma-ul-Husna</h3>
+<p>Allah Ta'ala ke 99 naam parhne ka section. Neeche kuch mashhoor naam ma'ni ke saath diye gaye hain.</p>
+<div class="arabic">الرَّحْمَٰنُ</div><p class="center">Ar-Rahman — Nihayat meherban</p>
+<div class="arabic">الرَّحِيمُ</div><p class="center">Ar-Raheem — Bahut raham farmane wala</p>
+<div class="arabic">الْمَلِكُ</div><p class="center">Al-Malik — Haqeeqi Badshah</p>
+<div class="arabic">الْقُدُّوسُ</div><p class="center">Al-Quddus — Nihayat paak</p>
+<div class="arabic">السَّلَامُ</div><p class="center">As-Salam — Salamati dene wala</p>
+<p class="small">Mukammal 99 naam aur unke ma'ni ko agle data update mein verified list ke saath mukammal karna hai.</p>
 </section>
 
-<p class="note">Agar koi file na khule to GitHub repository mein uska exact filename check karein. Urdu text file browser mein plain text ke taur par khul sakti hai.</p>
+<!-- HADITH BOOKS -->
+<section class="panel" id="hadithPanel" hidden>
+<h3>📚 Mashhoor Hadith Books</h3>
+<p>Yahan Hadith ki mashhoor kitabon ki directory hai. Mukammal ahadith, Urdu tarjuma aur references ko mustanad matn se jorna agla kaam hoga.</p>
+<ol class="book-list">
+<li>Sahih al-Bukhari</li>
+<li>Sahih Muslim</li>
+<li>Sunan Abu Dawud</li>
+<li>Jami at-Tirmidhi</li>
+<li>Sunan an-Nasa'i</li>
+<li>Sunan Ibn Majah</li>
+<li>Muwatta Imam Malik</li>
+<li>Musnad Ahmad</li>
+<li>Riyad as-Salihin</li>
+<li>Mishkat al-Masabih</li>
+<li>Bulugh al-Maram</li>
+<li>Arba'in Nawawi — 40 Ahadith</li>
+</ol>
+<p class="small">Kitabon ke naam dikh rahe hain; abhi inke poore matn aur chapter-wise reading ko verified source se connect nahi kiya gaya.</p>
+</section>
+
+<!-- DUA -->
+<section class="panel" id="duaPanel" hidden>
+<h3>🤲 Dua Library</h3>
+<div class="arabic">رَبَّنَا آتِنَا فِي الدُّنْيَا حَسَنَةً وَفِي الْآخِرَةِ حَسَنَةً وَقِنَا عَذَابَ النَّارِ</div>
+<p class="center">Aye hamare Rabb, humein duniya mein bhalai aur aakhirat mein bhalai ata farma aur humein aag ke azaab se bacha.</p>
+<p class="small">Mazeed masnoon duaein Arabic, Urdu tarjume aur references ke saath baad mein add ki jayengi.</p>
+</section>
+
+<!-- AZKAR -->
+<section class="panel" id="azkarPanel" hidden>
+<h3>🌅 Subah aur Shaam ke Azkar</h3>
+<div class="arabic">سُبْحَانَ اللّٰهِ وَبِحَمْدِهِ</div>
+<p class="center">SubhanAllahi wa bihamdihi.</p>
+<p>Allah ki paaki aur hamd bayan karein.</p>
+<div class="counter" id="azkarCount">0</div>
+<button class="btn" onclick="increment('azkarCount')">Zikr Parha +1</button>
+<button class="btn gold" style="margin-top:8px" onclick="resetCounter('azkarCount')">Reset Count</button>
+<p class="small">Ye basic counter hai. Mukammal subah-shaam ke masnoon azkar aur unki references alag se verified ki jayengi.</p>
+</section>
+
+<!-- NAMAZ -->
+<section class="panel" id="namazPanel" hidden>
+<h3>🕌 Namaz Time</h3>
+<label for="city">Apna shehar select karein</label>
+<select id="city">
+<option>Karachi</option>
+<option>Lahore</option>
+<option>Islamabad</option>
+<option>Peshawar</option>
+<option>Quetta</option>
+<option>Multan</option>
+<option>Hyderabad</option>
+<option>Faisalabad</option>
+<option>Gilgit</option>
+<option>Muzaffarabad</option>
+</select>
+<p>Namaz ke sahi waqt ke liye shehar ke coordinates, date aur calculation method ki zaroorat hoti hai.</p>
+<p class="small">Abhi ye shehar selection hai; live namaz timings is panel mein connect nahi ki gayi hain. Ghalat waqt dikhane ke bajaye verified timing source baad mein lagayenge.</p>
+</section>
+
+<!-- QIBLA -->
+<section class="panel" id="qiblaPanel" hidden>
+<h3>🧭 Qibla Direction</h3>
+<p>Qibla finder ko durust chalane ke liye device ki location aur supported compass sensor ki zaroorat ho sakti hai.</p>
+<p class="small">Ye panel abhi maloomat ke liye hai; live compass ya Qibla angle abhi connect nahi hai.</p>
+</section>
+
+<!-- CALENDAR -->
+<section class="panel" id="calendarPanel" hidden>
+<h3>🌙 Islamic Calendar</h3>
+<p>Hijri tareekh chand dekhne aur ilaqai authority ke mutabiq ek din mukhtalif ho sakti hai.</p>
+<p class="small">Live Hijri date aur Islamic occasions ko verified calendar source se baad mein connect karenge.</p>
+</section>
+
 </main>
 
-<footer>© Digital Pakistan | Islamic Hub</footer>
+<footer>
+<div>© Digital Pakistan — Islamic Hub</div>
+<div>Quran Pak • Hadith • Azkar • Deeni Maloomat</div>
+</footer>
+
+<script>
+function showPanel(id){
+  document.querySelectorAll('.panel').forEach(function(panel){
+    panel.hidden = true;
+  });
+  var panel = document.getElementById(id);
+  if(panel){
+    panel.hidden = false;
+    panel.scrollIntoView({behavior:'smooth',block:'start'});
+  }
+}
+var tasbiCount = 0;
+var tasbiTarget = 100;
+
+function countTasbi(){
+  tasbiCount++;
+  tasbiTarget = Number(document.getElementById('tasbiTarget').value);
+  document.getElementById('tasbiCount').textContent = tasbiCount;
+  document.getElementById('tasbiStatus').textContent =
+    tasbiCount >= tasbiTarget
+    ? 'Alhamdulillah! Aapka target poora ho gaya.'
+    : 'Target: ' + tasbiTarget + ' | Baqi: ' + (tasbiTarget-tasbiCount);
+}
+function resetTasbi(){
+  tasbiCount = 0;
+  document.getElementById('tasbiCount').textContent = '0';
+  document.getElementById('tasbiStatus').textContent =
+    'Target: ' + document.getElementById('tasbiTarget').value;
+}
+function changeTarget(){
+  tasbiTarget = Number(document.getElementById('tasbiTarget').value);
+  document.getElementById('tasbiStatus').textContent =
+    'Target: ' + tasbiTarget + ' | Baqi: ' + Math.max(0,tasbiTarget-tasbiCount);
+}
+function increment(id){
+  var el = document.getElementById(id);
+  el.textContent = Number(el.textContent) + 1;
+}
+function resetCounter(id){
+  document.getElementById(id).textContent = '0';
+}
+</script>
 </body>
-</html>
+  </html>
