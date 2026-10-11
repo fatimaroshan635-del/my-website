@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="ur">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="theme-color" content="#064e3b">
+<title>Namaz Time | Digital Pakistan</title>
+<style>
+*{box-sizing:border-box}
+body{margin:0;background:#f3f7f3;color:#20382d;font-family:Arial,sans-serif}
+header{background:linear-gradient(135deg,#063d2e,#087b59);color:white;text-align:center;padding:26px 15px}
+header h1{margin:0 0 8px}
+header p{font-size:14px;line-height:1.7;margin:0}
+main{max-width:650px;margin:auto;padding:16px 13px 35px}
+.card{background:white;border:1px solid #dce8de;border-radius:16px;padding:18px;margin-bottom:14px;box-shadow:0 4px 14px #153b220d}
+h2{font-size:19px;color:#075b43;margin:0 0 12px}
+label{display:block;font-weight:bold;font-size:14px;margin-bottom:7px}
+select{width:100%;padding:13px;border:1px solid #cad8cd;border-radius:10px;background:white;font-size:16px}
+button,.btn{display:block;width:100%;border:0;border-radius:10px;padding:13px;background:#075b43;color:white;text-align:center;font-size:15px;font-weight:bold;text-decoration:none;cursor:pointer;margin-top:11px}
+.info{font-size:13px;color:#68786c;line-height:1.8}
+.status{padding:12px;border-radius:10px;background:#edf5ee;font-size:14px;line-height:1.7;margin-top:12px}
+.times{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:10px}
+.time{border:1px solid #e0e9e1;border-radius:12px;padding:14px 8px;text-align:center;background:#fbfdfb}
+.time strong{display:block;color:#075b43;margin-bottom:8px}
+.time span{font-size:19px;font-weight:bold}
+footer{background:#063d2e;color:white;text-align:center;padding:18px;font-size:13px}
+</style>
+</head>
+<body>
+<header>
+<h1>🕌 Namaz Time</h1>
+<p>Digital Pakistan — Pakistan Prayer Timings</p>
+</header>
+
+<main>
+<section class="card">
+<h2>Apna Shehar Select Karein</h2>
+<label for="city">Pakistan ka shehar</label>
+<select id="city">
+<option>Karachi</option>
+<option>Hyderabad</option>
+<option>Sukkur</option>
+<option>Lahore</option>
+<option>Islamabad</option>
+<option>Rawalpindi</option>
+<option>Peshawar</option>
+<option>Quetta</option>
+<option>Multan</option>
+<option>Faisalabad</option>
+<option>Sialkot</option>
+<option>Bahawalpur</option>
+<option>Gwadar</option>
+<option>Gilgit</option>
+<option>Muzaffarabad</option>
+</select>
+<button id="loadBtn" onclick="loadPrayerTimes()">Namaz Times Check Karein</button>
+<div class="status" id="status">Shehar select karein aur button dabayein. Timings ke liye internet zaroori hai.</div>
+</section>
+
+<section class="card">
+<h2 id="dateTitle">Aaj ke Namaz ke Auqat</h2>
+<div class="times">
+<div class="time"><strong>Fajr</strong><span id="Fajr">—</span></div>
+<div class="time"><strong>Sunrise</strong><span id="Sunrise">—</span></div>
+<div class="time"><strong>Zuhr</strong><span id="Dhuhr">—</span></div>
+<div class="time"><strong>Asr</strong><span id="Asr">—</span></div>
+<div class="time"><strong>Maghrib</strong><span id="Maghrib">—</span></div>
+<div class="time"><strong>Isha</strong><span id="Isha">—</span></div>
+</div>
+<p class="info">Timings online AlAdhan service se mangwayi jati hain. Calculation method aur local masjid ke auqat mein farq ho sakta hai. Namaz ke liye apni local masjid ya mutalliq deeni authority se waqt ki tasdeeq karein.</p>
+</section>
+
+<a class="btn" href="islamic.html">← Back to Islamic Hub</a>
+</main>
+
+<footer>© Digital Pakistan | Namaz Time</footer>
+
+<script>
+function localDate(){
+  const d=new Date();
+  const day=String(d.getDate()).padStart(2,'0');
+  const month=String(d.getMonth()+1).padStart(2,'0');
+  return day+'-'+month+'-'+d.getFullYear();
+}
+
+async function loadPrayerTimes(){
+  const city=document.getElementById('city').value;
+  const status=document.getElementById('status');
+  const button=document.getElementById('loadBtn');
+
+  button.disabled=true;
+  button.textContent='Loading...';
+  status.textContent=city+' ke auqat online hasil kiye ja rahe hain...';
+
+  ['Fajr','Sunrise','Dhuhr','Asr','Maghrib','Isha'].forEach(id=>{
+    document.getElementById(id).textContent='—';
+  });
+
+  try{
+    const url='https://api.aladhan.com/v1/timingsByCity/'
+      +localDate()
+      +'?city='+encodeURIComponent(city)
+      +'&country=Pakistan&method=1';
+
+    const response=await fetch(url);
+    if(!response.ok) throw new Error('Service response error');
+
+    const result=await response.json();
+    if(result.code!==200 || !result.data || !result.data.timings){
+      throw new Error('Prayer timings unavailable');
+    }
+
+    const timings=result.data.timings;
+    ['Fajr','Sunrise','Dhuhr','Asr','Maghrib','Isha'].forEach(id=>{
+      if(timings[id]){
+        document.getElementById(id).textContent=timings[id].split(' ')[0];
+      }
+    });
+
+    document.getElementById('dateTitle').textContent=
+      city+' — Aaj ke Namaz ke Auqat';
+
+    status.textContent='Timings load ho gayi hain. Date: '
+      +localDate().split('-').reverse().join('-')
+      +'. Apni local masjid ke auqat se bhi tasdeeq karein.';
+  }catch(error){
+    status.textContent='Timings load nahi ho sakin. Internet check karein aur dobara koshish karein. Agar masla jari rahe to local masjid ke timetable se auqat dekhein.';
+  }finally{
+    button.disabled=false;
+    button.textContent='Namaz Times Check Karein';
+  }
+}
+</script>
+</body>
+</html>
