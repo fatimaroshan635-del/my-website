@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="theme-color" content="#064e3b">
+<title>Jobs & Rozgar Pakistan | Digital Pakistan</title>
+<style>
+:root{--g:#064e3b;--g2:#087b58;--gold:#e8bd62;--bg:#f3f7f4;--ink:#18372d;--muted:#63756d}
+*{box-sizing:border-box}
+body{margin:0;font-family:Arial,sans-serif;background:var(--bg);color:var(--ink)}
+header{padding:16px 5%;background:#043c2d;color:white;display:flex;justify-content:space-between;align-items:center;gap:12px;flex-wrap:wrap}
+.brand{font-size:20px;font-weight:800}.brand span{color:var(--gold)}
+header a{color:white;text-decoration:none;border:1px solid #ffffff66;border-radius:11px;padding:10px 14px}
+.hero{padding:44px 6%;color:white;background:linear-gradient(120deg,#032f25,#087b58 65%,#ad873b);position:relative;overflow:hidden}
+.hero:after{content:"💼";position:absolute;right:8%;top:25px;font-size:90px;opacity:.22}
+.kicker{color:#ffe5a6;font-weight:bold;font-size:12px;letter-spacing:2px}
+h1{font-size:clamp(29px,5vw,45px);margin:12px 0}
+.hero p{max-width:680px;line-height:1.7;color:#e6f5ed}
+main{max-width:1150px;margin:auto;padding:26px 17px 48px}
+h2{font-size:23px;margin:8px 0}
+.intro{color:var(--muted);line-height:1.7;margin-top:7px}
+.search{width:100%;padding:15px;border:1px solid #d6e4d9;border-radius:13px;background:white;font-size:15px;outline-color:var(--g2);margin:16px 0 22px}
+.filters{display:flex;gap:9px;flex-wrap:wrap;margin:0 0 23px}
+.filter{border:1px solid #d4e2d8;border-radius:25px;background:white;color:var(--ink);padding:10px 14px;cursor:pointer;font-size:12px;font-weight:bold}
+.filter.active,.filter:hover{background:var(--g);color:white;border-color:var(--g)}
+.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(230px,1fr));gap:14px}
+.card{background:white;border:1px solid #dce8df;border-radius:17px;overflow:hidden;box-shadow:0 6px 18px #153d270b;display:flex;flex-direction:column;min-height:220px}
+.banner{height:82px;padding:17px;background:linear-gradient(120deg,#064e3b,#087b58 65%,#b08b40);color:white;display:flex;justify-content:space-between;align-items:center}
+.banner small{color:#ffe5a6;font-size:10px;letter-spacing:1px;font-weight:bold}
+.banner .emoji{font-size:35px}
+.content{padding:17px;display:flex;flex-direction:column;align-items:flex-start;flex:1}
+.tag{font-size:10px;background:#e4f4e9;color:#176340;padding:6px 8px;border-radius:20px;margin-bottom:10px;font-weight:bold}
+.content h3{font-size:16px;line-height:1.4;margin:0 0 9px}
+.content p{font-size:13px;color:var(--muted);line-height:1.65;margin:0 0 16px}
+.content a{margin-top:auto;background:var(--g);color:white;text-decoration:none;border-radius:10px;padding:11px 13px;font-size:12px;font-weight:bold}
+.content a:hover{background:var(--g2)}
+.note{margin-top:24px;padding:16px;border-radius:13px;background:#fff7e5;border:1px solid #f0dfb7;color:#70531c;font-size:13px;line-height:1.8}
+.empty{grid-column:1/-1;background:white;border:1px dashed #b8cbbd;border-radius:15px;padding:24px;color:var(--muted)}
+.back{display:inline-block;margin-top:22px;color:var(--g);font-weight:bold;text-decoration:none}
+footer{text-align:center;padding:24px;color:var(--muted);font-size:13px;line-height:1.8}
+@media(max-width:500px){.hero{padding:34px 5%}.hero:after{font-size:55px;right:5%}.card{min-height:205px}}
+</style>
+</head>
+<body>
+<header>
+  <div class="brand">🇵🇰 Digital <span>Pakistan</span></div>
+  <a href="index.html">← Home</a>
+</header>
+
+<section class="hero">
+  <div class="kicker">CAREERS • EMPLOYMENT • OPPORTUNITIES</div>
+  <h1>Jobs & Rozgar Pakistan</h1>
+  <p>Government vacancies, provincial recruitment, police, teaching, private careers aur online employment portals — sab ek jagah.</p>
+</section>
+
+<main>
+  <h2>Explore Job Categories</h2>
+  <p class="intro">Category select karein ya search box mein department ya job type likhein. Vacancy, last date aur eligibility employer ki official website par verify karein.</p>
+
+  <input id="search" class="search" type="search" placeholder="Search jobs, police, teaching, FPSC, private..." aria-label="Search job categories">
+
+  <div class="filters" id="filters">
+    <button class="filter active" data-filter="all">All Jobs</button>
+    <button class="filter" data-filter="federal">Federal</button>
+    <button class="filter" data-filter="punjab">Punjab</button>
+    <button class="filter" data-filter="sindh">Sindh</button>
+    <button class="filter" data-filter="kpk">KPK</button>
+    <button class="filter" data-filter="balochistan">Balochistan</button>
+    <button class="filter" data-filter="ajk">AJK</button>
+    <button class="filter" data-filter="gb">Gilgit-Baltistan</button>
+    <button class="filter" data-filter="private">Private / Online</button>
+  </div>
+
+  <div class="grid" id="jobs"></div>
+
+  <div class="note">
+    <strong>Job safety:</strong> Apply karne se pehle advertisement, eligibility, last date aur department verify karein. Kisi unknown recruiter ko job ke badle paisay, OTP, password ya bank PIN na dein. Ye directory official job portals tak raasta deti hai; har waqt available vacancies ki guarantee nahi deti.
+  </div>
+  <a class="back" href="index.html">← Back to Digital Pakistan Home</a>
+</main>
+
+<footer>Digital Pakistan • Jobs & Career Information<br>Independent information directory — not a recruitment agency.</footer>
+
+<script>
+const jobsData=[
+{icon:"🏛️",tag:"FEDERAL",title:"FPSC — Federal Government Jobs",desc:"Federal ministries aur departments ki competitive recruitment aur official vacancy notices.",url:"https://www.fpsc.gov.pk/",groups:["federal"]},
+{icon:"📋",tag:"FEDERAL",title:"National Job Portal",desc:"Federal government jobs search aur online applications ke liye official portal.",url:"https://njp.gov.pk/",groups:["federal"]},
+{icon:"🪖",tag:"FEDERAL",title:"Pakistan Army Recruitment",desc:"Army recruitment, eligibility aur registration announcements official recruitment portal par check karein.",url:"https://www.joinpakarmy.gov.pk/",groups:["federal"]},
+{icon:"✈️",tag:"FEDERAL",title:"Pakistan Air Force Jobs",desc:"Air Force recruitment aur current intake ki official information.",url:"https://joinpaf.gov.pk/",groups:["federal"]},
+{icon:"⚓",tag:"FEDERAL",title:"Pakistan Navy Careers",desc:"Navy recruitment, entry requirements aur current opportunities.",url:"https://www.joinpaknavy.gov.pk/",groups:["federal"]},
+{icon:"👮",tag:"POLICE",title:"Punjab Police Careers",desc:"Punjab Police recruitment notices aur eligibility information.",url:"https://punjabpolice.gov.pk/",groups:["punjab"]},
+{icon:"🏙️",tag:"PUNJAB",title:"Punjab Government Jobs",desc:"Punjab government departments, vacancies aur recruitment announcements.",url:"https://jobs.punjab.gov.pk/",groups:["punjab"]},
+{icon:"🎓",tag:"PUNJAB",title:"Punjab Education Jobs",desc:"Teaching aur education department recruitment ke official announcements.",url:"https://schools.punjab.gov.pk/",groups:["punjab"]},
+{icon:"👮",tag:"POLICE",title:"Sindh Police Careers",desc:"Sindh Police recruitment, notices aur official updates.",url:"https://www.sindhpolice.gov.pk/",groups:["sindh"]},
+{icon:"🌊",tag:"SINDH",title:"Sindh Government Jobs",desc:"Sindh government departments aur public-sector vacancy information.",url:"https://www.sindh.gov.pk/",groups:["sindh"]},
+{icon:"🎓",tag:"SINDH",title:"Sindh Education Jobs",desc:"Education department ki teaching aur non-teaching announcements.",url:"https://sindheducation.gov.pk/",groups:["sindh"]},
+{icon:"👮",tag:"POLICE",title:"Khyber Pakhtunkhwa Police",desc:"KP Police recruitment notices aur department information.",url:"https://kppolice.gov.pk/",groups:["kpk"]},
+{icon:"🏔️",tag:"KPK",title:"KP Government Jobs",desc:"KP government departments aur public-sector recruitment information.",url:"https://kp.gov.pk/",groups:["kpk"]},
+{icon:"👮",tag:"POLICE",title:"Balochistan Police Careers",desc:"Balochistan Police recruitment aur vacancy announcements.",url:"https://balochistanpolice.gov.pk/",groups:["balochistan"]},
+{icon:"⛰️",tag:"BALOCHISTAN",title:"Balochistan Government Jobs",desc:"Provincial departments aur government recruitment notices.",url:"https://balochistan.gov.pk/",groups:["balochistan"]},
+{icon:"🌲",tag:"AJK",title:"Azad Kashmir Government Jobs",desc:"AJK government departments aur recruitment announcements.",url:"https://ajk.gov.pk/",groups:["ajk"]},
+{icon:"❄️",tag:"GILGIT-BALTISTAN",title:"GB Government Careers",desc:"Gilgit-Baltistan departments aur public-sector job information.",url:"https://gilgitbaltistan.gov.pk/",groups:["gb"]},
+{icon:"🏛️",tag:"CAPITAL TERRITORY",title:"Islamabad Government Jobs",desc:"Islamabad aur federal territory se related government recruitment ke liye federal job portals check karein.",url:"https://njp.gov.pk/",groups:["federal"]},
+{icon:"💻",tag:"PRIVATE",title:"Rozee.pk — Private Jobs",desc:"Private-sector careers aur employer job listings search karein.",url:"https://www.rozee.pk/",groups:["private"]},
+{icon:"🌐",tag:"PRIVATE",title:"Mustakbil Jobs",desc:"Pakistan mein private employment aur career opportunities dhoondein.",url:"https://www.mustakbil.com/",groups:["private"]},
+{icon:"💼",tag:"PROFESSIONAL",title:"LinkedIn Jobs",desc:"Professional roles, internships aur employer career listings search karein.",url:"https://www.linkedin.com/jobs/",groups:["private"]},
+{icon:"🎓",tag:"TEACHING",title:"University & Teaching Careers",desc:"University aur teaching vacancies ke liye HEC aur individual institution websites check karein.",url:"https://www.hec.gov.pk/",groups:["federal","private"]},
+{icon:"🧑‍💻",tag:"FREELANCE",title:"DigiSkills Training",desc:"Digital skills aur freelancing courses seekhne ke liye official training platform.",url:"https://digiskills.pk/",groups:["private"]},
+{icon:"🌍",tag:"OVERSEAS",title:"Overseas Employment Corporation",desc:"Overseas employment opportunities aur official recruitment announcements.",url:"https://oec.gov.pk/",groups:["federal"]}
+];
+
+let activeFilter="all";
+const jobs=document.getElementById("jobs");
+const search=document.getElementById("search");
+
+function render(){
+ const q=search.value.trim().toLowerCase();
+ const results=jobsData.filter(j=>
+  (activeFilter==="all"||j.groups.includes(activeFilter))&&
+  (j.title+" "+j.desc+" "+j.tag+" "+j.groups.join(" ")).toLowerCase().includes(q)
+ );
+ jobs.innerHTML=results.length?results.map(j=>`
+ <article class="card">
+ <div class="banner"><small>${j.tag}</small><span class="emoji">${j.icon}</span></div>
+ <div class="content"><span class="tag">${j.tag}</span><h3>${j.title}</h3><p>${j.desc}</p>
+ <a href="${j.url}" target="_blank" rel="noopener noreferrer">Open Job Portal ↗</a></div></article>`).join("")
+ :'<div class="empty">Is search ya category ke liye koi matching link nahi mila. Search words change karke dobara try karein.</div>';
+}
+document.querySelectorAll(".filter").forEach(btn=>btn.addEventListener("click",()=>{
+ activeFilter=btn.dataset.filter;
+ document.querySelectorAll(".filter").forEach(b=>b.classList.toggle("active",b===btn));
+ render();
+}));
+search.addEventListener("input",render);
+render();
+</script>
+</body>
+</html>
