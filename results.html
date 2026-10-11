@@ -1,0 +1,250 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="description" content="Pakistan all-board results directory for Matric, Intermediate, technical education and student examination portals.">
+<title>All Pakistan Board Results | Digital Pakistan</title>
+<style>
+:root{--g:#075b43;--d:#063c30;--gold:#e6b85c;--bg:#f3f7f5;--ink:#183229;--muted:#62736b}
+*{box-sizing:border-box}
+body{margin:0;font-family:Arial,sans-serif;background:var(--bg);color:var(--ink)}
+a{text-decoration:none;color:inherit}
+header{background:linear-gradient(130deg,var(--d),#087456);color:white;padding:18px 16px 30px}
+.top,.hero,main{max-width:1100px;margin-left:auto;margin-right:auto}
+.top{display:flex;justify-content:space-between;align-items:center;gap:12px}
+.logo{font-size:19px;font-weight:bold}.back{border:1px solid #ffffff70;padding:9px 13px;border-radius:12px;font-size:13px}
+.hero{padding-top:27px}
+.tag{display:inline-block;background:#ffffff18;border:1px solid #ffffff40;padding:7px 11px;border-radius:25px;color:#ffe4a7;font-size:12px}
+h1{font-size:clamp(29px,6vw,45px);line-height:1.12;margin:15px 0 10px}
+.hero p{max-width:700px;color:#e0eee8;line-height:1.7;font-size:14px}
+main{padding:22px 15px 95px}
+.panel{background:#fff;border:1px solid #e0e9e4;border-radius:18px;padding:18px;margin-bottom:20px;box-shadow:0 4px 16px #123b2509}
+h2{font-size:20px;margin:0 0 8px}
+.sub{color:var(--muted);font-size:13px;line-height:1.6;margin:0 0 15px}
+.formgrid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:13px}
+label{display:block;font-weight:bold;font-size:13px;margin-bottom:7px}
+input,select{width:100%;padding:13px;border:1px solid #d5e2da;border-radius:11px;background:white;font-size:14px;color:var(--ink)}
+input:focus,select:focus{outline:2px solid #a4d5b8;border-color:var(--g)}
+button,.primary{border:0;border-radius:11px;padding:13px 15px;background:var(--g);color:white;font-size:14px;font-weight:bold;cursor:pointer;display:inline-block;text-align:center}
+button:hover,.primary:hover{background:var(--d)}
+.gold{background:var(--gold);color:#24362c}
+.full{grid-column:1/-1}
+#message{display:none;margin-top:13px;background:#fff5df;border:1px solid #eddbad;color:#634d22;padding:12px;border-radius:11px;font-size:13px;line-height:1.6}
+.filters{display:flex;gap:8px;overflow-x:auto;padding:3px 0 13px}
+.filter{white-space:nowrap;background:#fff;border:1px solid #d8e5dd;color:var(--ink);border-radius:25px;padding:9px 13px;font-size:13px}
+.filter.active{background:var(--g);color:white}
+.grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:12px}
+.card{background:white;border:1px solid #e0e9e4;border-radius:16px;padding:15px;display:flex;flex-direction:column;min-width:0;box-shadow:0 4px 13px #123b2508}
+.icon{width:43px;height:43px;border-radius:13px;background:#e8f4ed;display:grid;place-items:center;font-size:23px;margin-bottom:11px}
+.card h3{font-size:15px;line-height:1.4;margin:0 0 7px}
+.card p{font-size:12px;line-height:1.6;color:var(--muted);margin:0 0 13px;flex:1}
+.card a{background:#eaf4ef;color:var(--g);padding:11px 8px;text-align:center;border-radius:10px;font-size:12px;font-weight:bold}
+.card a:hover{background:#d9eddf}
+.empty{display:none;background:white;padding:20px;border-radius:12px;color:var(--muted);text-align:center}
+.notice{background:#fff8e9;border:1px solid #f1dfb5;border-radius:14px;padding:14px;color:#624d25;font-size:13px;line-height:1.7;margin:18px 0}
+footer{text-align:center;background:white;border-top:1px solid #dfe8e3;padding:22px 12px 80px;color:var(--muted);font-size:12px}
+.bottom{position:fixed;bottom:0;left:0;right:0;z-index:5;background:white;border-top:1px solid #dce7e0;display:flex;justify-content:center;gap:clamp(16px,5vw,55px);padding:11px 8px calc(11px + env(safe-area-inset-bottom))}
+.bottom a{font-size:12px;color:var(--g);font-weight:bold;text-align:center}
+@media(max-width:760px){.grid{grid-template-columns:repeat(2,minmax(0,1fr))}}
+@media(max-width:430px){.grid,.formgrid{grid-template-columns:1fr}.full{grid-column:auto}.card{padding:14px}}
+</style>
+</head>
+<body>
+<header>
+ <div class="top">
+  <div class="logo">🇵🇰 Digital Pakistan</div>
+  <a class="back" href="index.html">← Home</a>
+ </div>
+ <div class="hero">
+  <span class="tag">📋 ALL PAKISTAN EXAM RESULTS</span>
+  <h1>Pakistan Board Results Portal</h1>
+  <p>Find your official education board for Matric, Intermediate, technical examinations and other student tests. Select your board below to open its official website.</p>
+ </div>
+</header>
+
+<main>
+ <section class="panel">
+  <h2>🔎 Find Your Result Board</h2>
+  <p class="sub">Select your province, board and examination. Entering a roll number here does not retrieve or store your marks; the official board controls the actual result lookup.</p>
+  <form id="resultForm">
+   <div class="formgrid">
+    <div>
+     <label for="province">Province / Region</label>
+     <select id="province" required>
+      <option value="">Select province</option>
+      <option>Punjab</option><option>Sindh</option>
+      <option>Khyber Pakhtunkhwa</option><option>Balochistan</option>
+      <option>Federal / Islamabad</option><option>Azad Kashmir</option>
+      <option>Gilgit-Baltistan</option><option>Technical Education</option>
+     </select>
+    </div>
+    <div>
+     <label for="board">Education Board</label>
+     <select id="board" required><option value="">First select region</option></select>
+    </div>
+    <div>
+     <label for="exam">Examination</label>
+     <select id="exam" required>
+      <option value="">Select examination</option>
+      <option>Class 9 / SSC Part I</option>
+      <option>Class 10 / SSC Part II (Matric)</option>
+      <option>Class 11 / HSSC Part I</option>
+      <option>Class 12 / HSSC Part II (Intermediate)</option>
+      <option>Technical / Diploma</option>
+      <option>Other examination</option>
+     </select>
+    </div>
+    <div>
+     <label for="roll">Roll Number (optional)</label>
+     <input id="roll" type="text" inputmode="numeric" maxlength="30" placeholder="Enter your roll number">
+    </div>
+    <div class="full">
+     <button class="gold" type="submit" style="width:100%">Open Official Result Website ↗</button>
+    </div>
+   </div>
+   <div id="message" role="status"></div>
+  </form>
+ </section>
+
+ <div class="notice"><strong>Privacy & accuracy:</strong> Your roll number is not sent by this page to any third party. It is not saved. You will need to enter it on the board's official result page if required. We do not generate marks or claim a result is published before the board announces it.</div>
+
+ <h2 style="margin:26px 0 8px">All Pakistan Boards</h2>
+ <p class="sub">Use the filters to find a board. If a board changes its website address, please verify the current address through the relevant government education department.</p>
+
+ <div class="filters" id="filters">
+  <button type="button" class="filter active" data-filter="all">All Boards</button>
+  <button type="button" class="filter" data-filter="Punjab">Punjab</button>
+  <button type="button" class="filter" data-filter="Sindh">Sindh</button>
+  <button type="button" class="filter" data-filter="Khyber Pakhtunkhwa">KPK</button>
+  <button type="button" class="filter" data-filter="Balochistan">Balochistan</button>
+  <button type="button" class="filter" data-filter="Federal / Islamabad">Federal</button>
+  <button type="button" class="filter" data-filter="Azad Kashmir">AJK</button>
+  <button type="button" class="filter" data-filter="Gilgit-Baltistan">GB</button>
+  <button type="button" class="filter" data-filter="Technical Education">Technical</button>
+ </div>
+ <div class="formgrid" style="margin-bottom:14px">
+  <div class="full"><input id="boardSearch" type="search" placeholder="Search board by name or city..." aria-label="Search education boards"></div>
+ </div>
+
+ <div class="grid" id="boardGrid"></div>
+ <div class="empty" id="emptyState">No matching board found. Try another search.</div>
+
+ <div class="notice"><strong>Note:</strong> These links are intended to direct students to board websites, not to copy their databases. The availability of online result lookup varies by board and examination.</div>
+</main>
+
+<footer>© <span id="year"></span> Digital Pakistan · All Pakistan Results Directory</footer>
+<nav class="bottom" aria-label="Main navigation">
+ <a href="index.html">🏠<br>Home</a>
+ <a href="education.html">🎓<br>Education</a>
+ <a href="jobs.html">💼<br>Jobs</a>
+ <a href="schemes.html">🇵🇰<br>Schemes</a>
+</nav>
+
+<script>
+const boards=[
+ {n:"BISE Lahore",p:"Punjab",u:"https://biselahore.com/",d:"Lahore and affiliated districts"},
+ {n:"BISE Rawalpindi",p:"Punjab",u:"https://biserawalpindi.edu.pk/",d:"Rawalpindi region"},
+ {n:"BISE Gujranwala",p:"Punjab",u:"https://bisegrw.edu.pk/",d:"Gujranwala region"},
+ {n:"BISE Faisalabad",p:"Punjab",u:"https://www.bisefsd.edu.pk/",d:"Faisalabad region"},
+ {n:"BISE Multan",p:"Punjab",u:"https://web.bisemultan.edu.pk/",d:"Multan region"},
+ {n:"BISE Sargodha",p:"Punjab",u:"https://site.bisesargodha.edu.pk/",d:"Sargodha region"},
+ {n:"BISE Bahawalpur",p:"Punjab",u:"https://bisebwp.edu.pk/",d:"Bahawalpur region"},
+ {n:"BISE Dera Ghazi Khan",p:"Punjab",u:"https://bisedgkhan.edu.pk/",d:"Dera Ghazi Khan region"},
+ {n:"BISE Sahiwal",p:"Punjab",u:"https://bisesahiwal.edu.pk/",d:"Sahiwal region"},
+ {n:"Board of Secondary Education Karachi (BSEK)",p:"Sindh",u:"https://www.bsek.edu.pk/",d:"Karachi Matric / SSC"},
+ {n:"Board of Intermediate Education Karachi (BIEK)",p:"Sindh",u:"https://www.biek.edu.pk/",d:"Karachi Intermediate / HSSC"},
+ {n:"BISE Hyderabad",p:"Sindh",u:"https://biseh.edu.pk/",d:"Hyderabad region"},
+ {n:"BISE Sukkur",p:"Sindh",u:"https://www.bisesuksindh.edu.pk/",d:"Sukkur region"},
+ {n:"BISE Larkana",p:"Sindh",u:"https://www.biselrk.edu.pk/",d:"Larkana region"},
+ {n:"BISE Mirpur Khas",p:"Sindh",u:"https://bisempk.edu.pk/",d:"Mirpur Khas region"},
+ {n:"BISE Shaheed Benazirabad",p:"Sindh",u:"https://bisesba.edu.pk/",d:"Nawabshah / Shaheed Benazirabad"},
+ {n:"BISE Peshawar",p:"Khyber Pakhtunkhwa",u:"https://www.bisep.edu.pk/",d:"Peshawar region"},
+ {n:"BISE Abbottabad",p:"Khyber Pakhtunkhwa",u:"https://www.biseatd.edu.pk/",d:"Abbottabad region"},
+ {n:"BISE Bannu",p:"Khyber Pakhtunkhwa",u:"https://www.biseb.edu.pk/",d:"Bannu region"},
+ {n:"BISE Dera Ismail Khan",p:"Khyber Pakhtunkhwa",u:"https://www.bisedik.edu.pk/",d:"Dera Ismail Khan region"},
+ {n:"BISE Kohat",p:"Khyber Pakhtunkhwa",u:"https://www.bisekt.edu.pk/",d:"Kohat region"},
+ {n:"BISE Malakand",p:"Khyber Pakhtunkhwa",u:"https://bisemalakand.edu.pk/",d:"Malakand region"},
+ {n:"BISE Mardan",p:"Khyber Pakhtunkhwa",u:"https://web.bisemdn.edu.pk/",d:"Mardan region"},
+ {n:"BISE Swat",p:"Khyber Pakhtunkhwa",u:"https://www.bisess.edu.pk/",d:"Swat / Saidu Sharif region"},
+ {n:"Balochistan Board (BBISE Quetta)",p:"Balochistan",u:"https://bbise.edu.pk/",d:"Balochistan secondary and intermediate"},
+ {n:"Federal Board (FBISE)",p:"Federal / Islamabad",u:"https://www.fbise.edu.pk/",d:"Federal and affiliated institutions"},
+ {n:"AJK Board (BISE Mirpur)",p:"Azad Kashmir",u:"https://ajkbise.net/",d:"Azad Jammu and Kashmir"},
+ {n:"Gilgit-Baltistan Education Resources",p:"Gilgit-Baltistan",u:"https://gilgitbaltistan.gov.pk/",d:"Regional government education information"},
+ {n:"Punjab Board of Technical Education (PBTE)",p:"Technical Education",u:"https://www.pbte.edu.pk/",d:"Technical and diploma examinations"},
+ {n:"Sindh Board of Technical Education (SBTE)",p:"Technical Education",u:"https://www.sbte.edu.pk/",d:"Sindh technical education"},
+ {n:"KPK Board of Technical Education (KPBTE)",p:"Technical Education",u:"https://www.kpbte.edu.pk/",d:"Khyber Pakhtunkhwa technical education"}
+];
+
+const province=document.getElementById('province');
+const boardSelect=document.getElementById('board');
+const boardGrid=document.getElementById('boardGrid');
+const boardSearch=document.getElementById('boardSearch');
+const emptyState=document.getElementById('emptyState');
+let activeFilter='all';
+
+function renderSelect(){
+ const region=province.value;
+ const filtered=boards.filter(b=>!region||b.p===region);
+ boardSelect.innerHTML='<option value="">Select your board</option>';
+ filtered.forEach(b=>{
+  const o=document.createElement('option');
+  o.value=b.u;o.textContent=b.n;
+  boardSelect.appendChild(o);
+ });
+}
+province.addEventListener('change',renderSelect);
+
+function renderCards(){
+ const term=boardSearch.value.trim().toLowerCase();
+ const shown=boards.filter(b=>
+  (activeFilter==='all'||b.p===activeFilter)&&
+  (b.n+' '+b.p+' '+b.d).toLowerCase().includes(term)
+ );
+ boardGrid.innerHTML='';
+ shown.forEach(b=>{
+  const article=document.createElement('article');
+  article.className='card';
+  const icon=document.createElement('div');icon.className='icon';icon.textContent='🏫';
+  const title=document.createElement('h3');title.textContent=b.n;
+  const desc=document.createElement('p');desc.textContent=b.p+' · '+b.d;
+  const link=document.createElement('a');link.href=b.u;link.target='_blank';link.rel='noopener noreferrer';link.textContent='Open Official Website ↗';
+  article.append(icon,title,desc,link);
+  boardGrid.appendChild(article);
+ });
+ emptyState.style.display=shown.length?'none':'block';
+}
+document.querySelectorAll('.filter').forEach(btn=>{
+ btn.addEventListener('click',()=>{
+  document.querySelectorAll('.filter').forEach(x=>x.classList.remove('active'));
+  btn.classList.add('active');activeFilter=btn.dataset.filter;renderCards();
+ });
+});
+boardSearch.addEventListener('input',renderCards);
+
+document.getElementById('resultForm').addEventListener('submit',e=>{
+ e.preventDefault();
+ const url=boardSelect.value;
+ const exam=document.getElementById('exam').value;
+ const roll=document.getElementById('roll').value.trim();
+ const message=document.getElementById('message');
+ if(!url){
+  message.style.display='block';
+  message.textContent='Please select your region and education board first.';
+  return;
+ }
+ if(roll&&!/^[a-zA-Z0-9 -]+$/.test(roll)){
+  message.style.display='block';
+  message.textContent='Please check the roll number format.';
+  return;
+ }
+ message.style.display='block';
+ message.textContent='Your selected exam is: '+exam+'. Your roll number has not been sent or saved. The official board website will open in a new tab; enter your roll number there if its result service asks for it.';
+ window.open(url,'_blank','noopener');
+});
+document.getElementById('year').textContent=new Date().getFullYear();
+renderSelect();
+renderCards();
+</script>
+</body>
+</html>
