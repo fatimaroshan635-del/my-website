@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="description" content="Pakistan public assistance directory with official BISP, social protection, welfare and provincial government links.">
+<title>BISP & Government Benefits Pakistan</title>
+<style>
+:root{--g:#075b43;--d:#063c30;--gold:#e6b85c;--bg:#f3f7f5;--ink:#183229;--muted:#62736b}
+*{box-sizing:border-box}
+body{margin:0;font-family:Arial,sans-serif;background:var(--bg);color:var(--ink)}
+a{text-decoration:none;color:inherit}
+header{background:linear-gradient(130deg,var(--d),#087456);color:white;padding:18px 16px 30px}
+.top,.hero,main{max-width:1100px;margin-left:auto;margin-right:auto}
+.top{display:flex;justify-content:space-between;align-items:center;gap:12px}
+.logo{font-size:19px;font-weight:bold}.back{border:1px solid #ffffff70;padding:9px 13px;border-radius:12px;font-size:13px}
+.hero{padding-top:27px}
+.tag{display:inline-block;background:#ffffff18;border:1px solid #ffffff40;padding:7px 11px;border-radius:25px;color:#ffe4a7;font-size:12px}
+h1{font-size:clamp(29px,6vw,45px);line-height:1.12;margin:15px 0 10px}
+.hero p{max-width:700px;color:#e0eee8;line-height:1.7;font-size:14px}
+.search{display:flex;gap:8px;margin-top:20px;max-width:650px}
+.search input{width:100%;min-width:0;border:0;border-radius:12px;padding:14px;font-size:14px}
+.search button{border:0;border-radius:12px;background:var(--gold);color:#24362c;font-weight:bold;padding:0 17px}
+main{padding:22px 15px 95px}
+.notice{background:#fff8e9;border:1px solid #f1dfb5;border-radius:14px;padding:14px;color:#624d25;font-size:13px;line-height:1.7;margin-bottom:23px}
+.section-title{margin:25px 0 13px}.section-title h2{font-size:21px;margin:0}.section-title p{margin:6px 0 0;color:var(--muted);font-size:13px;line-height:1.6}
+.filters{display:flex;gap:8px;overflow-x:auto;padding:3px 0 13px}
+.filter{white-space:nowrap;background:#fff;border:1px solid #d8e5dd;color:var(--ink);border-radius:25px;padding:9px 13px;font-size:13px;cursor:pointer}
+.filter.active{background:var(--g);color:white;border-color:var(--g)}
+.grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:12px}
+.card{background:white;border:1px solid #e0e9e4;border-radius:16px;padding:15px;display:flex;flex-direction:column;min-width:0;box-shadow:0 4px 13px #123b2508}
+.icon{width:43px;height:43px;border-radius:13px;background:#e8f4ed;display:grid;place-items:center;font-size:23px;margin-bottom:11px}
+.card h3{font-size:15px;line-height:1.4;margin:0 0 7px}
+.card p{font-size:12px;line-height:1.65;color:var(--muted);margin:0 0 13px;flex:1}
+.card a{background:#eaf4ef;color:var(--g);padding:11px 8px;text-align:center;border-radius:10px;font-size:12px;font-weight:bold}
+.empty{display:none;background:white;padding:20px;border-radius:12px;color:var(--muted);text-align:center}
+footer{text-align:center;background:white;border-top:1px solid #dfe8e3;padding:22px 12px 80px;color:var(--muted);font-size:12px}
+.bottom{position:fixed;bottom:0;left:0;right:0;z-index:5;background:white;border-top:1px solid #dce7e0;display:flex;justify-content:center;gap:clamp(16px,5vw,55px);padding:11px 8px calc(11px + env(safe-area-inset-bottom))}
+.bottom a{font-size:12px;color:var(--g);font-weight:bold;text-align:center}
+@media(max-width:760px){.grid{grid-template-columns:repeat(2,minmax(0,1fr))}}
+@media(max-width:430px){.grid{grid-template-columns:1fr}.search button{padding:0 12px}}
+</style>
+</head>
+<body>
+<header>
+ <div class="top">
+  <div class="logo">🇵🇰 Digital Pakistan</div>
+  <a class="back" href="index.html">← Home</a>
+ </div>
+ <div class="hero">
+  <span class="tag">🤝 PUBLIC SUPPORT DIRECTORY</span>
+  <h1>BISP & Government Benefits Pakistan</h1>
+  <p>Find official public assistance, social protection programmes, student support and provincial welfare resources in one place.</p>
+  <div class="search">
+   <input id="search" type="search" placeholder="Search BISP, Kafaalat, education stipend..." aria-label="Search public benefits">
+   <button type="button" id="searchButton">Search</button>
+  </div>
+ </div>
+</header>
+
+<main>
+ <div class="notice"><strong>Fraud warning:</strong> Use official government websites and verified offices only. Never share your PIN, password or OTP with an agent. Do not pay anyone to “unlock” a benefit. Programme eligibility, registration and payment dates can change; confirm the latest instructions from the responsible department.</div>
+
+ <div class="section-title"><h2>Find Government Support</h2><p>Search or select a category to filter the available official resources.</p></div>
+ <div class="filters">
+  <button type="button" class="filter active" data-filter="all">All Resources</button>
+  <button type="button" class="filter" data-filter="federal">Federal</button>
+  <button type="button" class="filter" data-filter="education">Education Support</button>
+  <button type="button" class="filter" data-filter="punjab">Punjab</button>
+  <button type="button" class="filter" data-filter="sindh">Sindh</button>
+  <button type="button" class="filter" data-filter="kpk">KPK</button>
+  <button type="button" class="filter" data-filter="balochistan">Balochistan</button>
+  <button type="button" class="filter" data-filter="other">AJK, GB & Islamabad</button>
+ </div>
+
+ <div class="grid" id="grid">
+  <article class="card" data-category="federal">
+   <div class="icon">🤝</div><h3>Benazir Income Support Programme</h3>
+   <p>Official BISP information, programme announcements and support resources for eligible households.</p>
+   <a href="https://www.bisp.gov.pk/" target="_blank" rel="noopener noreferrer">Visit BISP ↗</a>
+  </article>
+  <article class="card" data-category="federal">
+   <div class="icon">👨‍👩‍👧</div><h3>Benazir Kafaalat</h3>
+   <p>Check official BISP announcements and eligibility guidance for the Kafaalat programme.</p>
+   <a href="https://www.bisp.gov.pk/" target="_blank" rel="noopener noreferrer">Official Information ↗</a>
+  </article>
+  <article class="card" data-category="education">
+   <div class="icon">📚</div><h3>Benazir Taleemi Wazaif</h3>
+   <p>Information about BISP education stipends for eligible children and their families.</p>
+   <a href="https://www.bisp.gov.pk/" target="_blank" rel="noopener noreferrer">Check BISP ↗</a>
+  </article>
+  <article class="card" data-category="federal">
+   <div class="icon">🧾</div><h3>BISP Official Updates</h3>
+   <p>Use the official programme website to find current notices, contact information and guidance.</p>
+   <a href="https://www.bisp.gov.pk/" target="_blank" rel="noopener noreferrer">Open Official Website ↗</a>
+  </article>
+  <article class="card" data-category="federal">
+   <div class="icon">🏠</div><h3>Pakistan Government Schemes</h3>
+   <p>Explore national housing, business, student and other government scheme resources.</p>
+   <a href="schemes.html">Explore Schemes on Digital Pakistan →</a>
+  </article>
+  <article class="card" data-category="education">
+   <div class="icon">🎓</div><h3>HEC Scholarships</h3>
+   <p>Official higher-education scholarships and student financial assistance announcements.</p>
+   <a href="https://www.hec.gov.pk/english/scholarshipsgrants/Pages/default.aspx" target="_blank" rel="noopener noreferrer">Visit HEC Scholarships ↗</a>
+  </article>
+  <article class="card" data-category="federal">
+   <div class="icon">💼</div><h3>Pakistan Bait-ul-Mal</h3>
+   <p>Check official information on available assistance programmes and application procedures.</p>
+   <a href="https://www.pbm.gov.pk/" target="_blank" rel="noopener noreferrer">Visit PBM ↗</a>
+  </article>
+  <article class="card" data-category="federal">
+   <div class="icon">🏥</div><h3>Social Protection & Health</h3>
+   <p>Check government announcements for applicable public support and health-related programmes.</p>
+   <a href="https://www.pass.gov.pk/" target="_blank" rel="noopener noreferrer">Poverty Alleviation & Social Safety ↗</a>
+  </article>
+
+  <article class="card" data-category="punjab">
+   <div class="icon">🌾</div><h3>Punjab Government Support</h3>
+   <p>Explore official provincial announcements on public welfare and citizen support programmes.</p>
+   <a href="https://punjab.gov.pk/" target="_blank" rel="noopener noreferrer">Punjab Government ↗</a>
+  </article>
+  <article class="card" data-category="punjab">
+   <div class="icon">🏡</div><h3>Apni Chhat Apna Ghar</h3>
+   <p>Official Punjab housing programme information. Check current eligibility and registration status.</p>
+   <a href="https://acag.punjab.gov.pk/" target="_blank" rel="noopener noreferrer">Visit Programme Portal ↗</a>
+  </article>
+  <article class="card" data-category="punjab">
+   <div class="icon">🎓</div><h3>Punjab Education Support</h3>
+   <p>Provincial school education information and official notices for students and families.</p>
+   <a href="https://schools.punjab.gov.pk/" target="_blank" rel="noopener noreferrer">Punjab Schools ↗</a>
+  </article>
+
+  <article class="card" data-category="sindh">
+   <div class="icon">🌊</div><h3>Sindh Government Support</h3>
+   <p>Check official provincial announcements and citizen welfare resources.</p>
+   <a href="https://www.sindh.gov.pk/" target="_blank" rel="noopener noreferrer">Sindh Government ↗</a>
+  </article>
+  <article class="card" data-category="sindh">
+   <div class="icon">📖</div><h3>Sindh Education Support</h3>
+   <p>Education department notices, school information and official student resources.</p>
+   <a href="https://sindheducation.gov.pk/" target="_blank" rel="noopener noreferrer">Sindh Education ↗</a>
+  </article>
+
+  <article class="card" data-category="kpk">
+   <div class="icon">⛰️</div><h3>KPK Government Support</h3>
+   <p>Explore provincial government departments and official public welfare announcements.</p>
+   <a href="https://kp.gov.pk/" target="_blank" rel="noopener noreferrer">KPK Government ↗</a>
+  </article>
+  <article class="card" data-category="kpk">
+   <div class="icon">🎒</div><h3>KPK Education Support</h3>
+   <p>Official provincial education resources and announcements for students.</p>
+   <a href="https://kpese.gov.pk/" target="_blank" rel="noopener noreferrer">KPK Education ↗</a>
+  </article>
+
+  <article class="card" data-category="balochistan">
+   <div class="icon">🏞️</div><h3>Balochistan Government Support</h3>
+   <p>Find provincial government departments, public notices and citizen resources.</p>
+   <a href="https://balochistan.gov.pk/" target="_blank" rel="noopener noreferrer">Balochistan Government ↗</a>
+  </article>
+
+  <article class="card" data-category="other">
+   <div class="icon">🏢</div><h3>Islamabad Capital Territory</h3>
+   <p>Official ICT administration information and public service announcements.</p>
+   <a href="https://ictadministration.gov.pk/" target="_blank" rel="noopener noreferrer">ICT Administration ↗</a>
+  </article>
+  <article class="card" data-category="other">
+   <div class="icon">🏔️</div><h3>Azad Jammu & Kashmir</h3>
+   <p>Official AJK government information and regional public welfare announcements.</p>
+   <a href="https://ajk.gov.pk/" target="_blank" rel="noopener noreferrer">AJK Government ↗</a>
+  </article>
+  <article class="card" data-category="other">
+   <div class="icon">❄️</div><h3>Gilgit-Baltistan</h3>
+   <p>Official regional government information and public service announcements.</p>
+   <a href="https://gilgitbaltistan.gov.pk/" target="_blank" rel="noopener noreferrer">GB Government ↗</a>
+  </article>
+ </div>
+ <div class="empty" id="empty">No matching resources found. Try another search or category.</div>
+
+ <div class="notice"><strong>Important:</strong> This directory is independent and is not affiliated with BISP or any government department. A link to a department website does not mean a programme is currently open for applications. Follow the official eligibility and registration instructions.</div>
+</main>
+
+<footer>© <span id="year"></span> Digital Pakistan · Public Support Directory</footer>
+<nav class="bottom" aria-label="Main navigation">
+ <a href="index.html">🏠<br>Home</a>
+ <a href="schemes.html">🇵🇰<br>Schemes</a>
+ <a href="jobs.html">💼<br>Jobs</a>
+ <a href="education.html">🎓<br>Education</a>
+</nav>
+<script>
+const search=document.getElementById('search');
+const cards=[...document.querySelectorAll('.card')];
+const filters=[...document.querySelectorAll('.filter')];
+let active='all';
+
+function update(){
+ const q=search.value.trim().toLowerCase();
+ let count=0;
+ cards.forEach(card=>{
+  const categoryOk=active==='all'||card.dataset.category===active;
+  const textOk=card.innerText.toLowerCase().includes(q);
+  const visible=categoryOk&&textOk;
+  card.style.display=visible?'flex':'none';
+  if(visible)count++;
+ });
+ document.getElementById('empty').style.display=count?'none':'block';
+}
+filters.forEach(btn=>btn.addEventListener('click',()=>{
+ filters.forEach(x=>x.classList.remove('active'));
+ btn.classList.add('active');
+ active=btn.dataset.filter;
+ update();
+}));
+search.addEventListener('input',update);
+document.getElementById('searchButton').addEventListener('click',update);
+document.getElementById('year').textContent=new Date().getFullYear();
+</script>
+</body>
+  </html>
+  
