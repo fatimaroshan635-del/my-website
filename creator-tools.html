@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="theme-color" content="#064e3b">
+<meta name="description" content="Useful tools for YouTube creators, video editing, thumbnails, graphic design and audio production on Digital Pakistan.">
+<title>Creator Tools | Digital Pakistan</title>
+<style>
+:root{--green:#064e3b;--dark:#022c22;--gold:#e8b84a;--bg:#f4f8f6;--text:#17352c;--muted:#64756e}
+*{box-sizing:border-box}
+body{margin:0;font-family:Arial,Helvetica,sans-serif;background:var(--bg);color:var(--text)}
+header{background:linear-gradient(135deg,var(--dark),var(--green));color:white;padding:20px 16px 34px}
+nav{max-width:1050px;margin:auto;display:flex;justify-content:space-between;align-items:center;gap:12px;flex-wrap:wrap}
+.brand{font-size:21px;font-weight:800;color:white;text-decoration:none}
+.brand span{color:var(--gold)}
+.btn{padding:10px 15px;border-radius:10px;text-decoration:none;font-size:13px;font-weight:bold;background:white;color:var(--green)}
+.hero{max-width:1050px;margin:35px auto 0}
+.tag{display:inline-block;padding:7px 12px;border-radius:30px;background:#ffffff18;border:1px solid #ffffff35;color:#ffe4a0;font-size:12px}
+h1{font-size:clamp(30px,6vw,47px);line-height:1.12;margin:18px 0 12px}
+.hero p{max-width:620px;font-size:15px;line-height:1.7;color:#e0eee7}
+main{max-width:1050px;margin:25px auto;padding:0 15px 35px}
+.search{width:100%;padding:15px;border:1px solid #d8e4de;border-radius:13px;font-size:15px;background:white;outline-color:var(--green)}
+.filters{display:flex;gap:8px;flex-wrap:wrap;margin:16px 0 23px}
+.filter{padding:10px 13px;border:1px solid #d5e2da;border-radius:30px;background:white;color:var(--green);font-weight:700;cursor:pointer}
+.filter.active{background:var(--green);color:white}
+h2{font-size:22px;margin:24px 0 6px}
+.sub{font-size:14px;line-height:1.6;color:var(--muted);margin:0 0 18px}
+.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:14px}
+.card{display:flex;flex-direction:column;background:white;border:1px solid #e0eae4;border-radius:16px;padding:18px;min-height:220px;box-shadow:0 5px 16px #123b2510}
+.icon{display:grid;place-items:center;width:48px;height:48px;border-radius:13px;background:#e7f3eb;font-size:25px;margin-bottom:12px}
+.card h3{font-size:17px;margin:0 0 8px}
+.card p{font-size:13px;color:var(--muted);line-height:1.6;margin:0 0 16px;flex:1}
+.open{display:block;text-align:center;padding:11px;border-radius:10px;background:var(--green);color:white;text-decoration:none;font-size:13px;font-weight:bold}
+.open:hover{background:#086b4d}
+.note{margin-top:24px;background:#fff8e8;border:1px solid #f2dfaa;border-radius:13px;padding:15px;font-size:13px;line-height:1.7;color:#6a5018}
+.empty{display:none;padding:24px;text-align:center;color:var(--muted);background:white;border-radius:12px}
+footer{text-align:center;padding:23px 15px;background:var(--dark);color:#d8e8df;font-size:12px;line-height:1.9}
+footer a{color:#ffe4a0;text-decoration:none}
+@media(max-width:480px){.hero{margin-top:27px}.card{min-height:205px}}
+</style>
+</head>
+<body>
+<header>
+<nav>
+<a class="brand" href="index.html">🇵🇰 Digital <span>Pakistan</span></a>
+<a class="btn" href="index.html">← Home</a>
+</nav>
+<div class="hero">
+<span class="tag">CREATE · EDIT · PUBLISH</span>
+<h1>Creator Tools<br>For Your Next Idea 🎬</h1>
+<p>YouTube videos, thumbnails, reels, logos aur audio ke liye useful creator resources. Apni zaroorat ke mutabiq category select karein.</p>
+</div>
+</header>
+
+<main>
+<input id="search" class="search" type="search" placeholder="🔎 Search creator tools..." aria-label="Search creator tools">
+
+<div class="filters">
+<button class="filter active" data-category="all">All Tools</button>
+<button class="filter" data-category="video">Video Editing</button>
+<button class="filter" data-category="design">Design & Thumbnails</button>
+<button class="filter" data-category="youtube">YouTube</button>
+<button class="filter" data-category="audio">Audio</button>
+</div>
+
+<h2>Explore Creator Resources</h2>
+<p class="sub">Buttons official service websites kholte hain. Free features aur paid plans service ke mutabiq mukhtalif ho sakte hain.</p>
+
+<div class="grid" id="grid">
+<article class="card" data-category="youtube">
+<div class="icon">▶️</div><h3>YouTube Studio</h3>
+<p>Apne channel ki videos, analytics, comments aur publishing manage karein.</p>
+<a class="open" href="https://studio.youtube.com/" target="_blank" rel="noopener noreferrer">Open YouTube Studio ↗</a>
+</article>
+
+<article class="card" data-category="youtube">
+<div class="icon">📈</div><h3>YouTube Creators</h3>
+<p>Channel growth, creator guidance aur YouTube ke official learning resources.</p>
+<a class="open" href="https://www.youtube.com/creators/" target="_blank" rel="noopener noreferrer">Explore Creator Hub ↗</a>
+</article>
+
+<article class="card" data-category="video">
+<div class="icon">🎬</div><h3>CapCut</h3>
+<p>Short videos, captions, transitions aur available AI editing features.</p>
+<a class="open" href="https://www.capcut.com/" target="_blank" rel="noopener noreferrer">Open CapCut ↗</a>
+</article>
+
+<article class="card" data-category="video">
+<div class="icon">🎞️</div><h3>Clipchamp</h3>
+<p>Browser-based video editing aur video creation tools.</p>
+<a class="open" href="https://clipchamp.com/" target="_blank" rel="noopener noreferrer">Open Clipchamp ↗</a>
+</article>
+
+<article class="card" data-category="design">
+<div class="icon">🖼️</div><h3>Canva</h3>
+<p>YouTube thumbnails, banners, posters, logos aur social media designs.</p>
+<a class="open" href="https://www.canva.com/" target="_blank" rel="noopener noreferrer">Create Designs ↗</a>
+</article>
+
+<article class="card" data-category="design">
+<div class="icon">🎨</div><h3>Adobe Express</h3>
+<p>Graphic design, social posts, promotional images aur creative projects.</p>
+<a class="open" href="https://www.adobe.com/express/" target="_blank" rel="noopener noreferrer">Open Adobe Express ↗</a>
+</article>
+
+<article class="card" data-category="design">
+<div class="icon">✨</div><h3>Adobe Firefly</h3>
+<p>Creative projects ke liye AI-assisted images aur visual assets.</p>
+<a class="open" href="https://firefly.adobe.com/" target="_blank" rel="noopener noreferrer">Create with Firefly ↗</a>
+</article>
+
+<article class="card" data-category="audio">
+<div class="icon">🎙️</div><h3>Audacity</h3>
+<p>Audio recording aur editing ke liye desktop software aur resources.</p>
+<a class="open" href="https://www.audacityteam.org/" target="_blank" rel="noopener noreferrer">Explore Audacity ↗</a>
+</article>
+
+<article class="card" data-category="audio">
+<div class="icon">🎵</div><h3>BandLab</h3>
+<p>Music creation, audio recording aur browser-based studio features.</p>
+<a class="open" href="https://www.bandlab.com/" target="_blank" rel="noopener noreferrer">Open BandLab ↗</a>
+</article>
+
+<article class="card" data-category="youtube">
+<div class="icon">🔍</div><h3>Google Trends</h3>
+<p>Search trends explore karein aur content ideas ke liye audience interest samjhein.</p>
+<a class="open" href="https://trends.google.com/" target="_blank" rel="noopener noreferrer">Explore Trends ↗</a>
+</article>
+
+<article class="card" data-category="youtube">
+<div class="icon">📊</div><h3>vidIQ</h3>
+<p>YouTube creators ke liye channel insights, keyword research aur optimization tools.</p>
+<a class="open" href="https://vidiq.com/" target="_blank" rel="noopener noreferrer">Explore vidIQ ↗</a>
+</article>
+
+<article class="card" data-category="video">
+<div class="icon">📱</div><h3>Canva Video</h3>
+<p>Social media clips, video templates aur simple visual content creation.</p>
+<a class="open" href="https://www.canva.com/video-editor/" target="_blank" rel="noopener noreferrer">Edit Videos ↗</a>
+</article>
+</div>
+
+<div class="empty" id="empty">Koi matching tool nahi mila. Doosra naam ya category try karein.</div>
+
+<div class="note"><strong>🔐 Creator safety:</strong> Apna channel password, recovery code ya OTP kisi third-party tool ko na dein. Copyrighted music, images aur clips use karne se pehle unki licence conditions check karein. Kisi tool ka naam yahan hona endorsement ya guaranteed monetization ki assurance nahi hai.</div>
+</main>
+
+<footer>
+<strong>Digital Pakistan 🇵🇰</strong><br>
+Useful digital resources in one place.<br>
+<a href="index.html">Home</a> · <a href="ai-tools.html">AI Tools</a> · <a href="jobs.html">Jobs</a> · <a href="education.html">Education</a>
+</footer>
+
+<script>
+const search=document.getElementById("search");
+const cards=[...document.querySelectorAll(".card")];
+const filters=[...document.querySelectorAll(".filter")];
+const empty=document.getElementById("empty");
+let category="all";
+
+function updateTools(){
+ const term=search.value.trim().toLowerCase();
+ let count=0;
+ cards.forEach(card=>{
+  const matchesCategory=category==="all"||card.dataset.category===category;
+  const matchesText=card.innerText.toLowerCase().includes(term);
+  const show=matchesCategory&&matchesText;
+  card.style.display=show?"flex":"none";
+  if(show)count++;
+ });
+ empty.style.display=count?"none":"block";
+}
+
+filters.forEach(button=>{
+ button.addEventListener("click",()=>{
+  category=button.dataset.category;
+  filters.forEach(item=>item.classList.toggle("active",item===button));
+  updateTools();
+ });
+});
+search.addEventListener("input",updateTools);
+</script>
+</body>
+  </html>
