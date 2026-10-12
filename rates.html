@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="theme-color" content="#064e3b">
+<meta name="description" content="Find official and reliable sources for Pakistan currency exchange, petroleum prices, gold rates and stock market information.">
+<title>Pakistan Rates & Prices | Digital Pakistan</title>
+<style>
+:root{--green:#064e3b;--dark:#022c22;--gold:#e8b84a;--bg:#f4f8f6;--text:#17352c;--muted:#64756e}
+*{box-sizing:border-box}
+body{margin:0;font-family:Arial,Helvetica,sans-serif;background:var(--bg);color:var(--text)}
+header{background:linear-gradient(135deg,var(--dark),var(--green));color:white;padding:20px 16px 34px}
+nav{max-width:1050px;margin:auto;display:flex;justify-content:space-between;align-items:center;gap:12px;flex-wrap:wrap}
+.brand{font-size:21px;font-weight:800;color:white;text-decoration:none}
+.brand span{color:var(--gold)}
+.btn{padding:10px 15px;border-radius:10px;text-decoration:none;font-size:13px;font-weight:bold;background:white;color:var(--green)}
+.hero{max-width:1050px;margin:35px auto 0}
+.tag{display:inline-block;padding:7px 12px;border-radius:30px;background:#ffffff18;border:1px solid #ffffff35;color:#ffe4a0;font-size:12px}
+h1{font-size:clamp(30px,6vw,46px);line-height:1.12;margin:18px 0 12px}
+.hero p{max-width:650px;font-size:15px;line-height:1.7;color:#e0eee7}
+main{max-width:1050px;margin:25px auto;padding:0 15px 35px}
+.notice{padding:16px;background:#fff8e8;border:1px solid #f0dca3;border-radius:14px;font-size:14px;line-height:1.8;color:#6a5018;margin-bottom:24px}
+.search{width:100%;padding:15px;border:1px solid #d8e4de;border-radius:13px;font-size:15px;background:white;outline-color:var(--green)}
+.filters{display:flex;gap:8px;flex-wrap:wrap;margin:15px 0 23px}
+.filter{padding:10px 13px;border:1px solid #d5e2da;border-radius:30px;background:white;color:var(--green);font-weight:bold;cursor:pointer}
+.filter.active{background:var(--green);color:white}
+h2{font-size:22px;margin:24px 0 6px}
+.sub{font-size:14px;line-height:1.7;color:var(--muted);margin:0 0 18px}
+.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(230px,1fr));gap:14px}
+.card{display:flex;flex-direction:column;background:white;border:1px solid #e0eae4;border-radius:16px;padding:18px;min-height:230px;box-shadow:0 5px 16px #123b2510}
+.icon{display:grid;place-items:center;width:48px;height:48px;border-radius:13px;background:#e7f3eb;font-size:25px;margin-bottom:12px}
+.card h3{font-size:17px;margin:0 0 8px}
+.card p{font-size:13px;color:var(--muted);line-height:1.7;margin:0 0 16px;flex:1}
+.source{display:inline-block;font-size:11px;color:#567168;margin-bottom:10px}
+.open{display:block;text-align:center;padding:11px;border-radius:10px;background:var(--green);color:white;text-decoration:none;font-size:13px;font-weight:bold}
+.open:hover{background:#086b4d}
+.empty{display:none;padding:24px;text-align:center;color:var(--muted);background:white;border-radius:12px}
+footer{text-align:center;padding:23px 15px;background:var(--dark);color:#d8e8df;font-size:12px;line-height:1.9}
+footer a{color:#ffe4a0;text-decoration:none}
+@media(max-width:480px){.hero{margin-top:27px}.card{min-height:215px}}
+</style>
+</head>
+<body>
+<header>
+<nav>
+<a class="brand" href="index.html">🇵🇰 Digital <span>Pakistan</span></a>
+<a class="btn" href="index.html">← Home</a>
+</nav>
+<div class="hero">
+<span class="tag">SOURCES YOU CAN CHECK</span>
+<h1>Pakistan Rates<br>& Prices 🇵🇰</h1>
+<p>Currency, fuel, gold aur stock market information ke liye relevant official aur reliable sources. Rate ki date aur details original source par check karein.</p>
+</div>
+</header>
+
+<main>
+<div class="notice">
+<strong>Important: No invented rates</strong><br>
+Is page par koi manually banaya hua rate ya unverified price display nahi ki ja rahi. Har card source ki website kholta hai. Rates badal sakte hain; transaction se pehle latest date, unit aur applicable rate confirm karein.
+</div>
+
+<input class="search" id="search" type="search" placeholder="🔎 Search: dollar, petrol, gold..." aria-label="Search rate sources">
+
+<div class="filters">
+<button class="filter active" data-category="all">All Sources</button>
+<button class="filter" data-category="currency">Currency</button>
+<button class="filter" data-category="fuel">Fuel</button>
+<button class="filter" data-category="gold">Gold</button>
+<button class="filter" data-category="market">Stock Market</button>
+<button class="filter" data-category="economy">Economy</button>
+</div>
+
+<h2>Check Rates from Their Sources</h2>
+<p class="sub">Digital Pakistan in sources ka directory page hai. Har source ka apna update schedule aur rate calculation ho sakta hai.</p>
+
+<div class="grid" id="grid">
+
+<article class="card" data-category="currency">
+<div class="icon">💱</div>
+<h3>Currency Exchange Rates</h3>
+<p>Foreign exchange data, weighted average customer rates aur doosri currency information check karein.</p>
+<span class="source">Source: State Bank of Pakistan</span>
+<a class="open" href="https://www.sbp.org.pk/economic-data" target="_blank" rel="noopener noreferrer">Check SBP Data ↗</a>
+</article>
+
+<article class="card" data-category="currency">
+<div class="icon">🏦</div>
+<h3>Open Market Exchange Rates</h3>
+<p>SBP ke economic data section mein available open-market closing exchange rate information aur uski date dekhein.</p>
+<span class="source">Source: State Bank of Pakistan</span>
+<a class="open" href="https://www.sbp.org.pk/economic-data" target="_blank" rel="noopener noreferrer">View Exchange Data ↗</a>
+</article>
+
+<article class="card" data-category="fuel">
+<div class="icon">⛽</div>
+<h3>Petrol & Diesel Prices</h3>
+<p>Petroleum prices aur relevant notifications ke liye government regulator ki website check karein. Latest applicable notification khud verify karein.</p>
+<span class="source">Source: OGRA</span>
+<a class="open" href="https://www.ogra.org.pk/" target="_blank" rel="noopener noreferrer">Open OGRA ↗</a>
+</article>
+
+<article class="card" data-category="gold">
+<div class="icon">🥇</div>
+<h3>Gold Market Rates</h3>
+<p>Gold ka rate city, purity, weight aur market timing ke mutabiq farq kar sakta hai. Published rate ki date aur unit confirm karein.</p>
+<span class="source">Market information; no live price shown</span>
+<a class="open" href="https://www.google.com/search?q=Pakistan+gold+rate+today+date+source" target="_blank" rel="noopener noreferrer">Find Dated Gold Rates ↗</a>
+</article>
+
+<article class="card" data-category="market">
+<div class="icon">📈</div>
+<h3>Pakistan Stock Exchange</h3>
+<p>Listed shares, market summary, indices aur trading information PSX ki official website par dekhein.</p>
+<span class="source">Source: Pakistan Stock Exchange</span>
+<a class="open" href="https://www.psx.com.pk/market-summary/" target="_blank" rel="noopener noreferrer">Open PSX Market ↗</a>
+</article>
+
+<article class="card" data-category="economy">
+<div class="icon">📊</div>
+<h3>Financial Market Data</h3>
+<p>KIBOR, money markets aur foreign exchange market se related published financial data check karein.</p>
+<span class="source">Source: State Bank of Pakistan</span>
+<a class="open" href="https://www.sbp.org.pk/our-operations/financial-market/financial-market-data" target="_blank" rel="noopener noreferrer">View Financial Data ↗</a>
+</article>
+
+<article class="card" data-category="economy">
+<div class="icon">🧾</div>
+<h3>Pakistan Economic Data</h3>
+<p>Official economic indicators aur published statistical information ke liye SBP ka economic data portal use karein.</p>
+<span class="source">Source: State Bank of Pakistan</span>
+<a class="open" href="https://www.sbp.org.pk/economic-data" target="_blank" rel="noopener noreferrer">Explore Economic Data ↗</a>
+</article>
+
+<article class="card" data-category="economy">
+<div class="icon">📉</div>
+<h3>Inflation & Statistics</h3>
+<p>Pakistan Bureau of Statistics ke published reports aur official inflation/statistics releases check karein.</p>
+<span class="source">Source: Pakistan Bureau of Statistics</span>
+<a class="open" href="https://www.pbs.gov.pk/" target="_blank" rel="noopener noreferrer">Open PBS ↗</a>
+</article>
+
+</div>
+
+<div class="empty" id="empty">Is category mein matching source nahi mila.</div>
+
+<div class="notice" style="margin-top:24px;margin-bottom:0">
+<strong>Rate verification checklist</strong><br>
+1. Source aur publication date check karein.<br>
+2. Currency, unit (jaise per gram ya per tola) aur city confirm karein.<br>
+3. Gold aur currency ke liye buying/selling rate ka farq samjhein.<br>
+4. Petrol ke liye latest applicable official notification dekhein.<br>
+5. Is directory ko investment ya financial advice na samjhein.
+</div>
+</main>
+
+<footer>
+<strong>Digital Pakistan 🇵🇰</strong><br>
+Rates directory — prices are not fabricated or manually estimated.<br>
+<a href="index.html">Home</a> ·
+<a href="ai-tools.html">AI Tools</a> ·
+<a href="creator-tools.html">Creator Tools</a> ·
+<a href="schemes.html">Government Schemes</a>
+</footer>
+
+<script>
+const search=document.getElementById("search");
+const cards=[...document.querySelectorAll(".card")];
+const filters=[...document.querySelectorAll(".filter")];
+const empty=document.getElementById("empty");
+let category="all";
+
+function updateCards(){
+ const term=search.value.trim().toLowerCase();
+ let count=0;
+ cards.forEach(card=>{
+  const categoryMatch=category==="all"||card.dataset.category===category;
+  const textMatch=card.innerText.toLowerCase().includes(term);
+  const show=categoryMatch&&textMatch;
+  card.style.display=show?"flex":"none";
+  if(show)count++;
+ });
+ empty.style.display=count?"none":"block";
+}
+filters.forEach(button=>{
+ button.addEventListener("click",()=>{
+  category=button.dataset.category;
+  filters.forEach(item=>item.classList.toggle("active",item===button));
+  updateCards();
+ });
+});
+search.addEventListener("input",updateCards);
+</script>
+</body>
+</html>
