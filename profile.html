@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="theme-color" content="#064e3b">
+<meta name="description" content="Digital Pakistan user profile and account page.">
+<title>My Profile | Digital Pakistan</title>
+<style>
+:root{--green:#064e3b;--green2:#087b58;--gold:#e8bd62;--bg:#f3f7f4;--ink:#18372d;--muted:#63756d}
+*{box-sizing:border-box}
+body{margin:0;font-family:Arial,sans-serif;background:var(--bg);color:var(--ink)}
+header{background:#043c2d;color:white;padding:16px}
+.top{max-width:900px;margin:auto;display:flex;align-items:center;justify-content:space-between;gap:12px}
+.brand{font-size:19px;font-weight:800}.brand span{color:var(--gold)}
+.home{color:white;text-decoration:none;border:1px solid #ffffff66;border-radius:10px;padding:10px 13px;font-size:14px}
+main{max-width:900px;margin:auto;padding:24px 15px 40px}
+.hero{background:linear-gradient(130deg,#032f25,#087b58 68%,#ad873b);color:white;border-radius:19px;padding:25px 20px}
+.hero h1{margin:0 0 10px;font-size:29px}
+.hero p{margin:0;line-height:1.7;color:#e6f5ed;font-size:14px}
+.profile{margin-top:18px;background:white;border:1px solid #dce8df;border-radius:17px;padding:22px;text-align:center}
+.avatar{width:78px;height:78px;border-radius:50%;display:grid;place-items:center;margin:0 auto 12px;background:#e1f2e7;color:var(--green);font-size:35px;border:2px solid #c7e4d1}
+.profile h2{font-size:21px;margin:8px 0}
+.muted{color:var(--muted);font-size:13px;line-height:1.7}
+.status{display:inline-block;background:#fff4d8;color:#76571c;border-radius:20px;padding:7px 11px;font-size:11px;font-weight:bold;margin-top:8px}
+.section{background:white;border:1px solid #dce8df;border-radius:17px;padding:19px;margin-top:17px}
+.section h2{font-size:19px;margin:0 0 7px}
+.section p{margin:0 0 16px}
+.login-list{display:grid;grid-template-columns:1fr;gap:11px}
+.login{width:100%;border:1px solid #d9e5dc;background:#fff;border-radius:12px;padding:14px;display:flex;align-items:center;gap:12px;text-align:left;color:var(--ink);font-size:14px;font-weight:bold;cursor:pointer}
+.login:hover{border-color:var(--green2);background:#f5fbf6}
+.symbol{width:37px;height:37px;flex-shrink:0;display:grid;place-items:center;border-radius:10px;background:#edf5ef;font-size:20px}
+.login small{display:block;font-weight:normal;color:var(--muted);font-size:12px;margin-top:4px}
+.notice{background:#fff7e5;border:1px solid #f0dfb7;border-radius:12px;padding:14px;margin-top:15px;font-size:12px;line-height:1.8;color:#70531c}
+.links{display:grid;grid-template-columns:1fr 1fr;gap:10px}
+.link{background:#f1f7f2;border-radius:10px;padding:13px;text-decoration:none;color:var(--green);font-size:13px;font-weight:bold;text-align:center}
+footer{text-align:center;color:var(--muted);font-size:12px;line-height:1.8;padding:24px 10px}
+@media(min-width:600px){.login-list{grid-template-columns:1fr 1fr}main{padding-top:30px}.hero{padding:32px}.hero h1{font-size:35px}}
+</style>
+</head>
+<body>
+<header>
+<div class="top">
+<div class="brand">🇵🇰 Digital <span>Pakistan</span></div>
+<a class="home" href="index.html">← Home</a>
+</div>
+</header>
+
+<main>
+<section class="hero">
+<h1>My Profile</h1>
+<p>Digital Pakistan par apni profile aur account options manage karein.</p>
+</section>
+
+<section class="profile">
+<div class="avatar">👤</div>
+<h2 id="profileName">Guest User</h2>
+<p class="muted" id="profileInfo">Aap abhi guest ke taur par website dekh rahe hain.</p>
+<span class="status" id="profileStatus">GUEST MODE</span>
+</section>
+
+<section class="section">
+<h2>Login / Create Account</h2>
+<p class="muted">Apna pasandeeda account option select karein.</p>
+<div class="login-list">
+<button class="login" onclick="showMessage('Google login abhi connect nahi hai. Is ke liye secure authentication setup zaroori hai.')">
+<span class="symbol">G</span><span>Continue with Google<small>Google account</small></span>
+</button>
+<button class="login" onclick="showMessage('Facebook login abhi connect nahi hai. Is ke liye Facebook app configuration aur secure authentication zaroori hai.')">
+<span class="symbol">f</span><span>Continue with Facebook<small>Facebook account</small></span>
+</button>
+<button class="login" onclick="showMessage('Phone login abhi connect nahi hai. OTP verification service setup hone ke baad kaam karega.')">
+<span class="symbol">📱</span><span>Continue with Phone<small>Mobile number and OTP</small></span>
+</button>
+<button class="login" onclick="showMessage('GitHub login abhi connect nahi hai. Is ke liye GitHub OAuth configuration aur secure authentication zaroori hai.')">
+<span class="symbol">⌘</span><span>Continue with GitHub<small>GitHub account</small></span>
+</button>
+</div>
+<div class="notice" id="message" role="status">
+Security: Yeh login options abhi demo interface hain. Abhi password ya OTP enter karne ka koi form nahi hai. Actual account login connect hone ke baad hi available hoga.
+</div>
+</section>
+
+<section class="section">
+<h2>Quick Links</h2>
+<p class="muted">Digital Pakistan ke important pages.</p>
+<div class="links">
+<a class="link" href="schemes.html">Government Schemes</a>
+<a class="link" href="jobs.html">Jobs & Rozgar</a>
+<a class="link" href="education.html">Education</a>
+<a class="link" href="benefits.html">Public Benefits</a>
+</div>
+</section>
+</main>
+
+<footer>
+Digital Pakistan • User Profile<br>
+Independent public information website
+</footer>
+
+<script>
+function showMessage(message){
+ document.getElementById("message").textContent=message;
+}
+</script>
+</body>
+</html>
