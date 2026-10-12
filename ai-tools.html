@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="theme-color" content="#064e3b">
+<meta name="description" content="Discover useful AI tools for writing, learning, design, coding and productivity on Digital Pakistan.">
+<title>AI Tools | Digital Pakistan</title>
+<style>
+:root{--green:#064e3b;--dark:#022c22;--gold:#e8b84a;--bg:#f4f8f6;--text:#17352c;--muted:#64756e;--white:#fff}
+*{box-sizing:border-box}
+body{margin:0;font-family:Arial,Helvetica,sans-serif;background:var(--bg);color:var(--text)}
+header{background:linear-gradient(135deg,var(--dark),var(--green));color:white;padding:20px 16px 32px}
+nav{max-width:1050px;margin:auto;display:flex;align-items:center;justify-content:space-between;gap:12px;flex-wrap:wrap}
+.brand{font-size:21px;font-weight:800;color:white;text-decoration:none}
+.brand span{color:var(--gold)}
+.btn{display:inline-block;padding:10px 15px;border-radius:10px;text-decoration:none;font-weight:700;font-size:13px}
+.btn-light{background:white;color:var(--green)}
+.hero{max-width:1050px;margin:35px auto 0}
+.tag{display:inline-block;background:#ffffff18;border:1px solid #ffffff30;padding:7px 12px;border-radius:30px;font-size:12px;color:#ffe4a0}
+h1{font-size:clamp(30px,6vw,48px);line-height:1.12;margin:18px 0 12px}
+.hero p{color:#e0eee7;line-height:1.7;max-width:620px;font-size:15px}
+main{max-width:1050px;margin:25px auto;padding:0 15px 35px}
+.search{width:100%;padding:15px;border:1px solid #d8e4de;border-radius:13px;font-size:15px;outline-color:var(--green);background:white}
+.filters{display:flex;gap:8px;flex-wrap:wrap;margin:16px 0 23px}
+.filter{border:1px solid #d5e2da;background:white;color:var(--green);padding:10px 13px;border-radius:30px;font-weight:700;cursor:pointer}
+.filter.active{background:var(--green);color:white}
+.section-title{font-size:22px;margin:24px 0 6px}
+.sub{color:var(--muted);font-size:14px;line-height:1.6;margin:0 0 18px}
+.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:14px}
+.card{background:white;border:1px solid #e0eae4;border-radius:16px;padding:18px;display:flex;flex-direction:column;min-height:220px;box-shadow:0 5px 16px #123b2510}
+.icon{width:48px;height:48px;border-radius:13px;background:#e7f3eb;display:grid;place-items:center;font-size:25px;margin-bottom:12px}
+.card h3{font-size:17px;margin:0 0 8px}
+.card p{font-size:13px;color:var(--muted);line-height:1.6;margin:0 0 16px;flex:1}
+.open{display:block;text-align:center;background:var(--green);color:white;text-decoration:none;padding:11px;border-radius:10px;font-size:13px;font-weight:700}
+.open:hover{background:#086b4d}
+.note{margin-top:24px;background:#fff8e8;border:1px solid #f2dfaa;border-radius:13px;padding:15px;font-size:13px;line-height:1.7;color:#6a5018}
+footer{text-align:center;padding:23px 15px;background:var(--dark);color:#d8e8df;font-size:12px;line-height:1.8}
+footer a{color:#ffe4a0;text-decoration:none}
+.empty{display:none;padding:24px;text-align:center;color:var(--muted);background:white;border-radius:12px}
+@media(max-width:480px){header{padding-top:16px}.hero{margin-top:27px}.card{min-height:205px}}
+</style>
+</head>
+<body>
+<header>
+<nav>
+<a class="brand" href="index.html">🇵🇰 Digital <span>Pakistan</span></a>
+<a class="btn btn-light" href="index.html">← Home</a>
+</nav>
+<div class="hero">
+<span class="tag">SMART DIGITAL SERVICES</span>
+<h1>Discover Useful<br>AI Tools 🤖</h1>
+<p>Writing, learning, designing aur daily work ke liye useful AI tools ek jagah. Apni zaroorat ke mutabiq category select karein.</p>
+</div>
+</header>
+
+<main>
+<input class="search" id="search" type="search" placeholder="🔎 Search AI tools..." aria-label="Search AI tools">
+
+<div class="filters" id="filters">
+<button class="filter active" data-category="all">All Tools</button>
+<button class="filter" data-category="chat">AI Chat</button>
+<button class="filter" data-category="writing">Writing</button>
+<button class="filter" data-category="design">Design</button>
+<button class="filter" data-category="learning">Learning</button>
+<button class="filter" data-category="coding">Coding</button>
+</div>
+
+<h2 class="section-title">Explore AI Tools</h2>
+<p class="sub">Tool par tap karein. Kuch services ke liye account ya paid subscription ki zaroorat ho sakti hai.</p>
+
+<div class="grid" id="grid">
+<article class="card" data-category="chat">
+<div class="icon">💬</div><h3>ChatGPT</h3>
+<p>Questions, ideas, writing, learning aur everyday tasks mein AI assistance.</p>
+<a class="open" href="https://chatgpt.com/" target="_blank" rel="noopener noreferrer">Open ChatGPT ↗</a>
+</article>
+
+<article class="card" data-category="chat">
+<div class="icon">✨</div><h3>Google Gemini</h3>
+<p>Research, brainstorming, explanations aur Google AI assistant.</p>
+<a class="open" href="https://gemini.google.com/" target="_blank" rel="noopener noreferrer">Open Gemini ↗</a>
+</article>
+
+<article class="card" data-category="chat">
+<div class="icon">🧠</div><h3>Microsoft Copilot</h3>
+<p>AI chat, ideas, summaries aur productivity tasks ke liye.</p>
+<a class="open" href="https://copilot.microsoft.com/" target="_blank" rel="noopener noreferrer">Open Copilot ↗</a>
+</article>
+
+<article class="card" data-category="writing">
+<div class="icon">✍️</div><h3>Grammarly</h3>
+<p>English writing, grammar, clarity aur proofreading mein madad.</p>
+<a class="open" href="https://www.grammarly.com/" target="_blank" rel="noopener noreferrer">Open Grammarly ↗</a>
+</article>
+
+<article class="card" data-category="design">
+<div class="icon">🎨</div><h3>Canva AI</h3>
+<p>Posters, presentations, social media designs aur creative projects.</p>
+<a class="open" href="https://www.canva.com/" target="_blank" rel="noopener noreferrer">Open Canva ↗</a>
+</article>
+
+<article class="card" data-category="design">
+<div class="icon">🖼️</div><h3>Adobe Firefly</h3>
+<p>AI-assisted image creation aur creative design tools.</p>
+<a class="open" href="https://firefly.adobe.com/" target="_blank" rel="noopener noreferrer">Open Firefly ↗</a>
+</article>
+
+<article class="card" data-category="learning">
+<div class="icon">📚</div><h3>Khan Academy</h3>
+<p>Learning resources aur selected subjects mein AI-assisted learning features.</p>
+<a class="open" href="https://www.khanacademy.org/" target="_blank" rel="noopener noreferrer">Explore Learning ↗</a>
+</article>
+
+<article class="card" data-category="learning">
+<div class="icon">🔎</div><h3>Perplexity</h3>
+<p>Web-based research aur sources ke saath sawalon ke jawab dhoondhein.</p>
+<a class="open" href="https://www.perplexity.ai/" target="_blank" rel="noopener noreferrer">Open Perplexity ↗</a>
+</article>
+
+<article class="card" data-category="coding">
+<div class="icon">💻</div><h3>Replit</h3>
+<p>Browser mein coding projects banane aur programming seekhne ka platform.</p>
+<a class="open" href="https://replit.com/" target="_blank" rel="noopener noreferrer">Open Replit ↗</a>
+</article>
+
+<article class="card" data-category="coding">
+<div class="icon">🐙</div><h3>GitHub</h3>
+<p>Code repositories, version control aur apne development projects manage karein.</p>
+<a class="open" href="https://github.com/" target="_blank" rel="noopener noreferrer">Open GitHub ↗</a>
+</article>
+
+<article class="card" data-category="writing">
+<div class="icon">📝</div><h3>QuillBot</h3>
+<p>Paraphrasing aur English writing ko improve karne ke tools.</p>
+<a class="open" href="https://quillbot.com/" target="_blank" rel="noopener noreferrer">Open QuillBot ↗</a>
+</article>
+
+<article class="card" data-category="design">
+<div class="icon">🎬</div><h3>CapCut</h3>
+<p>Video editing, captions aur available AI-powered creative features.</p>
+<a class="open" href="https://www.capcut.com/" target="_blank" rel="noopener noreferrer">Open CapCut ↗</a>
+</article>
+</div>
+
+<div class="empty" id="empty">Koi matching tool nahi mila. Doosra naam search karein.</div>
+
+<div class="note"><strong>⚠️ Safety tip:</strong> Apna password, OTP, bank details ya CNIC number kisi AI tool mein share na karein. Tools ki availability, features aur pricing waqt ke saath badal sakti hain. Har service ki official website hi use karein.</div>
+</main>
+
+<footer>
+<strong>Digital Pakistan 🇵🇰</strong><br>
+Useful digital resources in one place.<br>
+<a href="index.html">Home</a> · <a href="schemes.html">Government Schemes</a> · <a href="jobs.html">Jobs</a> · <a href="education.html">Education</a>
+</footer>
+
+<script>
+const search=document.getElementById("search");
+const cards=[...document.querySelectorAll(".card")];
+const filters=[...document.querySelectorAll(".filter")];
+const empty=document.getElementById("empty");
+let category="all";
+
+function updateTools(){
+ const term=search.value.trim().toLowerCase();
+ let count=0;
+ cards.forEach(card=>{
+  const matchesCategory=category==="all"||card.dataset.category===category;
+  const matchesText=card.innerText.toLowerCase().includes(term);
+  const show=matchesCategory&&matchesText;
+  card.style.display=show?"flex":"none";
+  if(show)count++;
+ });
+ empty.style.display=count?"none":"block";
+}
+filters.forEach(button=>{
+ button.addEventListener("click",()=>{
+  category=button.dataset.category;
+  filters.forEach(item=>item.classList.toggle("active",item===button));
+  updateTools();
+ });
+});
+search.addEventListener("input",updateTools);
+</script>
+</body>
+  </html>
