@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="theme-color" content="#064e3b">
+<meta name="description" content="Find official Pakistan health information, vaccination resources, medicine regulation and public health guidance.">
+<title>Health & Medical Resources | Digital Pakistan</title>
+<style>
+:root{--green:#064e3b;--dark:#022c22;--gold:#e8b84a;--bg:#f4f8f6;--text:#17352c;--muted:#64756e}
+*{box-sizing:border-box}
+body{margin:0;font-family:Arial,Helvetica,sans-serif;background:var(--bg);color:var(--text)}
+header{background:linear-gradient(135deg,var(--dark),var(--green));color:white;padding:20px 16px 34px}
+nav{max-width:1050px;margin:auto;display:flex;justify-content:space-between;align-items:center;gap:12px;flex-wrap:wrap}
+.brand{font-size:21px;font-weight:800;color:white;text-decoration:none}
+.brand span{color:var(--gold)}
+.btn{padding:10px 15px;border-radius:10px;text-decoration:none;font-size:13px;font-weight:bold;background:white;color:var(--green)}
+.hero{max-width:1050px;margin:35px auto 0}
+.tag{display:inline-block;padding:7px 12px;border-radius:30px;background:#ffffff18;border:1px solid #ffffff35;color:#ffe4a0;font-size:12px}
+h1{font-size:clamp(30px,6vw,46px);line-height:1.12;margin:18px 0 12px}
+.hero p{max-width:650px;font-size:15px;line-height:1.7;color:#e0eee7}
+main{max-width:1050px;margin:25px auto;padding:0 15px 35px}
+.notice{padding:15px;background:#fff8e8;border:1px solid #f0dca3;border-radius:14px;font-size:13px;line-height:1.8;color:#6a5018;margin-bottom:22px}
+.search{width:100%;padding:15px;border:1px solid #d8e4de;border-radius:13px;font-size:15px;background:white;outline-color:var(--green)}
+.filters{display:flex;gap:8px;flex-wrap:wrap;margin:15px 0 23px}
+.filter{padding:10px 13px;border:1px solid #d5e2da;border-radius:30px;background:white;color:var(--green);font-weight:bold;cursor:pointer}
+.filter.active{background:var(--green);color:white}
+h2{font-size:22px;margin:24px 0 6px}
+.sub{font-size:14px;line-height:1.7;color:var(--muted);margin:0 0 18px}
+.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(225px,1fr));gap:14px}
+.card{display:flex;flex-direction:column;background:white;border:1px solid #e0eae4;border-radius:16px;padding:18px;min-height:225px;box-shadow:0 5px 16px #123b2510}
+.icon{display:grid;place-items:center;width:48px;height:48px;border-radius:13px;background:#e7f3eb;font-size:25px;margin-bottom:12px}
+.card h3{font-size:17px;margin:0 0 8px}
+.card p{font-size:13px;color:var(--muted);line-height:1.7;margin:0 0 15px;flex:1}
+.domain{font-size:11px;color:#567168;margin-bottom:10px;overflow-wrap:anywhere}
+.open{display:block;text-align:center;padding:11px;border-radius:10px;background:var(--green);color:white;text-decoration:none;font-size:13px;font-weight:bold}
+.open:hover{background:#086b4d}
+.empty{display:none;padding:24px;text-align:center;color:var(--muted);background:white;border-radius:12px}
+footer{text-align:center;padding:23px 15px;background:var(--dark);color:#d8e8df;font-size:12px;line-height:1.9}
+footer a{color:#ffe4a0;text-decoration:none}
+@media(max-width:480px){.hero{margin-top:27px}.card{min-height:210px}}
+</style>
+</head>
+<body>
+<header>
+<nav>
+<a class="brand" href="index.html">🇵🇰 Digital <span>Pakistan</span></a>
+<a class="btn" href="index.html">← Home</a>
+</nav>
+<div class="hero">
+<span class="tag">PUBLIC HEALTH INFORMATION</span>
+<h1>Health & Medical<br>Resources 🩺</h1>
+<p>Pakistan mein health information, vaccination guidance aur medicine regulation ke liye official resources ek jagah.</p>
+</div>
+</header>
+
+<main>
+<div class="notice">
+<strong>Important health notice</strong><br>
+Digital Pakistan government hospital ya medical service provider nahi hai. Yeh page information dhoondhne mein madad karta hai, diagnosis ya treatment nahi deta. Health concern ke liye qualified healthcare professional se mashwara karein. Emergency mein apne ilaqay ki emergency service ya nearest emergency department se foran rabta karein.
+</div>
+
+<input class="search" id="search" type="search" placeholder="🔎 Search vaccines, medicines, health..." aria-label="Search health resources">
+
+<div class="filters">
+<button class="filter active" data-category="all">All Resources</button>
+<button class="filter" data-category="government">Government Health</button>
+<button class="filter" data-category="vaccine">Vaccination</button>
+<button class="filter" data-category="medicine">Medicines</button>
+<button class="filter" data-category="research">Health Research</button>
+</div>
+
+<h2>Explore Health Resources</h2>
+<p class="sub">Har card relevant organization's website kholta hai. Latest notices aur eligibility original source par check karein.</p>
+
+<div class="grid" id="grid">
+
+<article class="card" data-category="government">
+<div class="icon">🏛️</div>
+<h3>Ministry of Health</h3>
+<p>Federal health policies, public-health notices, health programmes aur government updates.</p>
+<div class="domain">nhsrc.gov.pk</div>
+<a class="open" href="https://nhsrc.gov.pk/" target="_blank" rel="noopener noreferrer">Official Ministry ↗</a>
+</article>
+
+<article class="card" data-category="vaccine">
+<div class="icon">💉</div>
+<h3>Vaccination Programme</h3>
+<p>Pakistan ke Federal Directorate of Immunization se vaccine information aur immunization resources hasil karein.</p>
+<div class="domain">epi.gov.pk</div>
+<a class="open" href="https://www.epi.gov.pk/" target="_blank" rel="noopener noreferrer">Official EPI ↗</a>
+</article>
+
+<article class="card" data-category="vaccine">
+<div class="icon">📅</div>
+<h3>Immunization Schedule</h3>
+<p>Official vaccination schedule aur mukhtalif preventable diseases ke bare mein maloomat dekhein.</p>
+<div class="domain">epi.gov.pk</div>
+<a class="open" href="https://www.epi.gov.pk/immunization-schedule/" target="_blank" rel="noopener noreferrer">View Schedule ↗</a>
+</article>
+
+<article class="card" data-category="vaccine">
+<div class="icon">☎️</div>
+<h3>Sehat Tahaffuz Helpline</h3>
+<p>Pakistan ke immunization programme ki official website par Sehat Tahaffuz helpline aur available guidance check karein.</p>
+<div class="domain">epi.gov.pk</div>
+<a class="open" href="https://www.epi.gov.pk/" target="_blank" rel="noopener noreferrer">Check Official Details ↗</a>
+</article>
+
+<article class="card" data-category="medicine">
+<div class="icon">💊</div>
+<h3>Drug Regulatory Authority</h3>
+<p>Medicines regulation, drug safety, product registration aur official regulatory information ke liye DRAP dekhein.</p>
+<div class="domain">dra.gov.pk</div>
+<a class="open" href="https://www.dra.gov.pk/" target="_blank" rel="noopener noreferrer">Official DRAP ↗</a>
+</article>
+
+<article class="card" data-category="government">
+<div class="icon">🩺</div>
+<h3>Pakistan Medical & Dental Council</h3>
+<p>Doctors aur dentists ki registration aur medical-profession regulation se mutalliq information.</p>
+<div class="domain">pmdc.pk</div>
+<a class="open" href="https://pmdc.pk/" target="_blank" rel="noopener noreferrer">Official PMDC ↗</a>
+</article>
+
+<article class="card" data-category="research">
+<div class="icon">🌍</div>
+<h3>WHO Pakistan</h3>
+<p>Pakistan ke public-health updates, disease information aur World Health Organization resources.</p>
+<div class="domain">who.int/countries/pak</div>
+<a class="open" href="https://www.who.int/countries/pak" target="_blank" rel="noopener noreferrer">WHO Pakistan ↗</a>
+</article>
+
+<article class="card" data-category="research">
+<div class="icon">📚</div>
+<h3>National Health Updates</h3>
+<p>Health advisories, public notices aur government health publications ke liye Ministry ki website check karein.</p>
+<div class="domain">nhsrc.gov.pk</div>
+<a class="open" href="https://nhsrc.gov.pk/" target="_blank" rel="noopener noreferrer">View Health Updates ↗</a>
+</article>
+
+</div>
+
+<div class="empty" id="empty">Is search ya category ke liye koi matching resource nahi mila.</div>
+
+<div class="notice" style="margin-top:24px;margin-bottom:0">
+<strong>Stay safe</strong><br>
+• Online information ki bunyaad par apni prescribed medicine band ya change na karein.<br>
+• Medicine khareedte waqt packaging, expiry aur authorized pharmacy ka khayal rakhein.<br>
+• Vaccine eligibility, schedule aur availability relevant health authority se confirm karein.<br>
+• Apna CNIC, OTP ya medical records unknown websites par upload na karein.
+</div>
+</main>
+
+<footer>
+<strong>Digital Pakistan 🇵🇰</strong><br>
+Independent health-resource directory. Not a medical provider.<br>
+<a href="index.html">Home</a> ·
+<a href="official-portals.html">Official Portals</a> ·
+<a href="benefits.html">Benefits</a> ·
+<a href="schemes.html">Government Schemes</a>
+</footer>
+
+<script>
+const search=document.getElementById("search");
+const cards=[...document.querySelectorAll(".card")];
+const filters=[...document.querySelectorAll(".filter")];
+const empty=document.getElementById("empty");
+let category="all";
+
+function updateCards(){
+ const term=search.value.trim().toLowerCase();
+ let count=0;
+ cards.forEach(card=>{
+  const categoryMatch=category==="all"||card.dataset.category===category;
+  const textMatch=card.innerText.toLowerCase().includes(term);
+  const show=categoryMatch&&textMatch;
+  card.style.display=show?"flex":"none";
+  if(show)count++;
+ });
+ empty.style.display=count?"none":"block";
+}
+
+filters.forEach(button=>{
+ button.addEventListener("click",()=>{
+  category=button.dataset.category;
+  filters.forEach(item=>item.classList.toggle("active",item===button));
+  updateCards();
+ });
+});
+search.addEventListener("input",updateCards);
+</script>
+</body>
+</html>
